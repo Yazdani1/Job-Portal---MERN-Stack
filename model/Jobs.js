@@ -8,7 +8,14 @@ var postSchema = mongoose.Schema({
   des: {
     type: String,
   },
-  location: {
+  city: {
+    type: String,
+  },
+
+  house: {
+    type: String,
+  },
+  country: {
     type: String,
   },
 
@@ -16,11 +23,13 @@ var postSchema = mongoose.Schema({
     type: String,
   },
 
-  startdate: {
+  requirements: {
     type: String,
   },
 
-
+  skills: {
+    type: String,
+  },
 
   date: {
     type: Date,
