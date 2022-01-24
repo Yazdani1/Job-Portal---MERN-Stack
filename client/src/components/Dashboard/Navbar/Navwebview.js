@@ -42,8 +42,8 @@ const Navwebview = (props) => {
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
-            <div className="sidebar-item-back">
-              <div className="sidebar-items" data-tip="Dashboard">
+            <div className="sidebar-item-back" data-tip="Dashboard">
+              <div className="sidebar-items" >
                 <p>
                   {/* <AiFillHome size={20} onClick={() => setSidebar(!sidebar)} /> */}
                   <AiFillDashboard size={30} />
@@ -75,7 +75,7 @@ const Navwebview = (props) => {
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
-            <div className="sidebar-item-back">
+            <div className="sidebar-item-back" data-tip="Profile">
               <div className="sidebar-items">
                 <p>
                   <FaUserNurse size={30} />
@@ -139,7 +139,7 @@ const Navwebview = (props) => {
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
-            <div className="sidebar-item-back">
+            <div className="sidebar-item-back" data-tip="Messages">
               <div className="sidebar-items">
                 <p>
                   <AiFillMessage size={30} />
@@ -167,7 +167,7 @@ const Navwebview = (props) => {
             </div>
           </NavLink> */}
 
-          <div className="sidebar-item-back">
+          <div className="sidebar-item-back" data-tip="Log Out">
             <div className="sidebar-items" onClick={logOut}>
               <p>
                 <RiLogoutCircleRLine size={30} />
