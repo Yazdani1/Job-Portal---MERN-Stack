@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
 
-var postSchema = mongoose.Schema({
-  title: {
+const jobposts = mongoose.Schema({
+  name: {
     type: String,
   },
+
   des: {
     type: String,
   },
+
   city: {
     type: String,
   },
@@ -15,33 +17,23 @@ var postSchema = mongoose.Schema({
   house: {
     type: String,
   },
+
   country: {
     type: String,
   },
-
   jobtypes: {
     type: String,
   },
-
   requirements: {
     type: String,
   },
-
   skills: {
     type: String,
   },
-
   date: {
     type: Date,
     default: Date.now,
   },
-
-  likes: [
-    {
-      type: ObjectId,
-      ref: "User",
-    },
-  ],
 
   application: [
     {
@@ -62,5 +54,4 @@ var postSchema = mongoose.Schema({
     ref: "User",
   },
 });
-
-module.exports = mongoose.model("JobPost", postSchema);
+module.exports = mongoose.model("Jobposts", jobposts);
