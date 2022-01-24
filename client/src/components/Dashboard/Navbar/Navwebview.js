@@ -55,11 +55,11 @@ const Navwebview = (props) => {
           </NavLink>
 
           <NavLink
-            to="/create-event"
+            to="/create-job-post"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
-            <div className="sidebar-item-back">
+            <div className="sidebar-item-back" data-tip="Create Jobs">
               <div className="sidebar-items">
                 <p>
                   <RiEditFill size={20} />
@@ -71,7 +71,7 @@ const Navwebview = (props) => {
           </NavLink>
 
           <NavLink
-            to="/Dashboardprofile"
+            to="/profile"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
@@ -194,7 +194,7 @@ const Navwebview = (props) => {
           </NavLink>
 
           <NavLink
-            to="/create-event"
+            to="/create-job-post"
             style={{ textDecoration: "none" }}
             className={({ isActive }) =>
               isActive ? "largenavactive" : "inactive"
@@ -203,13 +203,14 @@ const Navwebview = (props) => {
             <div className="sidebar-large-navdesign">
               <p>
                 <RiEditFill size={15} />
-                Create Event
+                Create Jobs
+
               </p>
             </div>
           </NavLink>
 
           <NavLink
-            to="/Dashboardprofile"
+            to="/profile"
             style={{ textDecoration: "none" }}
             className={({ isActive }) =>
               isActive ? "largenavactive" : "inactive"

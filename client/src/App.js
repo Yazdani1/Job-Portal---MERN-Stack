@@ -10,6 +10,9 @@ import ProtectedRoute from "./components/Protectedroute";
 import { UserProvider } from "./components/UserContext";
 import DashboardprotectedRoute from "./components/Dashboard/DashboardprotectedRoute";
 import Publishedjobs from "./components/Dashboard/Published Jobs/Publishedjobs";
+import CreateJobs from "./components/Dashboard/Create Jobs/CreateJobs";
+import Profile from "./components/Dashboard/Profile/Profile";
+import Message from "./components/Dashboard/Message/Message";
 
 const App = () => {
   return (
@@ -43,6 +46,17 @@ const App = () => {
             <DashboardprotectedRoute DashboardProtect={Publishedjobs} />
           </Route>
 
+          <Route exact path="/create-job-post">
+            <DashboardprotectedRoute DashboardProtect={CreateJobs} />
+          </Route>
+
+          <Route exact path="/profile">
+            <DashboardprotectedRoute DashboardProtect={Profile} />
+          </Route>
+
+          <Route exact path="/message">
+            <DashboardprotectedRoute DashboardProtect={Message} />
+          </Route>
           {/*  Protected route end for dashboard side */}
 
           {/* page not found  */}
