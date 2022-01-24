@@ -37,7 +37,7 @@
 
 .sidebar-small-design {
   height: 92vh;
-  width: 110px;
+  width: 90px;
   background-color: #080606;
   color: white;
   /* margin-left: 1px; */
@@ -70,13 +70,15 @@
 .sidebar-items p {
   font-size: 14px;
   padding-top: 10px;
-  margin-left: 20px;
+  margin-left: 15px;
 
 }
 
 .sidebar-item-back:hover {
-  background-color: #08552b;
+  /* background-color: #08552b; */
   cursor: pointer;
+  background-color: rgb(19, 90, 170);
+
 }
 
 .responsivenav {

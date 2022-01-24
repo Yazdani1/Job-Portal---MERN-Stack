@@ -46,7 +46,7 @@ const Navwebview = (props) => {
               <div className="sidebar-items" >
                 <p>
                   {/* <AiFillHome size={20} onClick={() => setSidebar(!sidebar)} /> */}
-                  <AiFillDashboard size={30} />
+                  <AiFillDashboard size={20} />
                 </p>
 
                 {/* <p>Dashboard</p> */}
@@ -62,7 +62,7 @@ const Navwebview = (props) => {
             <div className="sidebar-item-back">
               <div className="sidebar-items">
                 <p>
-                  <RiEditFill size={30} />
+                  <RiEditFill size={20} />
                 </p>
 
                 {/* <p>Create Event</p> */}
@@ -78,7 +78,7 @@ const Navwebview = (props) => {
             <div className="sidebar-item-back" data-tip="Profile">
               <div className="sidebar-items">
                 <p>
-                  <FaUserNurse size={30} />
+                  <FaUserNurse size={20} />
                 </p>
 
                 {/* <p>Profile</p> */}
@@ -94,7 +94,7 @@ const Navwebview = (props) => {
             <div className="sidebar-item-back">
               <div className="sidebar-items">
                 <p>
-                  <GiSkills size={30} />
+                  <GiSkills size={20} />
                 </p>
 
                 {/* <p>Experience</p> */}
@@ -110,7 +110,7 @@ const Navwebview = (props) => {
             <div className="sidebar-item-back">
               <div className="sidebar-items">
                 <p>
-                  <BsHeartFill size={30} />
+                  <BsHeartFill size={20} />
                 </p>
 
                 {/* <p>Favourite</p> */}
@@ -126,7 +126,7 @@ const Navwebview = (props) => {
             <div className="sidebar-item-back">
               <div className="sidebar-items">
                 <p>
-                  <MdQuestionAnswer size={30} />
+                  <MdQuestionAnswer size={20} />
                 </p>
 
                 {/* <p>Comments</p> */}
@@ -142,7 +142,7 @@ const Navwebview = (props) => {
             <div className="sidebar-item-back" data-tip="Messages">
               <div className="sidebar-items">
                 <p>
-                  <AiFillMessage size={30} />
+                  <AiFillMessage size={20} />
                 </p>
 
                 {/* <p>Messages</p> */}
@@ -170,7 +170,7 @@ const Navwebview = (props) => {
           <div className="sidebar-item-back" data-tip="Log Out">
             <div className="sidebar-items" onClick={logOut}>
               <p>
-                <RiLogoutCircleRLine size={30} />
+                <RiLogoutCircleRLine size={20} />
               </p>
 
               {/* <p>Log Out</p> */}
