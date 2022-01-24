@@ -8,6 +8,8 @@ import Home from "./components/HomePage/Home";
 import PagenotFound from "./components/PagenotFound";
 import ProtectedRoute from "./components/Protectedroute";
 import { UserProvider } from "./components/UserContext";
+import DashboardprotectedRoute from "./components/Dashboard/DashboardprotectedRoute";
+import Publishedjobs from "./components/Dashboard/Published Jobs/Publishedjobs";
 
 const App = () => {
   return (
@@ -34,6 +36,14 @@ const App = () => {
           <Route exact path="/reset/:token">
             <ProtectedRoute FrontProtected={NewPassword} />
           </Route>
+
+          {/* Protected route for dashboard side */}
+
+          <Route exact path="/dashboard">
+            <DashboardprotectedRoute DashboardProtect={Publishedjobs} />
+          </Route>
+
+          {/*  Protected route end for dashboard side */}
 
           {/* page not found  */}
 

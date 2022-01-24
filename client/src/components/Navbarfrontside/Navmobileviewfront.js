@@ -72,18 +72,12 @@ const Navmobileviewfront = () => {
               <Link to="/dashboard" style={{ textDecoration: "none" }}>
                 <div className="sidebar-mobile-nav">
                   <li onClick={() => setMobilesidebar(!mobilesidebar)}>
-                    <AiFillDashboard size={20} /> Create Events
+                    <AiFillDashboard size={20} /> Dashboard
                   </li>
                 </div>
               </Link>
 
-              <Link to="/joined-events" style={{ textDecoration: "none" }}>
-                <div className="sidebar-mobile-nav">
-                  <li onClick={() => setMobilesidebar(!mobilesidebar)}>
-                    <AiFillDashboard size={20} /> My Events
-                  </li>
-                </div>
-              </Link>
+            
 
               <div className="sidebar-mobile-nav" onClick={logOut}>
                 <li onClick={() => setMobilesidebar(!mobilesidebar)}>

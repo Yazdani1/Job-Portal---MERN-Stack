@@ -1,0 +1,97 @@
+/* Sidebar large navbar design */
+
+.sidebar-large {
+  height: 92vh;
+  width: 190px;
+  background-color: #080606;
+  color: white;
+  padding: 0px;
+}
+
+.sidebar-large-navdesign {
+  /* margin-left: 11px; */
+  padding: 24px;
+  list-style-type: none;
+  line-height: 0px;
+}
+
+.sidebar-large-navdesign:hover{
+  background-color: #08552b;
+    cursor: pointer;
+    color: black;
+}
+
+.sidebar-large-navdesign p{
+  color: white;
+}
+
+.sidebar-large-navdesign svg{
+  margin-right: 5px;
+}
+
+.largenavactive p{
+  color: rgb(30, 100, 252);
+  border-left: 2px dotted white;
+  height: fit-content;
+}
+
+.sidebar-small-design {
+  height: 92vh;
+  width: 130px;
+  background-color: #080606;
+  color: white;
+  /* margin-left: 1px; */
+}
+
+.active p {
+  color: rgb(252, 200, 30);
+  /* background-color: chocolate; */
+  padding: 8px;
+  border-left: 2px dotted white;
+  width: fit-content;
+}
+
+
+
+/* sidebar small item design */
+
+.sidebar-items {
+  color: white;
+  align-items: center;
+  padding: 15px;
+  /* margin-left: 5px; */
+  line-height: 5px;
+}
+
+.sidebar-items span {
+  margin-left: 9px;
+}
+
+.sidebar-items p {
+  font-size: 14px;
+  padding-top: 10px;
+  margin-left: 20px;
+
+}
+
+.sidebar-item-back:hover {
+  background-color: #08552b;
+  cursor: pointer;
+}
+
+.responsivenav {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .sidebar-large {
+    display: none;
+  }
+  .sidebar-small-design {
+    display: none;
+  }
+  .responsivenav {
+    display: flex;
+    flex-direction: column;
+  }
+}
