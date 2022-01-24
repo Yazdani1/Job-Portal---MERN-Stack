@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //router
 
-// app.use("/api", require("./router/user"));
+app.use("/api", require("./router/userauth"));
 // app.use("/api", require("./router/eventpost"));
 // app.use("/api", require("./router/joinevents"));
 
