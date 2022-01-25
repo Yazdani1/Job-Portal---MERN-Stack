@@ -15,6 +15,16 @@ const Alljobposts = () => {
   //get all job posts
   const [alljobposts, setAlljobposts] = useState([]);
 
+  //for pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(8);
+
+  //Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = alljobposts.slice(indexOfFirstPost, indexOfLastPost);
+  const howManyPages = Math.ceil(alljobposts.length / postsPerPage);
+
   const loadallJobposts = () => {
     getallJobsinhomepage()
       .then((result) => {
@@ -43,6 +53,37 @@ const Alljobposts = () => {
   }
   return (
     <React.Fragment>
+      <div className="container  search-container">
+        <div className="card">
+          <div className="row ">
+            <div className="col-lg-8 col-md-8 col-sm-8 col-xl-8">
+              <div className="eventorganizer-search">
+                <form>
+                  <div className="event-form">
+                    <input
+                      type="text"
+                      // value={search}
+                      // onChange={(e) => setSearch(e.target.value)}
+                      className="form-control"
+                      maxLength="100"
+                      placeholder="search events .."
+                    />
+                  </div>
+                </form>
+                <span>{alljobposts.length} Jobs found</span>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xl-4">
+              <div className="eventorganizer-search">
+                {/* <p onClick={searchEvents}>Search</p> */}
+                <p>Search</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="container">
         <div className="row">
           {alljobposts.length ? (
@@ -88,15 +129,13 @@ const Alljobposts = () => {
             <h5 className="card">No search result found with your query</h5>
           )}
         </div>
-        {/* <div className="card pagination-allevents">
-          {allevents.length > 8 ? (
-            <Pagination
-              pages={howManyPages}
-              setCurrentPage={setCurrentPage}
-            />
+        <div className="card pagination-job-posts-homepage">
+          {alljobposts.length > 1 ? (
+            <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
           ) : null}
-        </div> */}
+        </div>
       </div>
+
       <ToastContainer autoClose={8000} />
     </React.Fragment>
   );

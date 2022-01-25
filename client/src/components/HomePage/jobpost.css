@@ -1,126 +1,138 @@
 .all-events {
-    margin-top: 10px;
-    padding: 20px;
-  }
-  .all-events:hover {
-    box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
-    -webkit-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
-    -moz-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
-  
-    cursor: pointer;
-    transition-duration: 1s;
-  }
-  
-  /* userinfo in the event post */
-  
-  .profile-name-date {
-    display: flex;
-    color: black;
-  }
-  .profile-name-avatar {
-    height: 40px;
-    width: 40px;
-    background-color: black;
-    border-radius: 90px;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    text-align: center;
-    position: relative;
-  }
-  
-  .profile-name-avatar p {
-    color: white;
-    border-radius: 90px;
-    height: 40px;
-    width: 40px;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 90px;
-  }
-  
-  .profile-name-avatar-image img {
-    height: 40px;
-    width: 40px;
-    object-fit: cover;
-  
-    border-radius: 90px;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    text-align: center;
-    position: relative;
-  }
-  
-  .profile-name-post-date {
-    padding-left: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    line-height: 9px;
-    margin-top: 5px;
-  }
-  
-  .profile-name-size {
-    font-size: 15px;
-  }
-  
-  /* event date and location design */
-  .events-date-and-place {
-    display: flex;
-  }
-  .event-location {
-    margin-left: 10px;
-  }
-  .event-seats-and-participate {
-    display: flex;
-  }
-  .going-interested {
-    display: flex;
-  }
-  .going-interested p {
-    padding-left: 15px;
-  }
-  
-  /* pagination */
-  .pagination-allevents {
-    margin-top: 15px;
-  }
-  
-  
-  /* responsive design for different screen size */
-  
-  .mobile-view-allevents{
+  margin-top: 10px;
+  padding: 20px;
+}
+.all-events:hover {
+  box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+
+  cursor: pointer;
+  transition-duration: 1s;
+}
+
+/* userinfo in the event post */
+
+.profile-name-date {
+  display: flex;
+  color: black;
+}
+.profile-name-avatar {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 90px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+
+.profile-name-avatar p {
+  color: white;
+  border-radius: 90px;
+  height: 40px;
+  width: 40px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 90px;
+}
+
+.profile-name-avatar-image img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+
+  border-radius: 90px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+
+.profile-name-post-date {
+  padding-left: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  line-height: 9px;
+  margin-top: 5px;
+}
+
+.profile-name-size {
+  font-size: 15px;
+}
+
+/* responsive design for different screen size */
+
+.mobile-view-allevents {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .large-screen-allevent-view {
     display: none;
   }
-  
-  @media (max-width: 1200px) {
-    
-    .large-screen-allevent-view{
-      display: none;
-    }
-    .mobile-view-allevents{
-      display: flex;
-    }
+  .mobile-view-allevents {
+    display: flex;
   }
-  
-  
-  /* trending events tag design */
-  
-  .trending{
-    background-color: blueviolet;
-    border-radius: 10px;
-    padding: 5px;
-    block-size: fit-content;
-    color: white;
-    width: fit-content;
-    margin-left: 60px;
-    font-size: 14px;
-  }
-  
+}
 
-  /* job post items design with icons */
+/* trending events tag design */
 
-  .job-items svg{
-    margin-right: 10px;
-  }
+.trending {
+  background-color: blueviolet;
+  border-radius: 10px;
+  padding: 5px;
+  block-size: fit-content;
+  color: white;
+  width: fit-content;
+  margin-left: 60px;
+  font-size: 14px;
+}
+
+/* job post items design with icons */
+
+.job-items svg {
+  margin-right: 10px;
+}
+
+/* job post home page pagination */
+
+.pagination-job-posts-homepage {
+  margin-top: 20px;
+}
+
+/* .container{
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  overflow: hidden;
+} */
+
+
+/* search fields design */
+
+.search-container{
+  margin-top: 30px;
+}
+.eventorganizer-search{
+  padding: 30px;
+}
+
+
+
+.eventorganizer-search p{
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  width: auto;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
