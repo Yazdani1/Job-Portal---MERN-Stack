@@ -8,4 +8,4 @@ export const getallJobsinhomepage = () => {
       .catch((err) => {
         console.log(err);
       });
-  };
+};
