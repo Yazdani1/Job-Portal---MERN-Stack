@@ -77,7 +77,22 @@ exports.getmyJobposts = (req, res) => {
     });
 };
 
-//get all job posts
+//delete my jobs
+
+exports.deleteMyjobposts = (req,res)=>{
+
+  var deletequery = { _id: req.params.id };
+  JobPost.findByIdAndDelete(deletequery)
+    .then((deleteEvents) => {
+      res.json(deleteEvents);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+}
+
+//get all job posts for home page
 
 exports.getallJobposts = (req, res) => {
   JobPost.find({})

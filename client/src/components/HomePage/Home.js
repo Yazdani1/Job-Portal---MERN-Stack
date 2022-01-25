@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import Alljobposts from "./Alljobposts";
 
 const Home = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Alljobposts />
+    </div>
+  );
 };
 
 export default Home;

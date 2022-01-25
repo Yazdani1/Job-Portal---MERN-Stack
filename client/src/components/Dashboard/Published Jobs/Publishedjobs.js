@@ -3,7 +3,7 @@ import { UserContext } from "../../UserContext";
 import "./publishedjobs.css";
 import ReactTooltip from "react-tooltip";
 import { GiSkills } from "react-icons/gi";
-import { getmyPublishedjobs } from "./apiPublishedjobs";
+import { getmyPublishedjobs, deletemyJobs } from "./apiPublishedjobs";
 import "./pagination.css";
 import moment from "moment";
 import { MdCardMembership } from "react-icons/md";
@@ -31,7 +31,6 @@ const Publishedjobs = () => {
   //loading
   const [loading, setLoading] = useState(true);
 
-
   //for pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(8);
@@ -42,13 +41,26 @@ const Publishedjobs = () => {
   const currentPosts = mypublishedjobs.slice(indexOfFirstPost, indexOfLastPost);
   const howManyPages = Math.ceil(mypublishedjobs.length / postsPerPage);
 
-
   const loadmyPublishedjobposts = () => {
     getmyPublishedjobs()
       .then((result) => {
         if (result) {
           setMypublishedjobs(result);
           setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const deleteMyjobposts = (id) => {
+    deletemyJobs(id)
+      .then((result) => {
+        if (result) {
+          toast.success("Job Post Deleted Successfully! ", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
         }
       })
       .catch((err) => {
@@ -127,7 +139,6 @@ const Publishedjobs = () => {
 
       {/* to show job posts in the table  */}
 
-
       <div className="container-fluid main_containers">
         {/* table start */}
 
@@ -142,7 +153,7 @@ const Publishedjobs = () => {
                   <th scope="col">Published on</th>
                   <th scope="col">Job Types</th>
                   <th scope="col">Total applications</th>
-                 
+
                   <th scope="col">View Applications</th>
                   <th colspan="4">Action</th>
                 </tr>
@@ -158,7 +169,6 @@ const Publishedjobs = () => {
                     <td> {moment(item.date).format("MMMM Do YYYY")}</td>
                     <td>{item.jobtypes}</td>
                     <td>{item.application.length}</td>
-                
 
                     {/* to get all the joined members for each event post */}
 
@@ -171,7 +181,8 @@ const Publishedjobs = () => {
                     <td>
                       <Link to={"/event-application/" + item._id}>
                         <button className="btn btn-primary">
-                        <EyeOutlined style={{ fontSize: "20px" }} />View Application
+                          <EyeOutlined style={{ fontSize: "20px" }} />
+                          View Application
                         </button>
                       </Link>
                     </td>
@@ -201,7 +212,7 @@ const Publishedjobs = () => {
                       <button
                         className="btn btn-danger"
                         onClick={() => {
-                          // deleteevents(item._id);
+                          deleteMyjobposts(item._id);
                         }}
                       >
                         <MdDelete size={20} /> Delete
@@ -227,7 +238,7 @@ const Publishedjobs = () => {
           ) : null}
         </div>
       </div>
-
+      <ToastContainer autoClose={8000} />
     </React.Fragment>
   );
 };

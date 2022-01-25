@@ -1,4 +1,4 @@
-
+//to get my published jobs
 export const getmyPublishedjobs = () => {
     return fetch("/api/get-my-jobposts", {
       method: "GET",
@@ -15,3 +15,23 @@ export const getmyPublishedjobs = () => {
         console.log(err);
       });
   };
+
+  //to delete my published jobs
+
+  export const deletemyJobs=(id)=> {
+    return fetch("/api/delete-myjob-posts/" + id, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  
+  }
