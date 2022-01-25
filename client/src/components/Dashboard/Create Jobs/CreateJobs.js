@@ -112,11 +112,9 @@ const CreateJobs = () => {
                     value={jobtypes}
                     onChange={(e) => setJobtypes(e.target.value)}
                   >
+                    <option value="Full-Time">Full-Time</option>
                     <option value="Part-Time">Part-Time</option>
                     <option value="For Students">For Students</option>
-
-                    <option value="Full-Time">Full-Time</option>
-
                     <option value="Contract">Contract</option>
                   </select>
                 </div>
@@ -194,11 +192,8 @@ const CreateJobs = () => {
                   />
                 </div>
 
-                
                 <div className="form-group">
-                  <label for="exampleFormControlTextarea2">
-                    Job Skills
-                  </label>
+                  <label for="exampleFormControlTextarea2">Job Skills</label>
                   <ReactQuill
                     class="ql-skills rounded-0"
                     value={skills}
