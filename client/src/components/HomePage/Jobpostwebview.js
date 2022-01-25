@@ -1,5 +1,10 @@
 import React from "react";
 import "./jobpost.css";
+import moment from "moment";
+import { Link, useHistory, useParams } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
+import { MdLocationPin } from "react-icons/md";
+import { FcApproval, FcNightPortrait } from "react-icons/fc";
 
 const Jobpostwebview = ({
   name,
@@ -10,13 +15,16 @@ const Jobpostwebview = ({
   jobtypes,
   requirements,
   skills,
+  date,
+  photo,
   username,
   userid,
   postid,
+  totalapplications,
 }) => {
   return (
     <React.Fragment>
-      <div className="large-screen-allevent-view">
+      <div className="large-screen-allevent-views">
         <div className="card all-events">
           <Link
             to={"/organizers-public-profile/" + userid}
@@ -48,77 +56,34 @@ const Jobpostwebview = ({
             style={{ textDecoration: "none", color: "black" }}
           >
             <h5>{name}</h5>
-            <p>{ReactHtmlParser(des?.substring(0, 350))}</p>
+            <p>{ReactHtmlParser(des?.substring(0, 150))}</p>
           </Link>
-
-          {/* <div className="row">
-             <div className="col-lg-6 col-md-6 col-sm-6 col-xl-6">
-              <div className="events-date-and-place">
-                <p>Start date: {moment(startdate).format("MMMM Do YYYY")}</p>
-                <p className="event-location">
-                  Location: <MdLocationPin style={{ color: "red" }} />{" "}
-                  {location}.
-                </p>
-              </div>
-             </div>
-             <div className="col-lg-6 col-md-6 col-sm-6 col-xl-6">
-              <div className="event-seats-and-participate">
-                <div className="going-interested">
-                  {alreadylikedpost.includes(
-                    state && state.user && state.user._id
-                  ) ? (
-                    <p
-                      onClick={() => {
-                        unlike(postid);
-                      }}
-                    >
-                      <AiFillLike size={20} />
-                    </p>
-                  ) : (
-                    <p
-                      onClick={() => {
-                        if (!localStorage.getItem("tokenLogin")) {
-                          history.push("/signin");
-                        } else {
-                          addlike(postid);
-                        }
-                      }}
-                    >
-                      <AiOutlineLike size={20} />
-                    </p>
-                  )}
-                </div>
-
-                <div className="going-interested">
-                  <p>{totallikes} Likes </p>
-                </div>
-
-                <div className="going-interested">
-                  <p>Max seats: {maxmembers}</p>
-                </div>
-
-                <div className="going-interested">
-                  <p>
-                    Going <FcOk /> {joinedeventnumbers}
-                  </p>
-                </div>
-
-                <div className="going-interested">
-                  <p
-                    onClick={() => {
-                      if (!localStorage.getItem("tokenLogin")) {
-                        history.push("/signin");
-                      } else {
-                        saveWishlist(postid);
-                      }
-                    }}
-                  >
-                    Save <BsFillBookmarkStarFill />
-                  </p>
-                </div>
-              </div>
-            </div> 
-          </div>*/}
+          <div className="row">
+            <div className="col-lg-3">
+              <p className="job-items">
+                <FcApproval size={20} style={{ color: "red" }} />
+                {jobtypes}
+              </p>
+            </div>
+            <div className="col-lg-3">
+              <p className="job-items">
+                <MdLocationPin size={20} style={{ color: "red" }} />
+                {country}
+              </p>
+            </div>
+            <div className="col-lg-3">
+              <p className="job-items">
+                <MdLocationPin size={20} style={{ color: "red" }} />
+                {city}
+              </p>
+            </div>
+            <div className="col-lg-3">
+              <p className="job-items">
+                <FcNightPortrait size={20} style={{ color: "red" }} />
+                {totalapplications} applicants
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>

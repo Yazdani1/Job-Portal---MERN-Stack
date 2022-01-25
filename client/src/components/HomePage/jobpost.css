@@ -118,3 +118,9 @@
     font-size: 14px;
   }
   
+
+  /* job post items design with icons */
+
+  .job-items svg{
+    margin-right: 10px;
+  }
