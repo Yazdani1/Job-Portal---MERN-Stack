@@ -55,7 +55,7 @@ const Jobpostwebview = ({
             to={"/event-details-page/" + postid}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <h5>{name}</h5>
+            <h6>{name}</h6>
             <p>{ReactHtmlParser(des?.substring(0, 150))}</p>
           </Link>
           <div className="row">
