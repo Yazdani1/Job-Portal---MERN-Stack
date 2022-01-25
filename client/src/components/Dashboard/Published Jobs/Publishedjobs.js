@@ -58,7 +58,8 @@ const Publishedjobs = () => {
     deletemyJobs(id)
       .then((result) => {
         if (result) {
-          toast.success("Job Post Deleted Successfully! ", {
+          loadmyPublishedjobposts();
+          toast.success("Job post deleted successfully! ", {
             position: toast.POSITION.TOP_RIGHT,
           });
         }
