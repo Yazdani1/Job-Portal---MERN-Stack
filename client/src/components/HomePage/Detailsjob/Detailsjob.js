@@ -11,7 +11,7 @@ import { Spin, Space } from "antd";
 import { MdLocationPin } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import { UserContext } from "../../UserContext";
-
+import Footer from "../Footer/Footer";
 const Detailsjob = () => {
   const { id } = useParams();
   const [state, setState] = useContext(UserContext);
@@ -164,6 +164,7 @@ const Detailsjob = () => {
           <div className="col-lg-6 col-md-12 col-sm-12 col-xl-8"></div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 };
