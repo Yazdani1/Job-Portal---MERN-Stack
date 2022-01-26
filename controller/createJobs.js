@@ -58,7 +58,7 @@ exports.createjobPost = (req, res) => {
     });
 };
 
-//get my job posts
+//get my job posts in admin side
 
 exports.getmyJobposts = (req, res) => {
   JobPost.find({ postedBy: req.user._id })
@@ -77,7 +77,7 @@ exports.getmyJobposts = (req, res) => {
     });
 };
 
-//delete my jobs
+//delete my jobs from admin side
 
 exports.deleteMyjobposts = (req, res) => {
   var deletequery = { _id: req.params.id };
@@ -125,3 +125,6 @@ exports.searchJobpost = (req, res) => {
       console.log(err);
     });
 };
+
+
+//details job posts for home page

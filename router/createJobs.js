@@ -7,7 +7,7 @@ const {
   getmyJobposts,
   getallJobposts,
   deleteMyjobposts,
-  searchJobpost
+  searchJobpost,
 } = require("../controller/createJobs");
 
 //employer published jobs
@@ -24,5 +24,9 @@ router.get("/getall-jobposts", getallJobposts);
 //search job posts in the home page
 
 router.post("/search-jobs", searchJobpost);
+
+//details job posts
+
+router.get("/job-description/:id", jobdetailsDescription);
 
 module.exports = router;
