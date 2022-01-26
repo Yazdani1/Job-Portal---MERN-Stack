@@ -79,8 +79,7 @@ exports.getmyJobposts = (req, res) => {
 
 //delete my jobs
 
-exports.deleteMyjobposts = (req,res)=>{
-
+exports.deleteMyjobposts = (req, res) => {
   var deletequery = { _id: req.params.id };
   JobPost.findByIdAndDelete(deletequery)
     .then((deleteEvents) => {
@@ -89,8 +88,7 @@ exports.deleteMyjobposts = (req,res)=>{
     .catch((err) => {
       console.log(err);
     });
-
-}
+};
 
 //get all job posts for home page
 
@@ -105,6 +103,23 @@ exports.getallJobposts = (req, res) => {
     )
     .then((mypublishedjobs) => {
       res.json(mypublishedjobs);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+//search jobs in the home page api end point
+
+exports.searchJobpost = (req, res) => {
+  let searchPattern = req.body.query;
+
+  JobPost.find({
+    name: { $regex: searchPattern, $options: "i" },
+  })
+    .populate("postedBy", "_id name email photo")
+    .then((jobsearch) => {
+      res.json(jobsearch);
     })
     .catch((err) => {
       console.log(err);

@@ -6,7 +6,8 @@ const {
   createjobPost,
   getmyJobposts,
   getallJobposts,
-  deleteMyjobposts
+  deleteMyjobposts,
+  searchJobpost
 } = require("../controller/createJobs");
 
 //employer published jobs
@@ -19,5 +20,9 @@ router.delete("/delete-myjob-posts/:id", requireLogin, deleteMyjobposts);
 
 //get all job posts for home page
 router.get("/getall-jobposts", getallJobposts);
+
+//search job posts in the home page
+
+router.get("/search-jobs", searchJobpost);
 
 module.exports = router;
