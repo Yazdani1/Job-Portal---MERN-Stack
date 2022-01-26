@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { UserContext } from "../UserContext";
-import { getallJobsinhomepage } from "./apiHomepage";
+import { getallJobsinhomepage, searchJobpost } from "./apiHomepage";
 import { SyncOutlined } from "@ant-design/icons";
 import Jobpostwebview from "./Jobpostwebview";
 import Pagination from "../Dashboard/Published Jobs/Pagination";
@@ -11,6 +11,10 @@ const Alljobposts = () => {
 
   const [state, setState] = useContext(UserContext);
   const [loading, setLoading] = useState(true);
+
+  //search job post
+
+  const [searchjob, setSearchjob] = useState("");
 
   //get all job posts
   const [alljobposts, setAlljobposts] = useState([]);
@@ -27,6 +31,19 @@ const Alljobposts = () => {
 
   const loadallJobposts = () => {
     getallJobsinhomepage()
+      .then((result) => {
+        if (result) {
+          setAlljobposts(result);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const searchjobs = () => {
+    searchJobpost({ query: searchjob })
       .then((result) => {
         if (result) {
           setAlljobposts(result);
@@ -62,8 +79,8 @@ const Alljobposts = () => {
                   <div className="event-form">
                     <input
                       type="text"
-                      // value={search}
-                      // onChange={(e) => setSearch(e.target.value)}
+                      value={searchjob}
+                      onChange={(e) => setSearchjob(e.target.value)}
                       className="form-control"
                       maxLength="100"
                       placeholder="search events .."
@@ -75,9 +92,7 @@ const Alljobposts = () => {
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4 col-xl-4">
               <div className="eventorganizer-search">
-                {/* <p onClick={searchEvents}>Search</p> */}
-                <p>Search</p>
-
+                <p onClick={searchjobs}>Search</p>
               </div>
             </div>
           </div>
