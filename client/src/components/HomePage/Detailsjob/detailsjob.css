@@ -14,3 +14,16 @@
   margin-top: 10px;
   padding: 10px;
 }
+
+
+/* collapse option job details items */
+
+.job-items-collapse-option{
+    display: flex;
+    justify-content: space-between;
+}
+
+.collapse-icon-design{
+    margin-right: 20px; 
+}
+

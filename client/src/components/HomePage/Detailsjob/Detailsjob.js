@@ -4,7 +4,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import moment from "moment";
 import ReactHtmlParser from "react-html-parser";
-import { FcOk } from "react-icons/fc";
+import { FcOk, FcCollapse, FcExpand } from "react-icons/fc";
 import { FcApproval } from "react-icons/fc";
 import { SyncOutlined } from "@ant-design/icons";
 import { Spin, Space } from "antd";
@@ -17,13 +17,18 @@ const Detailsjob = () => {
   const [state, setState] = useContext(UserContext);
 
   //details job post state
-
   const [detailsjob, setDetailsjob] = useState([]);
+
+  //details post collapse option state
+
+  //loding state
+  const [loading, setLoading] = useState(true);
 
   const loadDetailsjobpost = () => {
     getdetailsJob(id)
       .then((result) => {
         setDetailsjob(result);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -33,6 +38,16 @@ const Detailsjob = () => {
   useEffect(() => {
     loadDetailsjobpost();
   }, [detailsjob]);
+
+  if (loading) {
+    return (
+      <div class="text-center my-25">
+        <h1>
+          <SyncOutlined spin />
+        </h1>
+      </div>
+    );
+  }
 
   return (
     <React.Fragment>
@@ -47,15 +62,20 @@ const Detailsjob = () => {
                 </p>
               </div>
               <div className="card job-requirements">
-                <h6>Requirements</h6>
+                <div className="job-items-collapse-option">
+                  <h6>Requirements</h6>
+                  <p className="collapse-icon-design"><FcCollapse size={20}/></p>
+                </div>
                 <p>
-                  {ReactHtmlParser(detailsjob && detailsjob.jobdetails?.des)}
+                  {ReactHtmlParser(
+                    detailsjob && detailsjob.jobdetails?.requirements
+                  )}
                 </p>
               </div>
               <div className="card job-skills">
                 <h6>Skills</h6>
                 <p>
-                  {ReactHtmlParser(detailsjob && detailsjob.jobdetails?.des)}
+                  {ReactHtmlParser(detailsjob && detailsjob.jobdetails?.skills)}
                 </p>
               </div>
             </div>
