@@ -52,7 +52,7 @@ const Jobpostwebview = ({
           </Link>
 
           <Link
-            to={"/event-details-page/" + postid}
+            to={"/job-description/" + postid}
             style={{ textDecoration: "none", color: "black" }}
           >
             <h6>{name}</h6>

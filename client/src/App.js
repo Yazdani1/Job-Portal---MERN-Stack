@@ -13,6 +13,7 @@ import Publishedjobs from "./components/Dashboard/Published Jobs/Publishedjobs";
 import CreateJobs from "./components/Dashboard/Create Jobs/CreateJobs";
 import Profile from "./components/Dashboard/Profile/Profile";
 import Message from "./components/Dashboard/Message/Message";
+import Detailsjob from "./components/HomePage/Detailsjob/Detailsjob";
 
 const App = () => {
   return (
@@ -38,6 +39,10 @@ const App = () => {
 
           <Route exact path="/reset/:token">
             <ProtectedRoute FrontProtected={NewPassword} />
+          </Route>
+
+          <Route exact path="/job-description/:id">
+            <ProtectedRoute FrontProtected={Detailsjob} />
           </Route>
 
           {/* Protected route for dashboard side */}

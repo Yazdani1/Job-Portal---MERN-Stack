@@ -1,5 +1,5 @@
 export const getdetailsJob = (id) => {
-    return fetch("/api/event-details/" + id, {
+    return fetch("/api/job-description/" + id, {
       method: "GET",
     })
       .then((res) => {
