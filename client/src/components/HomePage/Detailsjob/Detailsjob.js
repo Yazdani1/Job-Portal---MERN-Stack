@@ -23,7 +23,7 @@ const Detailsjob = () => {
 
   const [show, setShow] = useState(true);
   const [showskills, setShowskills] = useState(true);
-
+  const [showsaddress, setShowsaddress] = useState(false);
 
   //loding state
   const [loading, setLoading] = useState(true);
@@ -66,6 +66,7 @@ const Detailsjob = () => {
                 </p>
               </div>
 
+              {/* job requirements */}
               <div className="card job-requirements">
                 <div className="job-items-collapse-option">
                   <h6>Requirements</h6>
@@ -95,6 +96,7 @@ const Detailsjob = () => {
                 ) : null}
               </div>
 
+              {/* skills */}
               <div className="card job-skills">
                 <div className="job-items-collapse-option">
                   <h6>Skills</h6>
@@ -122,6 +124,38 @@ const Detailsjob = () => {
                       detailsjob && detailsjob.jobdetails?.skills
                     )}
                   </p>
+                ) : null}
+              </div>
+
+              {/* job address */}
+
+              <div className="card job-company-address">
+                <div className="job-items-collapse-option">
+                  <h6>Address</h6>
+
+                  {showsaddress ? (
+                    <p
+                      className="collapse-icon-design"
+                      onClick={() => setShowsaddress(!showsaddress)}
+                    >
+                      <FcCollapse size={20} />
+                    </p>
+                  ) : (
+                    <p
+                      className="collapse-icon-design"
+                      onClick={() => setShowsaddress(!showsaddress)}
+                    >
+                      <FcExpand size={20} />
+                    </p>
+                  )}
+                </div>
+
+                {showsaddress ? (
+                  <>
+                    <p>{detailsjob && detailsjob.jobdetails?.house}</p>
+                    <p>{detailsjob && detailsjob.jobdetails?.city}</p>
+                    <p>{detailsjob && detailsjob.jobdetails?.country}</p>
+                  </>
                 ) : null}
               </div>
             </div>
