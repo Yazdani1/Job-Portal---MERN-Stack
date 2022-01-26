@@ -23,6 +23,6 @@ router.get("/getall-jobposts", getallJobposts);
 
 //search job posts in the home page
 
-router.get("/search-jobs", searchJobpost);
+router.post("/search-jobs", searchJobpost);
 
 module.exports = router;

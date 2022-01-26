@@ -44,15 +44,16 @@ const Alljobposts = () => {
 
   const searchjobs = () => {
     searchJobpost({ query: searchjob })
-      .then((result) => {
-        if (result) {
-          setAlljobposts(result);
+      .then((searchjobresult) => {
+        if (searchjobresult) {
+          setAlljobposts(searchjobresult);
           setLoading(false);
         }
       })
       .catch((err) => {
         console.log(err);
       });
+      setSearchjob("");
   };
 
   useEffect(() => {
@@ -102,7 +103,7 @@ const Alljobposts = () => {
       <div className="container">
         <div className="row">
           {alljobposts.length ? (
-            alljobposts.map((job, index) => (
+            currentPosts.map((job, index) => (
               //for large to medium screen
 
               <>
