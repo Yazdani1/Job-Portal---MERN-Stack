@@ -128,3 +128,32 @@ exports.searchJobpost = (req, res) => {
 
 
 //details job posts for home page
+
+exports.jobdetailsDescription = (req,res)=>{
+
+  var detailsquery = { _id: req.params.id };
+
+  JobPost.findOne(detailsquery)
+    .populate("postedBy", "_id name photo")
+    .populate("application.postedBy", "_id name email photo")
+    .then((jobdetails) => {
+      JobPost.find({ _id: { $ne: detailsquery } })
+        .sort({ date: "DESC" })
+        .limit(6)
+        .populate("postedBy", "_id name email photo")
+        .populate("application.postedBy", "_id name email photo")
+        .exec((err, morejobs) => {
+          if (err) {
+            return res.status(400).json({ error: err });
+          }
+          res.json({ jobdetails, morejobs });
+        })
+        .catch((err) => {
+          return res.status(404).json({ error: err });
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+}

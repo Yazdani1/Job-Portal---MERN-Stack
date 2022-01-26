@@ -26,3 +26,4 @@ export const searchJobpost = (query) => {
       console.log(err);
     });
 };
+

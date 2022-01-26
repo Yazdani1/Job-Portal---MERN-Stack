@@ -8,6 +8,7 @@ const {
   getallJobposts,
   deleteMyjobposts,
   searchJobpost,
+  jobdetailsDescription
 } = require("../controller/createJobs");
 
 //employer published jobs
