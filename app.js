@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api", require("./router/userauth"));
 app.use("/api", require("./router/createJobs"));
+app.use("/api", require("./router/appliedJobs"));
 
 // app.use("/api", require("./router/eventpost"));
 // app.use("/api", require("./router/joinevents"));

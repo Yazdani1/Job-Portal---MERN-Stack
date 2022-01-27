@@ -4,7 +4,7 @@ import { applytothisjobs, getdetailsJob } from "./apiDetails";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, useHistory, useParams } from "react-router-dom";
 
-const Applyjob = () => {
+const Applyjob = ({ jobId }) => {
   const { id } = useParams();
 
   const [detailsjob, setDetailsjob] = useState([]);
@@ -89,21 +89,20 @@ const Applyjob = () => {
       });
   };
 
-  const loadDetailsjobpost = () => {
-    getdetailsJob(id)
-      .then((result) => {
-        setDetailsjob(result);
-        console.log(result);
+  // const loadDetailsjobpost = () => {
+  //   getdetailsJob(id)
+  //     .then((result) => {
+  //       setDetailsjob(result);
+  //       console.log(result);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    loadDetailsjobpost();
-  }, [detailsjob]);
+  // useEffect(() => {
+  //   loadDetailsjobpost();
+  // }, [detailsjob]);
 
   const showError = () => (
     <div
@@ -207,7 +206,8 @@ const Applyjob = () => {
             <button
               className="apply-job-button"
               onClick={(e) =>
-                applyforjob(e, detailsjob && detailsjob.jobdetails?._id)
+                // applyforjob(e, detailsjob && detailsjob.jobdetails?._id)
+                applyforjob(e, jobId)
               }
             >
               Apply Job

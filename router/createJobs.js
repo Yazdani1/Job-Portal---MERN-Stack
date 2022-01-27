@@ -31,9 +31,6 @@ router.post("/search-jobs", searchJobpost);
 
 router.get("/job-description/:id", jobdetailsDescription);
 
-//applied jobs
-
-router.post("/apply-job", requireLogin, appliedjobPost);
 
 
 module.exports = router;
