@@ -32,5 +32,24 @@ export const getdetailsJob = (id) => {
       });
   };
 
+  //my applied jobs list
 
+
+  export const myappliedjobs = (myjobsapply) => {
+    return fetch("/api/getmy-appliedjobs-list", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(myjobsapply),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   

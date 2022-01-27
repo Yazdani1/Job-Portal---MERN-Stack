@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./applyjob.css";
-import { applytothisjobs, getdetailsJob } from "./apiDetails";
+import { applytothisjobs, myappliedjobs } from "./apiDetails";
 import { ToastContainer, toast } from "react-toastify";
 import { Link, useHistory, useParams } from "react-router-dom";
 
@@ -50,7 +50,7 @@ const Applyjob = ({ jobId }) => {
     setProjects(e.target.value);
   };
 
-  const applyforjob = (e, jobId) => {
+  const applyforjob = (e,jobId) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
@@ -62,7 +62,7 @@ const Applyjob = ({ jobId }) => {
       workexperience,
       skills,
       projects,
-      jobId,
+      jobId
     })
       .then((result) => {
         if (result.error) {
@@ -72,6 +72,47 @@ const Applyjob = ({ jobId }) => {
           setError("");
           setSuccess(true);
           toast.success("You have successfully applied for this job", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+          console.log(result);
+
+          setName("");
+          setEmail("");
+          setYearofexperience("");
+          setWorkexperience("");
+          setSkills("");
+          setProjects("");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  //to save the job have applied in the user profile..
+
+  const myappliedjobslist = (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess(false);
+
+    myappliedjobs({
+      name,
+      email,
+      yearofexperience,
+      workexperience,
+      skills,
+      projects,
+      
+    })
+      .then((result) => {
+        if (result.error) {
+          setError(result.error);
+          console.log(result);
+        } else {
+          setError("");
+          setSuccess(true);
+          toast.success("Your applied job has saved to your profile", {
             position: toast.POSITION.TOP_RIGHT,
           });
           console.log(result);
@@ -207,7 +248,9 @@ const Applyjob = ({ jobId }) => {
               className="apply-job-button"
               onClick={(e) =>
                 // applyforjob(e, detailsjob && detailsjob.jobdetails?._id)
-                applyforjob(e, jobId)
+                {
+                  applyforjob(e, jobId); myappliedjobslist(e);
+                }
               }
             >
               Apply Job
