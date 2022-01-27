@@ -32,7 +32,7 @@ router.post("/search-jobs", searchJobpost);
 router.get("/job-description/:id", jobdetailsDescription);
 
 //to get job application list for each job post
-router.get("/job-application-list/:id", jobapplicationList);
+router.get("/job-application-list/:id",requireLogin, jobapplicationList);
 
 
 module.exports = router;

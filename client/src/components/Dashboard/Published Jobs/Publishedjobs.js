@@ -180,7 +180,7 @@ const Publishedjobs = () => {
                     ))} */}
 
                     <td>
-                      <Link to={"/event-application/" + item._id}>
+                      <Link to={"/job-application/" + item._id}>
                         <button className="btn btn-primary">
                           <EyeOutlined style={{ fontSize: "20px" }} />
                           View Application
@@ -194,7 +194,7 @@ const Publishedjobs = () => {
                     ))}</td> */}
 
                     <td>
-                      <Link to={"/event-details-page/" + item._id}>
+                      <Link to={"/job-description/" + item._id}>
                         <button className="btn btn-primary">
                           <EyeOutlined style={{ fontSize: "20px" }} /> View
                         </button>

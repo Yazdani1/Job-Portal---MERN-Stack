@@ -126,11 +126,9 @@ exports.searchJobpost = (req, res) => {
     });
 };
 
-
 //details job posts for home page
 
-exports.jobdetailsDescription = (req,res)=>{
-
+exports.jobdetailsDescription = (req, res) => {
   var detailsquery = { _id: req.params.id };
 
   JobPost.findOne(detailsquery)
@@ -155,23 +153,20 @@ exports.jobdetailsDescription = (req,res)=>{
     .catch((err) => {
       console.log(err);
     });
-
-}
-
+};
 
 //to get job application list for each job post
 
-exports.jobapplicationList = (req,res)=>{
+exports.jobapplicationList = (req, res) => {
+  var detailsquery = { _id: req.params.id };
 
-  
-
-}
-
-
-
-
-
-
-
-
-
+  JobPost.findOne(detailsquery)
+    .populate("postedBy", "_id name photo")
+    .populate("application.postedBy", "_id name email photo")
+    .then((jobdetails) => {
+      res.json(jobdetails);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
