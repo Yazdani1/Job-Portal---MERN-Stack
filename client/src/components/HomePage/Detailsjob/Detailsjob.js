@@ -59,6 +59,33 @@ const Detailsjob = () => {
         <div className="row">
           <div className="col-lg-6 col-md-12 col-sm-12 col-xl-8">
             <div className="job-details-page">
+
+              <div className="card job-company-info">
+                <Link
+                  to={"/organizers-public-profile/" + id}
+                  style={{ textDecoration: "none" }}
+                >
+                  <div className="profile-name-date">
+                    {detailsjob && detailsjob.jobdetails?.photo ? (
+                      <div className="profile-name-avatar-image">
+                        <img src={detailsjob && detailsjob.jobdetails?.photo} />
+                      </div>
+                    ) : (
+                      <div className="profile-name-avatar">
+                        <p>{detailsjob && detailsjob.jobdetails?.postedBy?.name?.substring(0, 2).toUpperCase()}</p>
+                      </div>
+                    )}
+
+                    <div className="profile-name-post-date">
+                      <p className="profile-name-size">{detailsjob && detailsjob.jobdetails?.postedBy?.name}</p>
+                      <p>{moment(detailsjob && detailsjob.jobdetails?.date).format("MMMM Do YYYY")}</p>
+                    </div>
+                  
+                  </div>
+                </Link>
+              </div>
+
+
               <div className="card job-description">
                 <h6>Description</h6>
                 <p>
