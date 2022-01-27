@@ -159,5 +159,19 @@ exports.jobdetailsDescription = (req,res)=>{
 }
 
 
+//to get job application list for each job post
+
+exports.jobapplicationList = (req,res)=>{
+
+  
+
+}
+
+
+
+
+
+
+
 
 
