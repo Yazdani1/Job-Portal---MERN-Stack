@@ -6,7 +6,7 @@ const Applyjob = () => {
     <React.Fragment>
       <div className="card event-form-designs">
         <div className="text-center">
-          <h5 className="text-center">Join this Event</h5>
+          <h5 className="text-center">Apply for this Job</h5>
         </div>
 
         {/* {showError()} */}
@@ -40,19 +40,47 @@ const Applyjob = () => {
 
           <div className="event-form">
             <label for="exampleInputEmail1" className="form-label">
-              Number of participants
+              Year of experience
             </label>
-            <input
+            <select
+              className="custom-select"
+              //   value={jobtypes}
+              //   onChange={(e) => setJobtypes(e.target.value)}
+            >
+              <option value="0-6 months">0-6 months</option>
+              <option value="1-2 years">1-2 years</option>
+              <option value="2-4 years">2-4 years</option>
+              <option value="4+ years">4+ years</option>
+            </select>
+          </div>
+
+          <div className="event-form">
+            <label for="exampleInputEmail1" className="form-label">
+              Work-experience 
+            </label>
+            <textarea
               type="number"
-              //   value={participants}
-              //   onChange={participantsChange}
+              //   value={message}
+              //   onChange={messageChange}
               className="form-control"
-              maxLength="100"
+              rows={3}
             />
           </div>
           <div className="event-form">
             <label for="exampleInputEmail1" className="form-label">
-              Message(optional)
+              Skills
+            </label>
+            <textarea
+              type="number"
+              //   value={message}
+              //   onChange={messageChange}
+              className="form-control"
+              rows={3}
+            />
+          </div>
+          <div className="event-form">
+            <label for="exampleInputEmail1" className="form-label">
+              Projects (Optional)
             </label>
             <textarea
               type="number"

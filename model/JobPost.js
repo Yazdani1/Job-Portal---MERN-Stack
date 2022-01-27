@@ -39,8 +39,10 @@ const jobposts = mongoose.Schema({
     {
       name: String,
       email: String,
-      participants: Number,
-      message: String,
+      yearofexperience: String,
+      workexperience: String,
+      skills: String,
+      projects: String,
       postedBy: { type: ObjectId, ref: "User" },
       date: {
         type: Date,
