@@ -78,20 +78,16 @@ const JobapplicationList = () => {
           }
         />
       </div>
-      <div className="container job-application-list">
+      <div
+        className="container job-application-list"
+        style={{ maxHeight: "650px", overflow: "scroll" }}
+      >
+        <h6>All applications:</h6>
         {jobapplication &&
           jobapplication.application?.map((applicationlist) => (
             <>
-              {/* <div className="job-application-item-design"> */}
-              {/* <div>
-                  <h6>{applicationlist.postedBy?.name}</h6>
-                  <p>Applied on: 16 July, 2021</p>
-                </div> */}
-
               <div className="card job-requirements">
                 <div className="job-items-collapse-option">
-                  {/* <h6>{applicationlist.postedBy?.name}</h6> */}
-
                   <div className="profile-name-date">
                     {applicationlist?.postedBy?.photo ? (
                       <div className="profile-name-avatar-image">
@@ -99,12 +95,19 @@ const JobapplicationList = () => {
                       </div>
                     ) : (
                       <div className="profile-name-avatar">
-                        <p>{applicationlist?.postedBy?.name?.substring(0, 2).toUpperCase()}</p>
+                        <p>
+                          {applicationlist?.postedBy?.name
+                            ?.substring(0, 2)
+                            .toUpperCase()}
+                        </p>
                       </div>
                     )}
 
                     <div className="profile-name-post-date">
-                      <p className="profile-name-size">{applicationlist?.postedBy?.name}</p>
+                      <p className="profile-name-size">
+                        {applicationlist?.postedBy?.name}
+                      </p>
+
                       <p>
                         Applied on:
                         {moment(applicationlist.date).format("MMMM Do YYYY")}
@@ -119,8 +122,13 @@ const JobapplicationList = () => {
                     <FcNext size={20} />
                   </p>
                 </div>
+                <p>Name: {applicationlist.name}</p>
+                <p>E-mail: {applicationlist.email}</p>
+                <p>Year of experience:{applicationlist.yearofexperience}</p>
+                <p>Work experience:{applicationlist.workexperience}</p>
+                <p>Skills: {applicationlist.skills}</p>
+                <p>Projects: {applicationlist.projects}</p>
               </div>
-              {/* </div> */}
             </>
           ))}
       </div>
