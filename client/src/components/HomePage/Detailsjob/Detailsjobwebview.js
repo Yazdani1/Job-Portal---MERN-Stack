@@ -11,30 +11,26 @@ import { MdLocationPin } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 
 const Detailsjobwebview = ({
-    name,
-    des,
-    city,
-    house,
-    country,
-    jobtypes,
-    requirements,
-    skills,
-    date,
-    photo,
-    username,
-    userid,
-    postid,
-    totalapplications,
+  name,
+  des,
+  city,
+  house,
+  country,
+  jobtypes,
+  requirements,
+  skills,
+  date,
+  photo,
+  username,
+  userid,
+  postid,
+  totalapplications,
 }) => {
-
-    
   //details post collapse option state
 
   const [show, setShow] = useState(true);
   const [showskills, setShowskills] = useState(true);
   const [showsaddress, setShowsaddress] = useState(false);
-
-
 
   return (
     <React.Fragment>
@@ -52,22 +48,15 @@ const Detailsjobwebview = ({
                 </div>
               ) : (
                 <div className="profile-name-avatar">
-                  <p>
-                    {username?.substring(0, 2)
-                        .toUpperCase()}
-                  </p>
+                  <p>{username?.substring(0, 2).toUpperCase()}</p>
                 </div>
               )}
 
               <div className="profile-name-post-date">
-                <p className="profile-name-size">
-                  {username}
-                </p>
+                <p className="profile-name-size">{username}</p>
                 <p>
                   Published on:
-                  {moment(date).format(
-                    "MMMM Do YYYY"
-                  )}
+                  {moment(date).format("MMMM Do YYYY")}
                 </p>
               </div>
             </div>
@@ -82,21 +71,20 @@ const Detailsjobwebview = ({
             </div>
             <div className="col-lg-3">
               <p className="job-items">
+                <FcNightPortrait size={20} style={{ color: "red" }} />
+                {totalapplications} applicants
+              </p>
+            </div>
+            <div className="col-lg-3">
+              <p className="job-items">
                 <MdLocationPin size={20} style={{ color: "red" }} />
                 {country}
               </p>
             </div>
             <div className="col-lg-3">
               <p className="job-items">
-                <MdLocationPin size={20} style={{ color: "red" }} />
+                <MdLocationPin size={20} style={{ color: "blue" }} />
                 {city}
-              </p>
-            </div>
-            <div className="col-lg-3">
-              <p className="job-items">
-                <FcNightPortrait size={20} style={{ color: "red" }} />
-                {totalapplications}{" "}
-                applicants
               </p>
             </div>
           </div>
@@ -128,13 +116,7 @@ const Detailsjobwebview = ({
               </p>
             )}
           </div>
-          {show ? (
-            <p>
-              {ReactHtmlParser(
-               requirements
-              )}
-            </p>
-          ) : null}
+          {show ? <p>{ReactHtmlParser(requirements)}</p> : null}
         </div>
 
         {/* skills */}
@@ -159,11 +141,7 @@ const Detailsjobwebview = ({
             )}
           </div>
 
-          {showskills ? (
-            <p>
-              {ReactHtmlParser(skills)}
-            </p>
-          ) : null}
+          {showskills ? <p>{ReactHtmlParser(skills)}</p> : null}
         </div>
 
         {/* job address */}

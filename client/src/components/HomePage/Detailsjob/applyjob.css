@@ -1,0 +1,13 @@
+.event-form-designs {
+    padding: 15px;
+    margin-top: 10px;
+  }
+
+  .apply-job-button {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 20px;
+    color: white;
+    background-color: black;
+    padding: 6px;
+  }
