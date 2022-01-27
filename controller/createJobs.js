@@ -157,3 +157,9 @@ exports.jobdetailsDescription = (req,res)=>{
     });
 
 }
+
+
+
+
+
+
