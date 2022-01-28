@@ -37,10 +37,10 @@ const Detailsjobwebview = ({
       <div className="job-details-page">
         {/* job company header */}
         <div className="card job-company-info">
-          <Link
+          {/* <Link
             to={"/organizers-public-profile/" + userid}
             style={{ textDecoration: "none" }}
-          >
+          > */}
             <div className="profile-name-date">
               {photo ? (
                 <div className="profile-name-avatar-image">
@@ -60,7 +60,7 @@ const Detailsjobwebview = ({
                 </p>
               </div>
             </div>
-          </Link>
+          {/* </Link> */}
           <h6>{name}</h6>
           <div className="row">
             <div className="col-lg-3">

@@ -26,10 +26,10 @@ const Jobpostwebview = ({
     <React.Fragment>
       <div className="large-screen-allevent-views">
         <div className="card all-events">
-          <Link
+          {/* <Link
             to={"/organizers-public-profile/" + userid}
             style={{ textDecoration: "none" }}
-          >
+          > */}
             <div className="profile-name-date">
               {photo ? (
                 <div className="profile-name-avatar-image">
@@ -49,7 +49,7 @@ const Jobpostwebview = ({
                     <p className="trending">Trending</p>
                   ) : null} */}
             </div>
-          </Link>
+          {/* </Link> */}
 
           <Link
             to={"/job-description/" + postid}

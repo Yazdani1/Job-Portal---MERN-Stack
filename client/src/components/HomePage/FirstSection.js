@@ -15,21 +15,23 @@ const FirstSection = () => {
               <div class="top-left">
                 <div className="first_Section_data">
                   <h5>Welcome to this Job portal site</h5>
-                  <p>You can create your company profile and publish job posts</p>
+                  <p>
+                    You can create your company profile and publish job posts
+                  </p>
                   {!window.localStorage.getItem("tokenLogin") ? (
                     <>
-                      <h5>
-                        Become a member today
-                      </h5>
-                      <Link to={"/signup"}>
-                        <button className="btn btn-primary">Create your account</button>
+                      <h5>Become a member today</h5>
+                      <Link to={"/signup"} style={{ textDecoration: "none" }}>
+                        <div className="publish-jobpost">
+                          <p>Create your account</p>
+                        </div>
                       </Link>
                     </>
                   ) : (
-                    <Link to="/dashboard">
-                      <button className="btn btn-primary">
-                        Create Your Events
-                      </button>
+                    <Link to="/dashboard" style={{ textDecoration: "none" }}>
+                      <div className="publish-jobpost">
+                        <p> Publish Your Jobs</p>
+                      </div>
                     </Link>
                   )}
                 </div>

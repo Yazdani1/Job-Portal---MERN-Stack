@@ -18,4 +18,19 @@
     margin-top: 40px;
 
   }
-  
+
+  /* button design */
+  .publish-jobpost p{
+    background-color: black;
+    color: white;
+    padding: 1px;
+    border-radius: 20px;
+    width: auto;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    width: 20%;
+  }
