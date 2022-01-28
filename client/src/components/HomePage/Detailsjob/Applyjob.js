@@ -7,6 +7,8 @@ import { Link, useHistory, useParams } from "react-router-dom";
 const Applyjob = ({ jobId }) => {
   const { id } = useParams();
 
+  const history = useHistory();
+
   const [detailsjob, setDetailsjob] = useState([]);
   //apply job state
 
@@ -50,7 +52,7 @@ const Applyjob = ({ jobId }) => {
     setProjects(e.target.value);
   };
 
-  const applyforjob = (e,jobId) => {
+  const applyforjob = (e, jobId) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
@@ -62,7 +64,7 @@ const Applyjob = ({ jobId }) => {
       workexperience,
       skills,
       projects,
-      jobId
+      jobId,
     })
       .then((result) => {
         if (result.error) {
@@ -103,7 +105,6 @@ const Applyjob = ({ jobId }) => {
       workexperience,
       skills,
       projects,
-      
     })
       .then((result) => {
         if (result.error) {
@@ -112,9 +113,9 @@ const Applyjob = ({ jobId }) => {
         } else {
           setError("");
           setSuccess(true);
-          toast.success("Your applied job has saved to your profile", {
-            position: toast.POSITION.TOP_RIGHT,
-          });
+          // toast.success("Your applied job has saved to your profile", {
+          //   position: toast.POSITION.TOP_RIGHT,
+          // });
           console.log(result);
 
           setName("");
@@ -249,7 +250,12 @@ const Applyjob = ({ jobId }) => {
               onClick={(e) =>
                 // applyforjob(e, detailsjob && detailsjob.jobdetails?._id)
                 {
-                  applyforjob(e, jobId); myappliedjobslist(e);
+                  if (!window.localStorage.getItem("tokenLogin")) {
+                    history.push("/signin");
+                  } else {
+                    applyforjob(e, jobId);
+                    myappliedjobslist(e);
+                  }
                 }
               }
             >

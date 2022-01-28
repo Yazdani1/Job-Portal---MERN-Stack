@@ -1,36 +1,67 @@
 .homepage-first {
-    height: 350px;
-    background-color: #ffffff;
-  
-    /* background-color: #e8424a; */
-    color: black;
-    margin-top: 10px;
-  }
-  
-  .first_Section_data p {
-    font-size: 17px;
-    line-height: 35px;
-    height: 40px;
-  
-  }
+  height: 350px;
+  background-color: #ffffff;
 
-  .first_section{
-    margin-top: 40px;
+  /* background-color: #e8424a; */
+  color: black;
+  margin-top: 10px;
+}
 
-  }
+.first_Section_data p {
+  font-size: 17px;
+  line-height: 35px;
+  height: 40px;
+}
 
-  /* button design */
-  .publish-jobpost p{
-    background-color: black;
-    color: white;
-    padding: 1px;
-    border-radius: 20px;
-    width: auto;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    text-align: center;
-    position: relative;
-    width: 20%;
+.first_section {
+  margin-top: 40px;
+}
+
+/* button design */
+.publish-jobpost p {
+  background-color: black;
+  color: white;
+  padding: 1px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  width: 20%;
+  margin-top: 20px;
+}
+
+/* button design mobile view */
+
+.publish-jobpost-mobile-view p {
+  background-color: black;
+  color: white;
+  padding: 1px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  width: auto;
+  margin-top: 40px;
+}
+
+.mobile-view{
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .top-left {
+    display: none;
   }
+ 
+  .mobile-view {
+    display: flex;
+    flex-direction: column;
+  }
+}
+

@@ -201,14 +201,14 @@ const Publishedjobs = () => {
                       </Link>
                     </td>
 
-                    <td>
+                    {/* <td>
                       <Link to={"/editpost/" + item._id}>
                         <button className="btn btn-success">
                           <AiTwotoneEdit size={20} />
                           Edit
                         </button>
                       </Link>
-                    </td>
+                    </td> */}
                     <td>
                       <button
                         className="btn btn-danger"

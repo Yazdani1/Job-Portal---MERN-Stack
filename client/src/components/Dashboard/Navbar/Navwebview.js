@@ -86,7 +86,7 @@ const Navwebview = (props) => {
             </div>
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
             to="/AddExperience"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -97,12 +97,12 @@ const Navwebview = (props) => {
                   <GiSkills size={20} />
                 </p>
 
-                {/* <p>Experience</p> */}
+                 <p>Experience</p>
               </div>
             </div>
-          </NavLink>
+          </NavLink>  */}
 
-          <NavLink
+          {/* <NavLink
             to="/favourite"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -113,12 +113,12 @@ const Navwebview = (props) => {
                   <BsHeartFill size={20} />
                 </p>
 
-                {/* <p>Favourite</p> */}
+               <p>Favourite</p> 
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/my-comments"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -129,12 +129,12 @@ const Navwebview = (props) => {
                   <MdQuestionAnswer size={20} />
                 </p>
 
-                {/* <p>Comments</p> */}
+              <p>Comments</p> 
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/message"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -145,10 +145,10 @@ const Navwebview = (props) => {
                   <AiFillMessage size={20} />
                 </p>
 
-                {/* <p>Messages</p> */}
+               <p>Messages</p> 
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
           {/* <NavLink
             target={"_blank"}
@@ -222,7 +222,7 @@ const Navwebview = (props) => {
               </p>
             </div>
           </NavLink>
-
+{/* 
           <NavLink
             to="/AddExperience"
             style={{ textDecoration: "none" }}
@@ -235,9 +235,9 @@ const Navwebview = (props) => {
                 <GiSkills size={15} /> Experience
               </p>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/favourite"
             style={{ textDecoration: "none" }}
             className={({ isActive }) =>
@@ -249,9 +249,9 @@ const Navwebview = (props) => {
                 <BsHeartFill size={15} /> Favourite
               </p>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/my-comments"
             style={{ textDecoration: "none" }}
             className={({ isActive }) =>
@@ -263,9 +263,9 @@ const Navwebview = (props) => {
                 <MdQuestionAnswer size={15} /> My Comments
               </p>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/message"
             style={{ textDecoration: "none" }}
             className={({ isActive }) =>
@@ -277,7 +277,7 @@ const Navwebview = (props) => {
                 <AiFillMessage size={15} /> Messages
               </p>
             </div>
-          </NavLink>
+          </NavLink> */}
 
           {/* <NavLink
             target={"_blank"}
