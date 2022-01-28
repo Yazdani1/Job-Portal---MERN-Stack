@@ -116,7 +116,7 @@ const Publishedjobs = () => {
               <div className="dashboard-items_design">
                 <FaUserGraduate size={35} />
                 <p>Member Type</p>
-                {/* <p> {mypost.length >= 5 ? "Pro Account" : "Starter Account"}</p> */}
+                <p> {mypublishedjobs.length >= 5 ? "Pro Account" : "Starter Account"}</p>
               </div>
             </div>
           </div>
@@ -128,9 +128,9 @@ const Publishedjobs = () => {
 
                 <div className="profile-message">
                   {/* <h5>{user && user.message?.length}</h5> */}
-                  <Link to="/message">
+                  {/* <Link to="/message"> */}
                     <button className="btn btn-primary">View Messagees</button>
-                  </Link>
+                  {/* </Link> */}
                 </div>
               </div>
             </div>
