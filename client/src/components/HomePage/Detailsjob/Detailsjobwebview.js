@@ -55,10 +55,13 @@ const Detailsjobwebview = ({
               <div className="profile-name-post-date">
                 <p className="profile-name-size">{username}</p>
                 <p>
-                  Published on:
-                  {moment(date).format("MMMM Do YYYY")}
+                
+                  {moment(date).format("MMM Do YY")}
                 </p>
               </div>
+              {totalapplications >= 5 ? (
+                    <p className="trending">Trending</p>
+                  ) : null}
             </div>
           {/* </Link> */}
           <h6>{name}</h6>

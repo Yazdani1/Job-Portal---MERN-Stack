@@ -43,11 +43,11 @@ const Jobpostwebview = ({
 
               <div className="profile-name-post-date">
                 <p className="profile-name-size">{username}</p>
-                <p>Published on: {moment(date).format("MMMM Do YYYY")}</p>
+                <p>{moment(date).format("MMM Do YY")}</p>
               </div>
-              {/* {joinedeventnumbers >= 2 ? (
+              {totalapplications >= 5 ? (
                     <p className="trending">Trending</p>
-                  ) : null} */}
+                  ) : null}
             </div>
           {/* </Link> */}
 
