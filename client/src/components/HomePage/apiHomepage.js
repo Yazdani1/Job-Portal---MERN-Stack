@@ -1,3 +1,4 @@
+//to get all the job posts
 export const getallJobsinhomepage = () => {
   return fetch("/api/getall-jobposts", {
     method: "GET",
@@ -9,6 +10,8 @@ export const getallJobsinhomepage = () => {
       console.log(err);
     });
 };
+
+//search job post
 
 export const searchJobpost = (query) => {
   return fetch("/api/search-jobs", {
@@ -27,3 +30,16 @@ export const searchJobpost = (query) => {
     });
 };
 
+//to get all the user info
+
+export const getallUserlist = () => {
+  return fetch("/api/all-user-list", {
+    method: "GET",
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

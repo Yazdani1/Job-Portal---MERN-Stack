@@ -1,16 +1,14 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Alljobposts from "./Alljobposts";
 import Footer from "./Footer/Footer";
 import FirstSection from "./FirstSection";
-import { getallJobsinhomepage } from "./apiHomepage";
+import { getallJobsinhomepage, getallUserlist } from "./apiHomepage";
 import Totalpostcount from "./TotalPostCount";
 import { useState } from "react";
 
-
-
 const Home = () => {
-
-  const [alljobs,setAlljobs] = useState([]);
+  const [alljobs, setAlljobs] = useState([]);
+  const [allusers, setAllusers] = useState([]);
 
   const loadallJobposts = () => {
     getallJobsinhomepage()
@@ -23,19 +21,31 @@ const Home = () => {
         console.log(err);
       });
   };
+  //to get all the user list
 
+  const loadallUsers = () => {
+    getallUserlist()
+      .then((result) => {
+        if (result) {
+          setAllusers(result);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     loadallJobposts();
+    loadallUsers();
   }, []);
-
 
   return (
     <div>
-      <FirstSection/>
-      <Totalpostcount totalpost={alljobs.length} />
+      <FirstSection />
+      <Totalpostcount totalpost={alljobs.length} totaluser={allusers.length} />
       <Alljobposts />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

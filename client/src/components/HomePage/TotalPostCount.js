@@ -3,6 +3,8 @@ import "./totalpostcount.css";
 import { BsGraphUp } from "react-icons/bs";
 import { FaUserSecret } from "react-icons/fa";
 import { MdCardMembership } from "react-icons/md";
+import { FcContacts } from "react-icons/fc";
+
 
 import { Link, useHistory, useParams } from "react-router-dom";
 
@@ -13,7 +15,7 @@ const Totalpostcount = ({ totalpost, totaluser }) => {
         <div className="col-lg-4 col-md-12 col-sm-12">
           <div className="card home-post-count">
             <div className="profile-items_design">
-              <p>Total Published Events</p>
+              <p>Total Published Jobs</p>
               <h4>
                 <BsGraphUp size={25} />
               </h4>
@@ -39,13 +41,13 @@ const Totalpostcount = ({ totalpost, totaluser }) => {
         <div className="col-lg-4 col-md-12 col-sm-12">
           <div className="card home-post-count">
             <div className="profile-items_design">
-              <p>Become a Mamber Today</p>
+              <p>Are you looking for a job?</p>
               <p>
-                <MdCardMembership size={25} />
+                <FcContacts size={25} />
               </p>
-              <Link to="/dashboard">
-                <button className="btn btn-primary">Publish Your Post</button>
-              </Link>
+              <p>Search Job</p>
+
+             
             </div>
           </div>
         </div>
