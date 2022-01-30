@@ -107,22 +107,7 @@ const Alljobposts = () => {
               //for large to medium screen
 
               <>
-                {/* for mobiel escreen */}
-                {/* <Alleventmobileview
-                name={event.name}
-                des={event.des}
-                id={event.postedBy?._id}
-                photo={event?.postedBy?.photo}
-                username={event.postedBy?.name}
-                postid={event._id}
-                date={event.date}
-                startdate={event.startdate}
-                enddate={event.enddate}
-                location={event.location}
-                maxmembers={event.maxmembers}
-                includelikes={event.likes}
-                joinedeventnumbers={event.application.length}
-              /> */}
+         
 
                 {/* for extra large screen */}
 
