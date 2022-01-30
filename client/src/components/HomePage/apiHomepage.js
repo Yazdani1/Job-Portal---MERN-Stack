@@ -51,7 +51,7 @@ export const getlimiteduserlist = () => {
     method: "GET",
   })
     .then((res) => {
-      res.json();
+      return res.json();
     })
     .catch((err) => {
       console.log(err);
