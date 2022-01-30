@@ -43,3 +43,17 @@ export const getallUserlist = () => {
       console.log(err);
     });
 };
+
+//to get limited user list for home page
+
+export const getlimiteduserlist = () => {
+  return fetch("/api/user-limit-list", {
+    method: "GET",
+  })
+    .then((res) => {
+      res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

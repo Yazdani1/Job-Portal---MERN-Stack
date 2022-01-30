@@ -1,5 +1,6 @@
 const User = require("../model/User");
 
+//to get all user from database
 exports.getuserInfo = (req, res) => {
   User.find({})
     .sort({ date: "DESC" })
