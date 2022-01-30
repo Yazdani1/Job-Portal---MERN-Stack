@@ -17,6 +17,7 @@ exports.getuserInfo = (req, res) => {
 exports.getUserforhomepage = (req, res) => {
   User.find({})
     .limit(8)
+    .select("-password")
     .sort({ createdAt: "DESC" })
     .then((userlimitlist) => {
       res.json(userlimitlist);
