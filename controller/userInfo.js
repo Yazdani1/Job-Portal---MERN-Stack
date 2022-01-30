@@ -10,3 +10,17 @@ exports.getuserInfo = (req, res) => {
       console.log(err);
     });
 };
+
+//to get limited user list for home page
+
+exports.getUserforhomepage = (req, res) => {
+  User.find({})
+    .limit(8)
+    .sort({ createdAt: "DESC" })
+    .then((userlimitlist) => {
+      res.json(userlimitlist);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
