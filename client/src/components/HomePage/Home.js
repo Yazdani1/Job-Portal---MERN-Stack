@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Alljobposts from "./Alljobposts";
 import Footer from "./Footer/Footer";
+import UserList from "./UserList";
 import FirstSection from "./FirstSection";
 import {
   getallJobsinhomepage,
@@ -66,6 +67,7 @@ const Home = () => {
       <Totalpostcount totalpost={alljobs.length} totaluser={allusers.length} />
       <Alljobposts />
       {JSON.stringify(limitusers)}
+      <UserList/>
       <Footer />
     </div>
   );
