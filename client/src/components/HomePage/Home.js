@@ -15,20 +15,8 @@ const Home = () => {
   const [alljobs, setAlljobs] = useState([]);
   const [allusers, setAllusers] = useState([]);
 
-  //to get limit number of user list in the home page
-  const [limitusers, setLimitusers] = useState([]);
+ 
 
-  //to get limit number of user list for the home page
-
-  const limituserlist = () => {
-    getlimiteduserlist()
-      .then((result) => {
-        setLimitusers(result);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   const loadallJobposts = () => {
     getallJobsinhomepage()
@@ -58,7 +46,7 @@ const Home = () => {
   useEffect(() => {
     loadallJobposts();
     loadallUsers();
-    limituserlist();
+  
   }, []);
 
   return (
@@ -66,7 +54,6 @@ const Home = () => {
       <FirstSection />
       <Totalpostcount totalpost={alljobs.length} totaluser={allusers.length} />
       <Alljobposts />
-      {JSON.stringify(limitusers)}
       <UserList/>
       <Footer />
     </div>
