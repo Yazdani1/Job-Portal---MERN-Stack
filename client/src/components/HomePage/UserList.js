@@ -1,13 +1,11 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./userlist.css";
 import { getlimiteduserlist } from "./apiHomepage";
 import moment from "moment";
 import { Link, useHistory, useParams } from "react-router-dom";
 
 const UserList = () => {
-  
   const [limitusers, setLimitusers] = useState([]);
-
 
   //to get limit number of user list for the home page
 
@@ -27,10 +25,11 @@ const UserList = () => {
 
   return (
     <div className="container">
-      <h6 className="title-user-profile">Visit Event organizers profile</h6>
+      <h6 className="title-user-profile">Visit Employers profile</h6>
       <div className="row">
         {limitusers.map((user, index) => (
           <div className="col-lg-4 col-md-6 col-sm-6 col-xl-3" key={index}>
+              
             <div className="user-infocard card">
               {user && user.photo ? (
                 <div className="user-profile-picture-image">
@@ -57,6 +56,8 @@ const UserList = () => {
                 </Link>
               </div>
             </div>
+
+
           </div>
         ))}
       </div>
@@ -65,7 +66,7 @@ const UserList = () => {
         <Link to={"/event-organizers"} style={{ textDecoration: "none" }}>
           <div className="main_container-button">
             <span className="view-allusers-button">
-              View All Event Organizers
+              View All Employers
             </span>
           </div>
         </Link>
