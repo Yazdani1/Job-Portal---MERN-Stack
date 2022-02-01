@@ -8,9 +8,37 @@ import "./AlluserList.css";
 import { getallUserlist } from "./apiHomepage";
 
 const AlluserList = () => {
+  const [alluser, setAlluser] = useState([]);
 
 
+    //for pagination state..
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(12);
+  
+    //Get current posts
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentUsers = alluser?.slice(
+      indexOfFirstPost,
+      indexOfLastPost
+    );
+    const howManyPages = Math.ceil(alluser?.length / postsPerPage);
+  
+
+  const loadalluserList = () => {
+    getallUserlist()
+      .then((result) => {
+        setAlluser(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    loadalluserList();
+  }, []);
 
   return (
     <React.Fragment>
@@ -23,20 +51,20 @@ const AlluserList = () => {
                   <div className="event-form">
                     <input
                       type="text"
-                    //   value={search}
-                    //   onChange={(e) => setSearch(e.target.value)}
+                      //   value={search}
+                      //   onChange={(e) => setSearch(e.target.value)}
                       className="form-control"
                       maxLength="100"
                       placeholder="search event organizers name.."
                     />
                   </div>
                 </form>
-                <span>{eventorganizers.length} Users found</span>
+                <span>{alluser.length} Users found</span>
               </div>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4 col-xl-4">
               <div className="eventorganizer-search">
-                <p onClick={searchUser}>Search</p>
+                {/* <p onClick={searchUser}>Search</p> */}
               </div>
             </div>
           </div>
@@ -45,7 +73,7 @@ const AlluserList = () => {
 
       <div className="container">
         <div className="row">
-          {eventorganizers.length ? (
+          {alluser.length ? (
             currentUsers.map((user, index) => (
               <div className="col-lg-4 col-md-6 col-sm-6 col-xl-3" key={index}>
                 <div className="user-infocard card">
@@ -82,7 +110,7 @@ const AlluserList = () => {
         </div>
 
         <div className="card pagination-event-organizers">
-          {eventorganizers.length > 1 ? (
+          {alluser.length > 1 ? (
             <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
           ) : null}
         </div>
