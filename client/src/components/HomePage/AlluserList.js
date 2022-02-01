@@ -6,6 +6,7 @@ import Pagination from "../Dashboard/Published Jobs/Pagination";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import "./AlluserList.css";
 import { getallUserlist } from "./apiHomepage";
+import { ToastContainer, toast } from "react-toastify";
 
 const AlluserList = () => {
   const [alluser, setAlluser] = useState([]);
