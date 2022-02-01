@@ -63,7 +63,7 @@ const UserList = () => {
       </div>
 
       {limitusers ? (
-        <Link to={"/event-organizers"} style={{ textDecoration: "none" }}>
+        <Link to={"/all-user-lists"} style={{ textDecoration: "none" }}>
           <div className="main_container-button">
             <span className="view-allusers-button">
               View All Employers
