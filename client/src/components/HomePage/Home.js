@@ -15,9 +15,6 @@ const Home = () => {
   const [alljobs, setAlljobs] = useState([]);
   const [allusers, setAllusers] = useState([]);
 
- 
-
-
   const loadallJobposts = () => {
     getallJobsinhomepage()
       .then((result) => {
