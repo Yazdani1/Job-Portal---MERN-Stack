@@ -15,6 +15,7 @@ import Profile from "./components/Dashboard/Profile/Profile";
 import Message from "./components/Dashboard/Message/Message";
 import Detailsjob from "./components/HomePage/Detailsjob/Detailsjob";
 import JobapplicationList from "./components/Dashboard/Published Jobs/JobapplicationList";
+import AlluserList from "./components/HomePage/AlluserList";
 
 const App = () => {
   return (
@@ -44,6 +45,10 @@ const App = () => {
 
           <Route exact path="/job-description/:id">
             <ProtectedRoute FrontProtected={Detailsjob} />
+          </Route>
+
+          <Route exact path="/all-user-lists">
+            <ProtectedRoute FrontProtected={AlluserList} />
           </Route>
 
           {/* Protected route for dashboard side */}
