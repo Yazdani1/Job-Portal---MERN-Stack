@@ -47,14 +47,14 @@ const UserList = () => {
               )}
 
               <p>{moment(user.createdAt).format("MMMM Do YYYY")}</p>
-              <div className="view-profile-button">
+              {/* <div className="view-profile-button">
                 <Link
                   to={"/organizers-public-profile/" + user._id}
                   style={{ textDecoration: "none" }}
                 >
                   <span className="view-profile">View Profile</span>
                 </Link>
-              </div>
+              </div> */}
             </div>
 
 

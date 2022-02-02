@@ -5,6 +5,7 @@ import { SyncOutlined } from "@ant-design/icons";
 import Jobpostwebview from "./Jobpostwebview";
 import Pagination from "../Dashboard/Published Jobs/Pagination";
 import { ToastContainer, toast } from "react-toastify";
+import { GiArchiveResearch } from "react-icons/gi";
 
 const Alljobposts = () => {
   //context api
@@ -53,7 +54,7 @@ const Alljobposts = () => {
       .catch((err) => {
         console.log(err);
       });
-      setSearchjob("");
+    setSearchjob("");
   };
 
   useEffect(() => {
@@ -107,8 +108,6 @@ const Alljobposts = () => {
               //for large to medium screen
 
               <>
-         
-
                 {/* for extra large screen */}
 
                 <Jobpostwebview
@@ -127,7 +126,13 @@ const Alljobposts = () => {
               </>
             ))
           ) : (
-            <h5 className="card">No search result found with your query</h5>
+            <div className="container">
+              <h5 className="card noposts-design">
+                <GiArchiveResearch size={200} />
+                No search result found with your query! Please try different
+                search query
+              </h5>
+            </div>
           )}
         </div>
         <div className="card pagination-job-posts-homepage">
