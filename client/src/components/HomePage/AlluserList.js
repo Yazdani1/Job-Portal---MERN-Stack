@@ -147,7 +147,7 @@ const AlluserList = () => {
           )}
         </div>
 
-        <div className="card pagination-event-organizers">
+        <div className="card pagination-alluser-lists">
           {alluser.length > 1 ? (
             <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
           ) : null}

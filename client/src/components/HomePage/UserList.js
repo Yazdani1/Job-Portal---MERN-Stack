@@ -25,7 +25,7 @@ const UserList = () => {
 
   return (
     <div className="container">
-      <h6 className="title-user-profile">Visit Employers profile</h6>
+      <h6 className="title-user-profile">List of Employers</h6>
       <div className="row">
         {limitusers.map((user, index) => (
           <div className="col-lg-4 col-md-6 col-sm-6 col-xl-3" key={index}>
