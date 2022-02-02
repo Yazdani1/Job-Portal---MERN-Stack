@@ -7,10 +7,12 @@ import { BsCalendar2DateFill } from "react-icons/bs";
 import "./AlluserList.css";
 import { getallUserlist, searchallUserlists } from "./apiHomepage";
 import { ToastContainer, toast } from "react-toastify";
+import { SyncOutlined } from "@ant-design/icons";
 
 const AlluserList = () => {
   const [alluser, setAlluser] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   //for pagination state..
 
@@ -26,7 +28,10 @@ const AlluserList = () => {
   const loadalluserList = () => {
     getallUserlist()
       .then((result) => {
-        setAlluser(result);
+        if (result) {
+          setAlluser(result);
+          setLoading(false);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -35,9 +40,32 @@ const AlluserList = () => {
 
   //search user list
 
+  const searchUser = () => {
+    searchallUserlists({ query: search })
+      .then((searchResult) => {
+        if (searchResult) {
+          setAlluser(searchResult);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     loadalluserList();
   }, []);
+
+  if (loading) {
+    return (
+      <div class="text-center my-25">
+        <h1>
+          <SyncOutlined spin />
+        </h1>
+      </div>
+    );
+  }
 
   return (
     <React.Fragment>
@@ -58,12 +86,12 @@ const AlluserList = () => {
                     />
                   </div>
                 </form>
-                <span>{alluser.length} Users found</span>
+                <span>{alluser?.length} Users found</span>
               </div>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4 col-xl-4">
               <div className="eventorganizer-search">
-                {/* <p onClick={searchUser}>Search</p> */}
+                <p onClick={searchUser}>Search</p>
               </div>
             </div>
           </div>

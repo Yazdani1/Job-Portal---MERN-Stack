@@ -88,7 +88,7 @@ const Alljobposts = () => {
                     />
                   </div>
                 </form>
-                <span>{alljobposts.length} Jobs found</span>
+                <span>{alljobposts?.length} Jobs found</span>
               </div>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4 col-xl-4">

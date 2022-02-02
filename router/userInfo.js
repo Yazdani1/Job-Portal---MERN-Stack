@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { requireLogin } = require("../middleware/auth");
 require("dotenv").config();
 
-const { getuserInfo, getUserforhomepage } = require("../controller/userInfo");
+const { getuserInfo, getUserforhomepage,searchUserlist } = require("../controller/userInfo");
 
 router.get("/all-user-list", getuserInfo);
 

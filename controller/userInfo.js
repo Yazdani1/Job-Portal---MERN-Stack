@@ -35,7 +35,7 @@ exports.searchUserlist = (req, res) => {
   User.find({
     name: { $regex: searchPattern, $options: "i" },
   })
-    .populate("postedBy", "_id name email photo")
+    .select("name email photo createdAt")
     .then((searchusers) => {
       res.json(searchusers);
     })
