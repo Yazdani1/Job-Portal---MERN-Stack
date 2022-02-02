@@ -11,8 +11,6 @@ import { SyncOutlined } from "@ant-design/icons";
 import { FcComboChart, FcFilledFilter } from "react-icons/fc";
 import { GiArchiveResearch } from "react-icons/gi";
 
-
-
 const AlluserList = () => {
   const [alluser, setAlluser] = useState([]);
   const [search, setSearch] = useState("");
@@ -141,7 +139,8 @@ const AlluserList = () => {
             <div className="container">
               <h5 className="card noposts-design">
                 <GiArchiveResearch size={200} />
-                No search result found with your query! Please try different search query
+                No search result found with your query! Please try a different
+                search query
               </h5>
             </div>
           )}
