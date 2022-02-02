@@ -26,3 +26,20 @@ exports.getUserforhomepage = (req, res) => {
       console.log(err);
     });
 };
+
+//search user list
+
+exports.searchUserlist = (req, res) => {
+  let searchPattern = req.body.query;
+
+  User.find({
+    name: { $regex: searchPattern, $options: "i" },
+  })
+    .populate("postedBy", "_id name email photo")
+    .then((searchusers) => {
+      res.json(searchusers);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
