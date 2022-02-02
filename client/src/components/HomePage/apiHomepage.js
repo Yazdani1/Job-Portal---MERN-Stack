@@ -57,3 +57,22 @@ export const getlimiteduserlist = () => {
       console.log(err);
     });
 };
+
+//search user lists
+
+export const searchallUserlists = (query) => {
+  return fetch("/api/search-users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(query),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

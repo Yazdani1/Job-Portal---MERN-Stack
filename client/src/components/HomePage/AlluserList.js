@@ -5,27 +5,23 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import Pagination from "../Dashboard/Published Jobs/Pagination";
 import { BsCalendar2DateFill } from "react-icons/bs";
 import "./AlluserList.css";
-import { getallUserlist } from "./apiHomepage";
+import { getallUserlist, searchallUserlists } from "./apiHomepage";
 import { ToastContainer, toast } from "react-toastify";
 
 const AlluserList = () => {
   const [alluser, setAlluser] = useState([]);
+  const [search, setSearch] = useState("");
 
+  //for pagination state..
 
-    //for pagination state..
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(12);
 
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(12);
-  
-    //Get current posts
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentUsers = alluser?.slice(
-      indexOfFirstPost,
-      indexOfLastPost
-    );
-    const howManyPages = Math.ceil(alluser?.length / postsPerPage);
-  
+  //Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentUsers = alluser?.slice(indexOfFirstPost, indexOfLastPost);
+  const howManyPages = Math.ceil(alluser?.length / postsPerPage);
 
   const loadalluserList = () => {
     getallUserlist()
@@ -36,6 +32,8 @@ const AlluserList = () => {
         console.log(err);
       });
   };
+
+  //search user list
 
   useEffect(() => {
     loadalluserList();
@@ -52,8 +50,8 @@ const AlluserList = () => {
                   <div className="event-form">
                     <input
                       type="text"
-                      //   value={search}
-                      //   onChange={(e) => setSearch(e.target.value)}
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
                       className="form-control"
                       maxLength="100"
                       placeholder="search event organizers name.."
