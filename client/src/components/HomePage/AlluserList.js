@@ -87,7 +87,7 @@ const AlluserList = () => {
                       onChange={(e) => setSearch(e.target.value)}
                       className="form-control"
                       maxLength="100"
-                      placeholder="search event organizers name.."
+                      placeholder="search employers name.."
                     />
                   </div>
                 </form>
