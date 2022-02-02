@@ -8,6 +8,10 @@ import "./AlluserList.css";
 import { getallUserlist, searchallUserlists } from "./apiHomepage";
 import { ToastContainer, toast } from "react-toastify";
 import { SyncOutlined } from "@ant-design/icons";
+import { FcComboChart, FcFilledFilter } from "react-icons/fc";
+import { GiArchiveResearch } from "react-icons/gi";
+
+
 
 const AlluserList = () => {
   const [alluser, setAlluser] = useState([]);
@@ -51,6 +55,7 @@ const AlluserList = () => {
       .catch((err) => {
         console.log(err);
       });
+    setSearch("");
   };
 
   useEffect(() => {
@@ -132,7 +137,13 @@ const AlluserList = () => {
               </div>
             ))
           ) : (
-            <h5 className="card">No search result found with your query</h5>
+            // <h5 className="card">No search result found with your query</h5>
+            <div className="container">
+              <h5 className="card noposts-design">
+                <GiArchiveResearch size={200} />
+                No search result found with your query! Please try different search query
+              </h5>
+            </div>
           )}
         </div>
 
