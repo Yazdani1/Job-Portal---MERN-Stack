@@ -30,8 +30,8 @@ const Navwebview = (props) => {
   };
 
   useEffect(() => {
-    ReactTooltip.rebuild()
-});
+    ReactTooltip.rebuild();
+  });
 
   return (
     <div>
@@ -43,7 +43,7 @@ const Navwebview = (props) => {
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
             <div className="sidebar-item-back" data-tip="Dashboard">
-              <div className="sidebar-items" >
+              <div className="sidebar-items">
                 <p>
                   {/* <AiFillHome size={20} onClick={() => setSidebar(!sidebar)} /> */}
                   <AiFillDashboard size={20} />
@@ -204,7 +204,6 @@ const Navwebview = (props) => {
               <p>
                 <RiEditFill size={15} />
                 Create Jobs
-
               </p>
             </div>
           </NavLink>
@@ -222,7 +221,20 @@ const Navwebview = (props) => {
               </p>
             </div>
           </NavLink>
-{/* 
+          <NavLink
+            to="/applied-jobs"
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) =>
+              isActive ? "largenavactive" : "inactive"
+            }
+          >
+            <div className="sidebar-large-navdesign">
+              <p>
+                <FaUserNurse size={15} /> Applied Jobs
+              </p>
+            </div>
+          </NavLink>
+          {/* 
           <NavLink
             to="/AddExperience"
             style={{ textDecoration: "none" }}
@@ -303,12 +315,7 @@ const Navwebview = (props) => {
       )}
 
       <NavMobileview />
-      <ReactTooltip
-        place="right"
-        type="dark"
-        effect="solid"
-       
-      />
+      <ReactTooltip place="right" type="dark" effect="solid" />
     </div>
   );
 };
