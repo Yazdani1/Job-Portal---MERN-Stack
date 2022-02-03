@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./appliedjoblist.css";
 import { getmyappliedjobList } from "./apiAppliedjoblist";
+import ReactHtmlParser from "react-html-parser";
 
 const Appliedjoblist = () => {
   const [appliedjoblist, setAppliedjoblist] = useState([]);
@@ -21,13 +22,15 @@ const Appliedjoblist = () => {
 
   return (
     <div>
-      <h5>Applied job list is here</h5>
-      <h6>{JSON.stringify(appliedjoblist)}</h6>
+      <h5>Applied job list:</h5>
 
-      {appliedjoblist.map((item) => (
+      {appliedjoblist.map((item,index) => (
         <>
-          <h1>{item.name}</h1>
-          <p>{item.jobpost.des}</p>
+          <h4>{index+1}</h4>
+          <p>Job Title: {item.jobpost.name}</p>
+          <p>Job Des: {ReactHtmlParser(item.jobpost.des)}</p>
+          <p>Job Type: {item.jobpost.jobtypes}</p>
+
         </>
       ))}
     </div>
