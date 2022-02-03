@@ -27,7 +27,6 @@ const NavMobileview = () => {
     window.localStorage.removeItem("tokenLogin");
     window.localStorage.removeItem("token");
 
-
     setState(null);
     history.push("/signin");
   };
@@ -97,6 +96,18 @@ const NavMobileview = () => {
             </div>
           </NavLink>
 
+          <NavLink
+            to="/applied-jobs"
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+          >
+            <div className="sidebar-mobile-nav">
+              <li onClick={() => setMobilesidebar(!mobilesidebar)}>
+                <BsStack size={15} /> Applied Jobs
+              </li>
+            </div>
+          </NavLink>
+
           {/* <NavLink
             to="/AddExperience"
             style={{ textDecoration: "none" }}
@@ -108,7 +119,7 @@ const NavMobileview = () => {
               </li>
             </div>
           </NavLink> */}
-{/* 
+          {/* 
           <NavLink
             to="/favourite"
             style={{ textDecoration: "none" }}

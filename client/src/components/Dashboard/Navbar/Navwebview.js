@@ -16,6 +16,8 @@ import { GiRamProfile } from "react-icons/gi";
 import { MdQuestionAnswer } from "react-icons/md";
 import { UserContext } from "../../UserContext";
 import ReactTooltip from "react-tooltip";
+import { BsStack } from "react-icons/bs";
+
 
 const Navwebview = (props) => {
   const [state, setState] = useContext(UserContext);
@@ -85,6 +87,23 @@ const Navwebview = (props) => {
               </div>
             </div>
           </NavLink>
+
+          <NavLink
+            to="/applied-jobs"
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+          >
+            <div className="sidebar-item-back" data-tip="Applied Jobs">
+              <div className="sidebar-items">
+                <p>
+                  <BsStack size={20} />
+                </p>
+
+                {/* <p>Profile</p> */}
+              </div>
+            </div>
+          </NavLink>
+
 
           {/* <NavLink
             to="/AddExperience"
@@ -230,7 +249,7 @@ const Navwebview = (props) => {
           >
             <div className="sidebar-large-navdesign">
               <p>
-                <FaUserNurse size={15} /> Applied Jobs
+                <BsStack size={15} /> Applied Jobs
               </p>
             </div>
           </NavLink>
