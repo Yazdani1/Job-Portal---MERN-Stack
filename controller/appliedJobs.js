@@ -98,3 +98,10 @@ exports.myappliedjobspost = (req, res) => {
       console.log(err);
     });
 };
+
+
+//get applied job lists
+
+exports.getappliedJoblist = (req,res)=>{
+  
+}

@@ -16,6 +16,7 @@ import Message from "./components/Dashboard/Message/Message";
 import Detailsjob from "./components/HomePage/Detailsjob/Detailsjob";
 import JobapplicationList from "./components/Dashboard/Published Jobs/JobapplicationList";
 import AlluserList from "./components/HomePage/AlluserList";
+import Appliedjoblist from "./components/Dashboard/AppliedjobList/Appliedjoblist";
 
 const App = () => {
   return (
@@ -67,6 +68,10 @@ const App = () => {
 
           <Route exact path="/message">
             <DashboardprotectedRoute DashboardProtect={Message} />
+          </Route>
+
+          <Route exact path="/applied-jobs">
+            <DashboardprotectedRoute DashboardProtect={Appliedjoblist} />
           </Route>
 
           <Route exact path="/job-application/:id">
