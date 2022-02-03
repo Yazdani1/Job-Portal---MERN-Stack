@@ -30,6 +30,11 @@ const appliedjobslist = mongoose.Schema({
     default: Date.now,
   },
 
+  jobpost: {
+    type: ObjectId,
+    ref: "Jobposts",
+  },
+
   postedBy: {
     type: ObjectId,
     ref: "User",

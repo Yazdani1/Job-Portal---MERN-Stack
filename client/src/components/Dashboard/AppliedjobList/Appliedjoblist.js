@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./appliedjoblist.css";
-import { apiAppliedjoblist } from "./apiAppliedjoblist";
+import { getmyappliedjobList } from "./apiAppliedjoblist";
 
 const Appliedjoblist = () => {
   const [appliedjoblist, setAppliedjoblist] = useState([]);
 
   const loadappliedjoblist = () => {
-    apiAppliedjoblist()
+    getmyappliedjobList()
       .then((result) => {
         setAppliedjoblist(result);
       })
@@ -22,6 +22,14 @@ const Appliedjoblist = () => {
   return (
     <div>
       <h5>Applied job list is here</h5>
+      <h6>{JSON.stringify(appliedjoblist)}</h6>
+
+      {appliedjoblist.map((item) => (
+        <>
+          <h1>{item.name}</h1>
+          <p>{item.jobpost.des}</p>
+        </>
+      ))}
     </div>
   );
 };

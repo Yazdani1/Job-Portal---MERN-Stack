@@ -59,7 +59,7 @@ exports.appliedjobPost = (req, res) => {
 //to add applied job to applied job schema
 
 exports.myappliedjobspost = (req, res) => {
-  const { name, email, yearofexperience, workexperience, skills, projects } =
+  const { name, email, yearofexperience, workexperience, skills, projects,jobID } =
     req.body;
 
   const applyjobs = {
@@ -70,6 +70,7 @@ exports.myappliedjobspost = (req, res) => {
     skills,
     projects,
     postedBy: req.user._id,
+    jobpost:jobID
   };
 
   if (!name) {
@@ -105,6 +106,7 @@ exports.getappliedJoblist = (req, res) => {
   AppliedJob.find({ postedBy: req.user._id })
     .sort({ date: "DESC" })
     .populate("postedBy", "_id name email photo")
+    .populate("jobpost", "_id country requirements des")
     .then((myappliedjobs) => {
       res.json(myappliedjobs);
     })

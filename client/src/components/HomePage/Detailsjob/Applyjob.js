@@ -93,7 +93,7 @@ const Applyjob = ({ jobId }) => {
 
   //to save the job have applied in the user profile..
 
-  const myappliedjobslist = (e) => {
+  const myappliedjobslist = (e,jobID) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
@@ -105,6 +105,7 @@ const Applyjob = ({ jobId }) => {
       workexperience,
       skills,
       projects,
+      jobID
     })
       .then((result) => {
         if (result.error) {
@@ -254,7 +255,7 @@ const Applyjob = ({ jobId }) => {
                     history.push("/signin");
                   } else {
                     applyforjob(e, jobId);
-                    myappliedjobslist(e);
+                    myappliedjobslist(e,jobId);
                   }
                 }
               }
