@@ -99,9 +99,16 @@ exports.myappliedjobspost = (req, res) => {
     });
 };
 
-
 //get applied job lists
 
-exports.getappliedJoblist = (req,res)=>{
-  
-}
+exports.getappliedJoblist = (req, res) => {
+  AppliedJob.find({ postedBy: req.user._id })
+    .sort({ date: "DESC" })
+    .populate("postedBy", "_id name email photo")
+    .then((myappliedjobs) => {
+      res.json(myappliedjobs);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
