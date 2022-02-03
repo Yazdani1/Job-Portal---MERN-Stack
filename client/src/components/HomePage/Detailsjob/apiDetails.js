@@ -32,7 +32,7 @@ export const getdetailsJob = (id) => {
       });
   };
 
-  //my applied jobs list
+  //my applied jobs list. to add applied job in applied job schema
 
 
   export const myappliedjobs = (myjobsapply) => {

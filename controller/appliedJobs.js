@@ -56,7 +56,7 @@ exports.appliedjobPost = (req, res) => {
     });
 };
 
-//my applied jobs list
+//to add applied job to applied job schema
 
 exports.myappliedjobspost = (req, res) => {
   const { name, email, yearofexperience, workexperience, skills, projects } =

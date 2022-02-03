@@ -9,7 +9,7 @@ const { appliedjobPost,myappliedjobspost } = require("../controller/appliedJobs"
 
 router.post("/apply-job", requireLogin, appliedjobPost);
 
-//get my applied jobs in the profile
+//to add applied job to applied job schema
 
 router.post("/getmy-appliedjobs-list",requireLogin, myappliedjobspost);
 
