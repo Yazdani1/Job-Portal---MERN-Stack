@@ -14,7 +14,7 @@ const Appliedjoblist = () => {
 
     //for pagination
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(8);
+    const [postsPerPage] = useState(6);
   
     //Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
@@ -56,6 +56,8 @@ const Appliedjoblist = () => {
                   <th scope="col">Description</th>
                   <th scope="col">Published on</th>
                   <th scope="col">Job Types</th>
+                  <th scope="col">Applied on</th>
+
                   <th scope="col">Total applications</th>
 
                   <th scope="col">View Applications</th>
@@ -70,8 +72,10 @@ const Appliedjoblist = () => {
                     <td>{item.jobpost.name.substring(0, 30)}</td>
                     <td>{ReactHtmlParser(item.jobpost.des?.substring(0, 150))}</td>
 
+                    <td> {moment(item.jobpost.date).format("MMMM Do YYYY")}</td>
+                    <td>{item.jobpost.jobtypes}</td>
                     <td> {moment(item.date).format("MMMM Do YYYY")}</td>
-                    <td>{item.jobtypes}</td>
+
 
                     {/* to get all the joined members for each event post */}
 
