@@ -69,8 +69,8 @@ const Appliedjoblist = () => {
                   <tr key={item._id}>
                     <th scope="row">{index + 1}</th>
 
-                    <td>{item.jobpost.name?.substring(0, 30)}</td>
-                    <td>{ReactHtmlParser(item.jobpost.des?.substring(0, 100))}</td>
+                    <td>{item.jobpost?.name?.substring(0, 30)}</td>
+                    <td>{ReactHtmlParser(item.jobpost?.des?.substring(0, 100))}</td>
 
                     <td> {moment(item.jobpost?.date).format("MMMM Do YYYY")}</td>
                     <td>{item.jobpost?.jobtypes}</td>
