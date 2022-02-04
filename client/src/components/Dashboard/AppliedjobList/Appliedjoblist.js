@@ -58,10 +58,10 @@ const Appliedjoblist = () => {
                   <th scope="col">Job Types</th>
                   <th scope="col">Applied on</th>
 
-                  <th scope="col">Total applications</th>
+                  {/* <th scope="col">Total applications</th>
 
-                  <th scope="col">View Applications</th>
-                  <th colspan="4">Action</th>
+                  <th scope="col">View Applications</th> */}
+                  <th colspan="5">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -70,7 +70,7 @@ const Appliedjoblist = () => {
                     <th scope="row">{index + 1}</th>
 
                     <td>{item.jobpost.name.substring(0, 30)}</td>
-                    <td>{ReactHtmlParser(item.jobpost.des?.substring(0, 150))}</td>
+                    <td>{ReactHtmlParser(item.jobpost.des?.substring(0, 100))}</td>
 
                     <td> {moment(item.jobpost.date).format("MMMM Do YYYY")}</td>
                     <td>{item.jobpost.jobtypes}</td>
@@ -95,10 +95,11 @@ const Appliedjoblist = () => {
                     <td>
                       <Link to={"/job-description/" + item.jobpost._id}>
                         <button className="btn btn-primary">
-                          <EyeOutlined style={{ fontSize: "20px" }} /> View
+                          <EyeOutlined style={{ fontSize: "20px" }} /> View Job 
                         </button>
                       </Link>
                     </td>
+                    
 
                  
                 
