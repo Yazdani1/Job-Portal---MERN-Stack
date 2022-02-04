@@ -11,3 +11,22 @@
 .job-application-item-design{
     padding: 10px;
 }
+
+/* to add scroll option and hide scrollbar */
+
+.job-application-list {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+  }
+  
+  .job-application-list::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+  
+  /* other styling */
+  .job-application-list {
+    border-radius: 5px;
+    height: 650px;
+    padding: 10px;
+  }

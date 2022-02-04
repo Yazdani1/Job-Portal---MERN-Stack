@@ -80,11 +80,11 @@ const JobapplicationList = () => {
       </div>
       <div
         className="container job-application-list"
-        style={{ maxHeight: "650px", overflow: "scroll" }}
+        // style={{ maxHeight: "650px", overflow: "scroll" }}
       >
         <h6>All applications:</h6>
         {jobapplication &&
-          jobapplication.application?.map((applicationlist) => (
+          jobapplication.application?.map((applicationlist, index) => (
             <>
               <div className="card job-requirements">
                 <div className="job-items-collapse-option">
@@ -110,17 +110,14 @@ const JobapplicationList = () => {
 
                       <p>
                         Applied on:
-                        {moment(applicationlist.date).format("MMMM Do YYYY, h:mm:ss a")}
+                        {moment(applicationlist.date).format(
+                          "MMMM Do YYYY, h:mm:ss a"
+                        )}
                       </p>
                     </div>
                   </div>
 
-                  <p
-                    className="collapse-icon-design"
-                    onClick={() => setShow(!show)}
-                  >
-                    <FcNext size={20} />
-                  </p>
+                  <p className="collapse-icon-design">{index + 1}</p>
                 </div>
                 <p>Name: {applicationlist.name}</p>
                 <p>E-mail: {applicationlist.email}</p>

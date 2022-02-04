@@ -15,10 +15,8 @@ const Profile = () => {
             <h5>Your profile Information:</h5>
           </div>
           <div className="col-lg-8 col-md-8 col-sm-8 col-xl-8">
-          
-          <h6>Name</h6>
+            <h6>Name</h6>
             <div className="profile-items">
-           
               <p>{state && state.user && state.user.name}</p>
               <p className="item-icons">
                 <FaUserEdit size={20} />
@@ -31,10 +29,11 @@ const Profile = () => {
                 <FaUserEdit size={20} />
               </p>
             </div>
-
           </div>
         </div>
       </div>
+
+
     </React.Fragment>
   );
 };
