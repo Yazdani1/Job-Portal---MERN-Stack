@@ -78,11 +78,13 @@ const JobapplicationList = () => {
           }
         />
       </div>
+      <div className="container">
+        <h6>Total applications:- {jobapplication.application?.length}</h6>
+      </div>
       <div
         className="container job-application-list"
         // style={{ maxHeight: "650px", overflow: "scroll" }}
       >
-        <h6>All applications:</h6>
         {jobapplication &&
           jobapplication.application?.map((applicationlist, index) => (
             <>
