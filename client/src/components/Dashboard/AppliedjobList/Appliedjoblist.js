@@ -19,8 +19,8 @@ const Appliedjoblist = () => {
     //Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = appliedjoblist.slice(indexOfFirstPost, indexOfLastPost);
-    const howManyPages = Math.ceil(appliedjoblist.length / postsPerPage);
+    const currentPosts = appliedjoblist?.slice(indexOfFirstPost, indexOfLastPost);
+    const howManyPages = Math.ceil(appliedjoblist?.length / postsPerPage);
   
 
   const loadappliedjoblist = () => {
@@ -72,8 +72,8 @@ const Appliedjoblist = () => {
                     <td>{item.jobpost.name?.substring(0, 30)}</td>
                     <td>{ReactHtmlParser(item.jobpost.des?.substring(0, 100))}</td>
 
-                    <td> {moment(item.jobpost.date).format("MMMM Do YYYY")}</td>
-                    <td>{item.jobpost.jobtypes}</td>
+                    <td> {moment(item.jobpost?.date).format("MMMM Do YYYY")}</td>
+                    <td>{item.jobpost?.jobtypes}</td>
                     <td> {moment(item.date).format("MMMM Do YYYY")}</td>
 
 
@@ -93,7 +93,7 @@ const Appliedjoblist = () => {
                     ))}</td> */}
 
                     <td>
-                      <Link to={"/job-description/" + item.jobpost._id}>
+                      <Link to={"/job-description/" + item.jobpost?._id}>
                         <button className="btn btn-primary">
                           <EyeOutlined style={{ fontSize: "20px" }} /> View Job 
                         </button>
