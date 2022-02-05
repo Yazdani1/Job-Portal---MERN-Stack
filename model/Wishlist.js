@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
 
-const appliedjobslist = mongoose.Schema({
-
+const addposttowishlist = mongoose.Schema({
   date: {
     type: Date,
     default: Date.now,
@@ -18,4 +17,4 @@ const appliedjobslist = mongoose.Schema({
     ref: "User",
   },
 });
-module.exports = mongoose.model("Wishlist", appliedjobslist);
+module.exports = mongoose.model("Wishlist", addposttowishlist);
