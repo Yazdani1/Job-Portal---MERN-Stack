@@ -4,7 +4,7 @@ import moment from "moment";
 import { Link, useHistory, useParams } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
 import { MdLocationPin } from "react-icons/md";
-import { FcApproval, FcNightPortrait } from "react-icons/fc";
+import { FcApproval, FcNightPortrait,FcBookmark } from "react-icons/fc";
 
 const Jobpostwebview = ({
   name,
@@ -73,8 +73,8 @@ const Jobpostwebview = ({
             </div>
             <div className="col-lg-3">
               <p className="job-items">
-                <MdLocationPin size={20} style={{ color: "red" }} />
-                {city}
+                <FcBookmark size={20} style={{ color: "red" }} /> Save
+                
               </p>
             </div>
             <div className="col-lg-3">
