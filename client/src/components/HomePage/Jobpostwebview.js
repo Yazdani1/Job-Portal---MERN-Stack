@@ -4,7 +4,7 @@ import moment from "moment";
 import { Link, useHistory, useParams } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
 import { MdLocationPin } from "react-icons/md";
-import { FcApproval, FcNightPortrait,FcBookmark } from "react-icons/fc";
+import { FcApproval, FcNightPortrait, FcBookmark } from "react-icons/fc";
 
 const Jobpostwebview = ({
   name,
@@ -30,25 +30,25 @@ const Jobpostwebview = ({
             to={"/organizers-public-profile/" + userid}
             style={{ textDecoration: "none" }}
           > */}
-            <div className="profile-name-date">
-              {photo ? (
-                <div className="profile-name-avatar-image">
-                  <img src={photo} />
-                </div>
-              ) : (
-                <div className="profile-name-avatar">
-                  <p>{username?.substring(0, 2).toUpperCase()}</p>
-                </div>
-              )}
-
-              <div className="profile-name-post-date">
-                <p className="profile-name-size">{username}</p>
-                <p>{moment(date).format("MMM Do YY")}</p>
+          <div className="profile-name-date">
+            {photo ? (
+              <div className="profile-name-avatar-image">
+                <img src={photo} />
               </div>
-              {totalapplications >= 5 ? (
-                    <p className="trending">Trending</p>
-                  ) : null}
+            ) : (
+              <div className="profile-name-avatar">
+                <p>{username?.substring(0, 2).toUpperCase()}</p>
+              </div>
+            )}
+
+            <div className="profile-name-post-date">
+              <p className="profile-name-size">{username}</p>
+              <p>{moment(date).format("MMM Do YY")}</p>
             </div>
+            {totalapplications >= 5 ? (
+              <p className="trending">Trending</p>
+            ) : null}
+          </div>
           {/* </Link> */}
 
           <Link
@@ -73,19 +73,16 @@ const Jobpostwebview = ({
             </div>
             <div className="col-lg-3">
               <p className="job-items">
-                <FcBookmark size={20} style={{ color: "red" }} /> Save
-                
-              </p>
-            </div>
-            <div className="col-lg-3">
-              <p className="job-items">
                 <FcNightPortrait size={20} style={{ color: "red" }} />
                 {totalapplications} applicants
               </p>
             </div>
+            <div className="col-lg-3">
+              <p className="job-items">
+                <FcBookmark size={20} style={{ color: "red" }} /> Save
+              </p>
+            </div>
           </div>
-
-          
         </div>
       </div>
     </React.Fragment>

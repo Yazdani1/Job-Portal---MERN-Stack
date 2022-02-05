@@ -4,7 +4,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import moment from "moment";
 import ReactHtmlParser from "react-html-parser";
 import { FcOk, FcCollapse, FcExpand, FcNightPortrait } from "react-icons/fc";
-import { FcApproval } from "react-icons/fc";
+import { FcApproval,FcBookmark } from "react-icons/fc";
 import { SyncOutlined } from "@ant-design/icons";
 import { Spin, Space } from "antd";
 import { MdLocationPin } from "react-icons/md";
@@ -86,8 +86,8 @@ const Detailsjobwebview = ({
             </div>
             <div className="col-lg-3">
               <p className="job-items">
-                <MdLocationPin size={20} style={{ color: "blue" }} />
-                {city}
+              <FcBookmark size={20} style={{ color: "red" }} /> Save
+
               </p>
             </div>
           </div>
