@@ -7,26 +7,28 @@ import { FcComboChart, FcFilledFilter } from "react-icons/fc";
 import { EyeOutlined } from "@ant-design/icons";
 import { Link, useHistory, useParams } from "react-router-dom";
 import moment from "moment";
-
+import { SyncOutlined } from "@ant-design/icons";
 
 const Appliedjoblist = () => {
   const [appliedjoblist, setAppliedjoblist] = useState([]);
+  //loading
+  const [loading, setLoading] = useState(true);
 
-    //for pagination
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(6);
-  
-    //Get current posts
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = appliedjoblist?.slice(indexOfFirstPost, indexOfLastPost);
-    const howManyPages = Math.ceil(appliedjoblist?.length / postsPerPage);
-  
+  //for pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(6);
+
+  //Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = appliedjoblist?.slice(indexOfFirstPost, indexOfLastPost);
+  const howManyPages = Math.ceil(appliedjoblist?.length / postsPerPage);
 
   const loadappliedjoblist = () => {
     getmyappliedjobList()
       .then((result) => {
         setAppliedjoblist(result);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -36,7 +38,15 @@ const Appliedjoblist = () => {
   useEffect(() => {
     loadappliedjoblist();
   }, []);
-
+  if (loading) {
+    return (
+      <div class="text-center my-25">
+        <h1>
+          <SyncOutlined spin />
+        </h1>
+      </div>
+    );
+  }
   return (
     <div>
       <h5>Applied job list:</h5>
@@ -70,12 +80,16 @@ const Appliedjoblist = () => {
                     <th scope="row">{index + 1}</th>
 
                     <td>{item.jobpost?.name?.substring(0, 30)}</td>
-                    <td>{ReactHtmlParser(item.jobpost?.des?.substring(0, 100))}</td>
+                    <td>
+                      {ReactHtmlParser(item.jobpost?.des?.substring(0, 100))}
+                    </td>
 
-                    <td> {moment(item.jobpost?.date).format("MMMM Do YYYY")}</td>
+                    <td>
+                      {" "}
+                      {moment(item.jobpost?.date).format("MMMM Do YYYY")}
+                    </td>
                     <td>{item.jobpost?.jobtypes}</td>
                     <td> {moment(item.date).format("MMMM Do YYYY")}</td>
-
 
                     {/* to get all the joined members for each event post */}
 
@@ -85,8 +99,6 @@ const Appliedjoblist = () => {
                       </>
                     ))} */}
 
-                
-
                     {/* to loops the post comment in the admin dashboard */}
                     {/* <td>{item.comments.map(c=>(
                       <h1>{c.text}</h1>
@@ -95,14 +107,10 @@ const Appliedjoblist = () => {
                     <td>
                       <Link to={"/job-description/" + item.jobpost?._id}>
                         <button className="btn btn-primary">
-                          <EyeOutlined style={{ fontSize: "20px" }} /> View Job 
+                          <EyeOutlined style={{ fontSize: "20px" }} /> View Job
                         </button>
                       </Link>
                     </td>
-                    
-
-                 
-                
                   </tr>
                 ))}
               </tbody>
@@ -115,14 +123,12 @@ const Appliedjoblist = () => {
           </h5>
         )}
 
-
         <div className="card pagination-dashboard">
           {appliedjoblist.length > 1 ? (
             <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
           ) : null}
         </div>
       </div>
-
     </div>
   );
 };
