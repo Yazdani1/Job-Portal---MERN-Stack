@@ -1,0 +1,9 @@
+.post-title{
+    padding: 10px;
+    margin: 10px;
+    
+}
+.collapse-option{
+    display: flex;
+    justify-content: space-between;
+}

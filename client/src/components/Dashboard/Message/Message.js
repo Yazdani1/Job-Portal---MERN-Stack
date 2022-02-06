@@ -2,6 +2,7 @@ import "./message.css";
 import React, { useContext, useEffect, useState } from "react";
 import ReactTooltip from "react-tooltip";
 import { GiSkills } from "react-icons/gi";
+import { FcOk, FcCollapse, FcExpand, FcNightPortrait } from "react-icons/fc";
 import {
   getmyPublishedjobs,
   deletemyJobs,
@@ -20,9 +21,11 @@ import { FcComboChart, FcFilledFilter } from "react-icons/fc";
 import { EyeOutlined } from "@ant-design/icons";
 import ReactHtmlParser from "react-html-parser";
 import { HiHand } from "react-icons/hi";
+import Data from "./Data";
 
 const Message = () => {
   const [posts, setPosts] = useState([]);
+  const [show, setShow] = useState(false);
 
   const loadjobPost = () => {
     getmyPublishedjobs()
@@ -38,7 +41,19 @@ const Message = () => {
     loadjobPost();
   }, []);
 
-  return <></>;
+  return (
+    <>
+      <h1>All Job Posts List:</h1>
+      {posts.map((item, index) => (
+        <Data
+        
+          name={item.name}
+          des={item.des}
+          jobtypes={item.jobtypes}
+        />
+      ))}
+    </>
+  );
 };
 
 export default Message;
