@@ -45,8 +45,21 @@ const Message = () => {
     <>
       <h1>All Job Posts List:</h1>
       {posts.map((item, index) => (
+        // <div className="card post-title" key={item._id}>
+        //   <div className="collapse-option">
+        //     <h6>{item.name}</h6>
+
+        //     <p onClick={() => setShow(!show)}>
+        //       {show ? <FcCollapse size={20} /> : <FcExpand size={20} />}
+        //     </p>
+        //   </div>
+        //   <div>{show && <p>{item.des}</p>}</div>
+        //   <div>{show && <h6>{item.jobtypes}</h6>}</div>
+
+        // </div>
+
         <Data
-        
+          key={item._id}
           name={item.name}
           des={item.des}
           jobtypes={item.jobtypes}
