@@ -153,7 +153,7 @@ const Navwebview = (props) => {
             </div>
           </NavLink> */}
 
-          {/* <NavLink
+          <NavLink
             to="/message"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -164,10 +164,10 @@ const Navwebview = (props) => {
                   <AiFillMessage size={20} />
                 </p>
 
-               <p>Messages</p> 
+            
               </div>
             </div>
-          </NavLink> */}
+          </NavLink>
 
           {/* <NavLink
             target={"_blank"}

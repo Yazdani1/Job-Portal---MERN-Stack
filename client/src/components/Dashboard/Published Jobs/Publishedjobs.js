@@ -240,6 +240,7 @@ const Publishedjobs = () => {
         </div>
       </div>
       <ToastContainer autoClose={8000} />
+   
     </React.Fragment>
   );
 };
