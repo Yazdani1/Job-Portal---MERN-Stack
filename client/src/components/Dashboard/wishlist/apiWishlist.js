@@ -7,7 +7,7 @@ export const savejobtoWishlist = (postID) => {
       Accept: "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
-    body: JSON.stringify(postID),
+    body: JSON.stringify({postID}),
   })
     .then((res) => {
       return res.json();
@@ -27,7 +27,7 @@ export const removejobfromWishlist = (postID) => {
       Accept: "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
-    body: JSON.stringify(postID),
+    body: JSON.stringify({postID}),
   })
     .then((res) => {
       return res.json();
@@ -37,7 +37,7 @@ export const removejobfromWishlist = (postID) => {
     });
 };
 
-//to get wishlist..
+//to get job wishlist..
 
 export const getjobWishlist = () => {
   return fetch("/api/get-job-wishlist", {
