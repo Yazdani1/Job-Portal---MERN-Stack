@@ -42,3 +42,52 @@ exports.searchUserlist = (req, res) => {
       console.log(err);
     });
 };
+
+//save job to wishlist
+
+exports.savejobtoWishlist = (req, res) => {
+  const { postID } = req.body;
+
+  User.findByIdAndUpdate(req.user._id, {
+    $addToSet: { wishlist: postID },
+  }).exec((err, result) => {
+    if (err) {
+      return res.status(400).json({ error: err });
+    } else {
+      res.json(result);
+    }
+  });
+};
+
+//remove job from wishlist
+
+exports.removejobfromWishlist = (req, res) => {
+  const { postID } = req.body;
+
+  User.findByIdAndUpdate(req.user._id, {
+    $pull: { wishlist: postID },
+  }).exec((err, result) => {
+    if (err) {
+      return res.status(400).json({ error: err });
+    } else {
+      res.json(result);
+    }
+  });
+};
+
+//get wishlist
+
+exports.getjobWishlist = (req, res) => {
+  User.findOne({ _id: req.user._id })
+    .select("wishlist")
+    .populate(
+      "wishlist",
+      "_id country requirements name des city house jobtypes date"
+    )
+    .then((wishlistjobpost) => {
+      res.json(wishlistjobpost);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
