@@ -6,6 +6,7 @@ import Jobpostwebview from "./Jobpostwebview";
 import Pagination from "../Dashboard/Published Jobs/Pagination";
 import { ToastContainer, toast } from "react-toastify";
 import { GiArchiveResearch } from "react-icons/gi";
+import { savejobtoWishlist } from "../Dashboard/wishlist/apiWishlist";
 
 const Alljobposts = () => {
   //context api
@@ -55,6 +56,22 @@ const Alljobposts = () => {
         console.log(err);
       });
     setSearchjob("");
+  };
+
+  //save job
+
+  const savejobPosttowishlist = (postID) => {
+    savejobtoWishlist(postID)
+      .then((result) => {
+        if (result) {
+          toast.success("This job has saved in your profile", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
@@ -122,6 +139,7 @@ const Alljobposts = () => {
                   country={job.country}
                   city={job.city}
                   totalapplications={job.application.length}
+                  savejobPosttowishlist={savejobPosttowishlist}
                 />
               </>
             ))

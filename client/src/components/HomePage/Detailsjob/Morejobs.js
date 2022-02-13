@@ -12,6 +12,7 @@ import { MdLocationPin } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import { UserContext } from "../../UserContext";
 import Jobpostwebview from "../Jobpostwebview";
+import { savejobtoWishlist } from "../../Dashboard/wishlist/apiWishlist";
 
 const Morejobs = () => {
   const { id } = useParams();
@@ -31,6 +32,22 @@ const Morejobs = () => {
         console.log(err);
       });
   };
+
+    //save job
+
+    const savejobPosttowishlist = (postID) => {
+      savejobtoWishlist(postID)
+        .then((result) => {
+          if (result) {
+            toast.success("This job has saved in your profile", {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
 
   useEffect(() => {
     loadmorejobs();
@@ -62,6 +79,7 @@ const Morejobs = () => {
             country={job.country}
             city={job.city}
             totalapplications={job.application.length}
+            savejobPosttowishlist={savejobPosttowishlist}
           />
         </>
       ))}

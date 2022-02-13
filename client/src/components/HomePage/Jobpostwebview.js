@@ -21,6 +21,7 @@ const Jobpostwebview = ({
   userid,
   postid,
   totalapplications,
+  savejobPosttowishlist,
 }) => {
   return (
     <React.Fragment>
@@ -78,7 +79,7 @@ const Jobpostwebview = ({
               </p>
             </div>
             <div className="col-lg-3">
-              <p className="job-items">
+              <p className="job-items" onClick={()=>savejobPosttowishlist(postid)}>
                 <FcBookmark size={20} style={{ color: "red" }} /> Save
               </p>
             </div>
