@@ -25,13 +25,11 @@ const Wishlist = () => {
     <React.Fragment>
       <div className="container">
         {showwishlist.wishlist?.map((list) => (
-          <>
-            <div className="wishlist card">
-              <h6>{list.name}</h6>
-              <p>{list.des}</p>
-              <h6>{list.jobtypes}</h6>
-            </div>
-          </>
+          <div className="wishlist card" key={list._id}>
+            <h6>{list.name}</h6>
+            <p>{list.des}</p>
+            <h6>{list.jobtypes}</h6>
+          </div>
         ))}
       </div>
     </React.Fragment>
