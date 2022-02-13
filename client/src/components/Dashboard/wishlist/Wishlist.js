@@ -1,11 +1,39 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./wishlist.css";
 import { getjobWishlist } from "./apiWishlist";
 
 const Wishlist = () => {
+  const [showwishlist, setShowwishlist] = useState([]);
+
+  const loadwishlist = () => {
+    getjobWishlist()
+      .then((result) => {
+        if (result) {
+          setShowwishlist(result);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    loadwishlist();
+  }, [showwishlist]);
+
   return (
     <React.Fragment>
-      <h6>Hello </h6>
+      <div className="container">
+        {showwishlist.wishlist?.map((list) => (
+          <>
+            <div className="wishlist card">
+              <h6>{list.name}</h6>
+              <p>{list.des}</p>
+              <h6>{list.jobtypes}</h6>
+            </div>
+          </>
+        ))}
+      </div>
     </React.Fragment>
   );
 };
