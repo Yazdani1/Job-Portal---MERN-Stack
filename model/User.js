@@ -19,14 +19,7 @@ const userSchema = mongoose.Schema(
     wishlist: [
       {
         type: ObjectId,
-        ref: "EventPost",
-      },
-    ],
-
-    joinedevents: [
-      {
-        type: ObjectId,
-        ref: "EventPost",
+        ref: "Jobposts",
       },
     ],
 
