@@ -24,19 +24,17 @@ const Wishlist = () => {
   return (
     <React.Fragment>
       <div className="container">
-        {showwishlist.wishlist?.map((list) => (
-
-          <div className="row">
+        <div className="row">
+          {showwishlist.wishlist?.map((list) => (
             <div className="col-xl-3">
-
+              <div className="wishlist card" key={list._id}>
+                <h6>{list.name}</h6>
+                <p>{list.des}</p>
+                <h6>{list.jobtypes}</h6>
+              </div>
             </div>
-          </div>
-          // <div className="wishlist card" key={list._id}>
-          //   <h6>{list.name}</h6>
-          //   <p>{list.des}</p>
-          //   <h6>{list.jobtypes}</h6>
-          // </div>
-        ))}
+          ))}
+        </div>
       </div>
     </React.Fragment>
   );
