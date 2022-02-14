@@ -2,3 +2,12 @@
     padding: 10px;
     margin-top: 20px;
 }
+
+.wishlist:hover{
+    box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+    -webkit-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  
+    cursor: pointer;
+    transition-duration: 1s;
+}
