@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./wishlist.css";
 import { getjobWishlist } from "./apiWishlist";
 import ReactHtmlParser from "react-html-parser";
+import { FcApproval, FcNightPortrait, FcBookmark } from "react-icons/fc";
 
 const Wishlist = () => {
   const [showwishlist, setShowwishlist] = useState([]);
@@ -33,7 +34,10 @@ const Wishlist = () => {
                 <p>{ReactHtmlParser(list.des.substring(0, 150))}</p>
                 <div></div>
                 <div className="wishlis-jobtypes-deletbutton">
-                  <h6>{list.jobtypes}</h6>
+                  <h6>
+                    <FcApproval size={20} style={{ color: "red" }} />
+                    {list.jobtypes}
+                  </h6>
                   <h6>{list.jobtypes}</h6>
                 </div>
               </div>
