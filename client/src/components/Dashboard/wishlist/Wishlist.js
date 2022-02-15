@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./wishlist.css";
-import { getjobWishlist,removejobfromWishlist } from "./apiWishlist";
+import { getjobWishlist, removejobfromWishlist } from "./apiWishlist";
 import ReactHtmlParser from "react-html-parser";
 import { FcApproval } from "react-icons/fc";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { ToastContainer, toast } from "react-toastify";
 
 const Wishlist = () => {
   const [showwishlist, setShowwishlist] = useState([]);
@@ -24,21 +25,19 @@ const Wishlist = () => {
 
   //to delete wishlist job post
 
-  const removeWishlist = ()=>{
-
-    removejobfromWishlist().then(result=>{
-
-      if(result){
-        
-      }
-
-    }).catch(err=>{
-      console.log(err);
-    });
-
-
-  }
-
+  const removeWishlist = (postID) => {
+    removejobfromWishlist(postID)
+      .then((result) => {
+        if (result) {
+          toast.success("Wishlist post deleted successfully! ", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     loadwishlist();
@@ -59,7 +58,7 @@ const Wishlist = () => {
                     <FcApproval size={20} style={{ color: "red" }} />
                     {list.jobtypes}
                   </h6>
-                  <h6>
+                  <h6 onClick={() => removeWishlist(list._id)}>
                     <RiDeleteBin6Fill size={20} style={{ color: "red" }} />
                   </h6>
                 </div>
@@ -68,6 +67,7 @@ const Wishlist = () => {
           ))}
         </div>
       </div>
+      <ToastContainer autoClose={8000} />
     </React.Fragment>
   );
 };
