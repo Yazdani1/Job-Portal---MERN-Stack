@@ -53,7 +53,10 @@ const Wishlist = () => {
               <div className="wishlist card" key={list._id}>
                 <h6>{list.name}</h6>
 
-                <Link to={"/job-description/" + list._id}>
+                <Link
+                  to={"/job-description/" + list._id}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <p>{ReactHtmlParser(list.des.substring(0, 150))}</p>
                 </Link>
                 <div className="wishlis-jobtypes-deletbutton">
