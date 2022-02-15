@@ -5,6 +5,7 @@ import ReactHtmlParser from "react-html-parser";
 import { FcApproval } from "react-icons/fc";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { ToastContainer, toast } from "react-toastify";
+import { Link, useHistory, useParams } from "react-router-dom";
 
 const Wishlist = () => {
   const [showwishlist, setShowwishlist] = useState([]);
@@ -51,8 +52,10 @@ const Wishlist = () => {
             <div className="col-xl-3 col-lg-3 col-md-4">
               <div className="wishlist card" key={list._id}>
                 <h6>{list.name}</h6>
-                <p>{ReactHtmlParser(list.des.substring(0, 150))}</p>
-                <div></div>
+
+                <Link to={"/job-description/" + list._id}>
+                  <p>{ReactHtmlParser(list.des.substring(0, 150))}</p>
+                </Link>
                 <div className="wishlis-jobtypes-deletbutton">
                   <h6>
                     <FcApproval size={20} style={{ color: "red" }} />
