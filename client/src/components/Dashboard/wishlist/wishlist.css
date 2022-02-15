@@ -11,3 +11,7 @@
     cursor: pointer;
     transition-duration: 1s;
 }
+
+.wishlis-jobtypes-deletbutton{
+    display: flex;
+}

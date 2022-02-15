@@ -31,10 +31,11 @@ const Wishlist = () => {
               <div className="wishlist card" key={list._id}>
                 <h6>{list.name}</h6>
                 <p>{ReactHtmlParser(list.des.substring(0, 150))}</p>
-                <div>
-                  
+                <div></div>
+                <div className="wishlis-jobtypes-deletbutton">
+                  <h6>{list.jobtypes}</h6>
+                  <h6>{list.jobtypes}</h6>
                 </div>
-                <h6>{list.jobtypes}</h6>
               </div>
             </div>
           ))}
