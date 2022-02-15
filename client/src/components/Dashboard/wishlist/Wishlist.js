@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./wishlist.css";
 import { getjobWishlist } from "./apiWishlist";
 import ReactHtmlParser from "react-html-parser";
-import { FcApproval, FcNightPortrait, FcBookmark } from "react-icons/fc";
+import { FcApproval } from "react-icons/fc";
+import { RiDeleteBin6Fill } from "react-icons/ri";
 
 const Wishlist = () => {
   const [showwishlist, setShowwishlist] = useState([]);
+
+  //to load wishlist post
 
   const loadwishlist = () => {
     getjobWishlist()
@@ -18,6 +21,15 @@ const Wishlist = () => {
         console.log(err);
       });
   };
+
+  //to delete wishlist job post
+
+  const removeWishlist = ()=>{
+
+    
+
+  }
+
 
   useEffect(() => {
     loadwishlist();
@@ -38,7 +50,9 @@ const Wishlist = () => {
                     <FcApproval size={20} style={{ color: "red" }} />
                     {list.jobtypes}
                   </h6>
-                  <h6>{list.jobtypes}</h6>
+                  <h6>
+                    <RiDeleteBin6Fill size={20} style={{ color: "red" }} />
+                  </h6>
                 </div>
               </div>
             </div>
