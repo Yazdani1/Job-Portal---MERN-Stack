@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./wishlist.css";
-import { getjobWishlist } from "./apiWishlist";
+import { getjobWishlist,removejobfromWishlist } from "./apiWishlist";
 import ReactHtmlParser from "react-html-parser";
 import { FcApproval } from "react-icons/fc";
 import { RiDeleteBin6Fill } from "react-icons/ri";
@@ -26,7 +26,16 @@ const Wishlist = () => {
 
   const removeWishlist = ()=>{
 
-    
+    removejobfromWishlist().then(result=>{
+
+      if(result){
+        
+      }
+
+    }).catch(err=>{
+      console.log(err);
+    });
+
 
   }
 
