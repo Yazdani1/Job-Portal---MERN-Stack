@@ -9,6 +9,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import moment from "moment";
 import { SyncOutlined } from "@ant-design/icons";
 import { MdDelete } from "react-icons/md";
+import { ToastContainer, toast } from "react-toastify";
 
 const Appliedjoblist = () => {
   const [appliedjoblist, setAppliedjoblist] = useState([]);
@@ -43,7 +44,7 @@ const Appliedjoblist = () => {
       .then((result) => {
         if (result) {
           loadappliedjoblist();
-          toast.success("Job post deleted successfully! ", {
+          toast.success("Applied job deleted successfully! ", {
             position: toast.POSITION.TOP_RIGHT,
           });
         }
@@ -155,6 +156,7 @@ const Appliedjoblist = () => {
           ) : null}
         </div>
       </div>
+      <ToastContainer autoClose={8000} />
     </div>
   );
 };
