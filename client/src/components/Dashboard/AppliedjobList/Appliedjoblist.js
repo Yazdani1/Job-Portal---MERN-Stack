@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./appliedjoblist.css";
-import { getmyappliedjobList } from "./apiAppliedjoblist";
+import { getmyappliedjobList, deleteappliedjobList } from "./apiAppliedjoblist";
 import ReactHtmlParser from "react-html-parser";
 import Pagination from "../../Dashboard/Published Jobs/Pagination";
 import { FcComboChart, FcFilledFilter } from "react-icons/fc";
@@ -30,6 +30,19 @@ const Appliedjoblist = () => {
       .then((result) => {
         setAppliedjoblist(result);
         setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  //remove applied job
+
+  const deleteappliedJob = (id) => {
+    deleteappliedjobList(id)
+      .then((result) => {
+        if (result) {
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -113,10 +126,7 @@ const Appliedjoblist = () => {
                       </Link>
                     </td>
                     <td>
-                      <button
-                        className="btn btn-danger"
-                       
-                      >
+                      <button className="btn btn-danger">
                         <MdDelete size={20} /> Delete
                       </button>
                     </td>
