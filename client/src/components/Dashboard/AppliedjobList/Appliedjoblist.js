@@ -8,6 +8,7 @@ import { EyeOutlined } from "@ant-design/icons";
 import { Link, useHistory, useParams } from "react-router-dom";
 import moment from "moment";
 import { SyncOutlined } from "@ant-design/icons";
+import { MdDelete } from "react-icons/md";
 
 const Appliedjoblist = () => {
   const [appliedjoblist, setAppliedjoblist] = useState([]);
@@ -110,6 +111,14 @@ const Appliedjoblist = () => {
                           <EyeOutlined style={{ fontSize: "20px" }} /> View Job
                         </button>
                       </Link>
+                    </td>
+                    <td>
+                      <button
+                        className="btn btn-danger"
+                       
+                      >
+                        <MdDelete size={20} /> Delete
+                      </button>
                     </td>
                   </tr>
                 ))}
