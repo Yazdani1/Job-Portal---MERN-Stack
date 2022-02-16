@@ -113,7 +113,10 @@ exports.getappliedJoblist = (req, res) => {
   AppliedJob.find({ postedBy: req.user._id })
     .sort({ date: "DESC" })
     .populate("postedBy", "_id name email photo")
-    .populate("jobpost", "_id country requirements name des city house jobtypes date")
+    .populate(
+      "jobpost",
+      "_id country requirements name des city house jobtypes date"
+    )
     .then((myappliedjobs) => {
       res.json(myappliedjobs);
     })
@@ -122,14 +125,16 @@ exports.getappliedJoblist = (req, res) => {
     });
 };
 
-
 //remove applied jobs list
 
-exports.removeAppliedjoblist = (req,res)=>{
+exports.removeAppliedjoblist = (req, res) => {
+  var deletequery = { _id: req.params.id };
 
-  
-
-}
-
-
-
+  AppliedJob.findByIdAndDelete(deletequery)
+    .then((deleteAppliedjob) => {
+      res.json(deleteAppliedjob);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
