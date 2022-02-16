@@ -42,6 +42,10 @@ const Appliedjoblist = () => {
     deleteappliedjobList(id)
       .then((result) => {
         if (result) {
+          loadappliedjoblist();
+          toast.success("Job post deleted successfully! ", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
         }
       })
       .catch((err) => {
@@ -126,7 +130,10 @@ const Appliedjoblist = () => {
                       </Link>
                     </td>
                     <td>
-                      <button className="btn btn-danger">
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => deleteappliedJob(item._id)}
+                      >
                         <MdDelete size={20} /> Delete
                       </button>
                     </td>
