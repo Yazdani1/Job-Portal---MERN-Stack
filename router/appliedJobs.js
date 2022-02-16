@@ -6,6 +6,7 @@ const {
   appliedjobPost,
   myappliedjobspost,
   getappliedJoblist,
+  removeAppliedjoblist
 } = require("../controller/appliedJobs");
 
 //applied jobs
@@ -19,5 +20,9 @@ router.post("/getmy-appliedjobs-list", requireLogin, myappliedjobspost);
 //to get applied job list
 
 router.get("/applied-jobs", requireLogin, getappliedJoblist);
+
+//to delete applied jobs
+
+router.delete("/remove-appliedjobslist/:id", requireLogin, removeAppliedjoblist);
 
 module.exports = router;

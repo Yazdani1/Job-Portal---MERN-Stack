@@ -121,3 +121,15 @@ exports.getappliedJoblist = (req, res) => {
       console.log(err);
     });
 };
+
+
+//remove applied jobs list
+
+exports.removeAppliedjoblist = (req,res)=>{
+
+  
+
+}
+
+
+
