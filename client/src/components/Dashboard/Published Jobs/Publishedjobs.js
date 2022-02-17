@@ -20,6 +20,11 @@ import { FcComboChart, FcFilledFilter } from "react-icons/fc";
 import { EyeOutlined } from "@ant-design/icons";
 import ReactHtmlParser from "react-html-parser";
 import { HiHand } from "react-icons/hi";
+import { FaEdit } from "react-icons/fa";
+
+
+
+
 
 const Publishedjobs = () => {
   //context api
@@ -116,7 +121,12 @@ const Publishedjobs = () => {
               <div className="dashboard-items_design">
                 <FaUserGraduate size={35} />
                 <p>Member Type</p>
-                <p> {mypublishedjobs.length >= 5 ? "Pro Account" : "Starter Account"}</p>
+                <p>
+                  {" "}
+                  {mypublishedjobs.length >= 5
+                    ? "Pro Account"
+                    : "Starter Account"}
+                </p>
               </div>
             </div>
           </div>
@@ -129,7 +139,7 @@ const Publishedjobs = () => {
                 <div className="profile-message">
                   {/* <h5>{user && user.message?.length}</h5> */}
                   {/* <Link to="/message"> */}
-                    <button className="btn btn-primary">View Messagees</button>
+                  <button className="btn btn-primary">View Messagees</button>
                   {/* </Link> */}
                 </div>
               </div>
@@ -211,6 +221,17 @@ const Publishedjobs = () => {
                     </td> */}
                     <td>
                       <button
+                        className="btn btn-success"
+                        onClick={() => {
+                          deleteMyjobposts(item._id);
+                        }}
+                      >
+                        <FaEdit size={20} /> Edit
+                      </button>
+                    </td>
+
+                    <td>
+                      <button
                         className="btn btn-danger"
                         onClick={() => {
                           deleteMyjobposts(item._id);
@@ -240,7 +261,6 @@ const Publishedjobs = () => {
         </div>
       </div>
       <ToastContainer autoClose={8000} />
-   
     </React.Fragment>
   );
 };
