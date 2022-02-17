@@ -22,10 +22,6 @@ import ReactHtmlParser from "react-html-parser";
 import { HiHand } from "react-icons/hi";
 import { FaEdit } from "react-icons/fa";
 
-
-
-
-
 const Publishedjobs = () => {
   //context api
   const [state, setState] = useContext(UserContext);
@@ -219,16 +215,13 @@ const Publishedjobs = () => {
                         </button>
                       </Link>
                     </td> */}
-                    <td>
-                      <button
-                        className="btn btn-success"
-                        onClick={() => {
-                          deleteMyjobposts(item._id);
-                        }}
-                      >
-                        <FaEdit size={20} /> Edit
-                      </button>
-                    </td>
+                    <Link to={"/edit-job-post"}>
+                      <td>
+                        <button className="btn btn-success">
+                          <FaEdit size={20} /> Edit
+                        </button>
+                      </td>
+                    </Link>
 
                     <td>
                       <button

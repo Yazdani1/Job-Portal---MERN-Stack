@@ -18,6 +18,7 @@ import JobapplicationList from "./components/Dashboard/Published Jobs/Jobapplica
 import AlluserList from "./components/HomePage/AlluserList";
 import Appliedjoblist from "./components/Dashboard/AppliedjobList/Appliedjoblist";
 import Wishlist from "./components/Dashboard/wishlist/Wishlist";
+import EditjobPost from "./components/Dashboard/Create Jobs/EditjobPost";
 
 const App = () => {
   return (
@@ -61,6 +62,10 @@ const App = () => {
 
           <Route exact path="/create-job-post">
             <DashboardprotectedRoute DashboardProtect={CreateJobs} />
+          </Route>
+
+          <Route exact path="/edit-job-post">
+            <DashboardprotectedRoute DashboardProtect={EditjobPost} />
           </Route>
 
           <Route exact path="/profile">
