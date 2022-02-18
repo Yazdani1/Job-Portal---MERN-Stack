@@ -173,13 +173,17 @@ exports.jobapplicationList = (req, res) => {
 
 //to get post info in the edit field
 
-exports.getEditpostinfo = (req,res)=>{
+exports.getEditpostinfo = (req, res) => {
+  var editinfoquery = { _id: req.params.id };
 
-  var 
-
-
-}
-
+  JobPost.findOne(editinfoquery)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 //to update post edit info.
 

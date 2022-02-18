@@ -9,6 +9,7 @@ import "../../../../node_modules/react-toastify/dist/ReactToastify.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { UserContext } from "../../UserContext";
+import { SyncOutlined } from "@ant-design/icons";
 
 const EditjobPost = () => {
   const [state, setState] = useContext(UserContext);
@@ -26,14 +27,20 @@ const EditjobPost = () => {
   const [requirements, setRequirements] = useState("");
   const [skills, setSkills] = useState("");
 
+  //loading
+  const [loading, setLoading] = useState(true);
+
   // to get post info and show in the edit input field
 
   const getpostinfoinEditinputfield = () => {
     geteditPostinfo(id)
       .then((result) => {
         if (result) {
+          setLoading(false);
           setName(result.name);
           setCity(result.city);
+          setDes(result.des);
+          setJobtypes(result.jobtypes);
           console.log("Edit info:" + result);
         }
       })
@@ -45,6 +52,16 @@ const EditjobPost = () => {
   useEffect(() => {
     getpostinfoinEditinputfield();
   }, []);
+
+  if (loading) {
+    return (
+      <div class="text-center my-25">
+        <h1>
+          <SyncOutlined spin />
+        </h1>
+      </div>
+    );
+  }
 
   return (
     <div>
