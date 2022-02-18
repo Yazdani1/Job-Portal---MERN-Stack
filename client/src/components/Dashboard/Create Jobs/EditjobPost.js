@@ -39,8 +39,12 @@ const EditjobPost = () => {
           setLoading(false);
           setName(result.name);
           setCity(result.city);
+          setHouse(result.house);
+          setCountry(result.country);
           setDes(result.des);
           setJobtypes(result.jobtypes);
+          setRequirements(result.requirements);
+          setSkills(result.skills);
           console.log("Edit info:" + result);
         }
       })
