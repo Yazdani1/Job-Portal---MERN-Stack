@@ -209,4 +209,16 @@ exports.getEditpostinfo = (req, res) => {
   if (!skills) {
     return res.status(400).json({ error: "skill is required.." });
   }
+
+  JobPost.updateOne(editinfoquery, {
+    $set:{
+
+    }
+  })
+    .then((editinfo) => {
+      res.json(editinfo);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
