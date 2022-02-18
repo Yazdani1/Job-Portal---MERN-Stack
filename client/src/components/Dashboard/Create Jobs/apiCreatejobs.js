@@ -15,3 +15,22 @@ export const createjobPosts = (jobs) => {
       console.log(err);
     });
 };
+
+//to get post info in the edit input field
+
+export const geteditPostinfo = (id) => {
+  return fetch("/api/get-edit-postinfo/" + id, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

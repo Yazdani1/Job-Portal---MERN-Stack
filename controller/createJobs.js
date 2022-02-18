@@ -211,9 +211,17 @@ exports.getEditpostinfo = (req, res) => {
   }
 
   JobPost.updateOne(editinfoquery, {
-    $set:{
-
-    }
+    $set: {
+      name: name,
+      des: des,
+      city: city,
+      house: house,
+      country: country,
+      jobtypes: jobtypes,
+      requirements: requirements,
+      skills: skills,
+      postedBy: req.user,
+    },
   })
     .then((editinfo) => {
       res.json(editinfo);
