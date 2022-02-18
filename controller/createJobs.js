@@ -173,8 +173,40 @@ exports.jobapplicationList = (req, res) => {
 
 //to get post edit info in the edit field.
 
-exports.getEditpostinfo = (req,res)=>{
+exports.getEditpostinfo = (req, res) => {
+  var editinfoquery = { _id: req.params.id };
 
+  const { name, des, city, house, country, jobtypes, requirements, skills } =
+    req.body;
 
+  if (!name) {
+    return res.status(400).json({ error: "name is required" });
+  }
 
-}
+  if (!des) {
+    return res.status(400).json({ error: "des is required.." });
+  }
+  if (!city) {
+    return res.status(400).json({ error: "city is required.." });
+  }
+
+  if (!house) {
+    return res.status(400).json({ error: "house is required.." });
+  }
+
+  if (!country) {
+    return res.status(400).json({ error: "country is required.." });
+  }
+
+  if (!jobtypes) {
+    return res.status(400).json({ error: "job type is required.." });
+  }
+
+  if (!requirements) {
+    return res.status(400).json({ error: "requirement is required.." });
+  }
+
+  if (!skills) {
+    return res.status(400).json({ error: "skill is required.." });
+  }
+};
