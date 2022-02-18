@@ -170,3 +170,11 @@ exports.jobapplicationList = (req, res) => {
       console.log(err);
     });
 };
+
+//to get post edit info in the edit field.
+
+exports.getEditpostinfo = (req,res)=>{
+
+
+
+}

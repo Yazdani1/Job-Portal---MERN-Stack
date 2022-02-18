@@ -10,7 +10,8 @@ const {
   searchJobpost,
   jobdetailsDescription,
   appliedjobPost,
-  jobapplicationList
+  jobapplicationList,
+  getEditpostinfo
 } = require("../controller/createJobs");
 
 //employer published jobs
@@ -32,7 +33,10 @@ router.post("/search-jobs", searchJobpost);
 router.get("/job-description/:id", jobdetailsDescription);
 
 //to get job application list for each job post
-router.get("/job-application-list/:id",requireLogin, jobapplicationList);
+router.get("/job-application-list/:id", requireLogin, jobapplicationList);
 
+//to get post info in the edit page,
+
+router.get("/get-edit-postinfo/:id", requireLogin, getEditpostinfo);
 
 module.exports = router;
