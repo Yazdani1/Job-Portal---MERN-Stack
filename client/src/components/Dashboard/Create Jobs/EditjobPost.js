@@ -1,9 +1,9 @@
 import "./reateJobs.css";
-import { createjobPosts } from "./apiCreatejobs";
+import { createjobPosts, geteditPostinfo } from "./apiCreatejobs";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "../../../../node_modules/react-toastify/dist/ReactToastify.css";
 import ReactQuill from "react-quill";
@@ -15,6 +15,8 @@ const EditjobPost = () => {
 
   const history = useHistory();
 
+  const { id } = useParams();
+
   const [name, setName] = useState("");
   const [des, setDes] = useState("");
   const [city, setCity] = useState("");
@@ -23,6 +25,26 @@ const EditjobPost = () => {
   const [jobtypes, setJobtypes] = useState("Full-Time");
   const [requirements, setRequirements] = useState("");
   const [skills, setSkills] = useState("");
+
+  // to get post info and show in the edit input field
+
+  const getpostinfoinEditinputfield = () => {
+    geteditPostinfo(id)
+      .then((result) => {
+        if (result) {
+          setName(result.name);
+          setCity(result.city);
+          console.log("Edit info:" + result);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getpostinfoinEditinputfield();
+  }, []);
 
   return (
     <div>
@@ -48,7 +70,7 @@ const EditjobPost = () => {
               <form>
                 <div className="event-form">
                   <label for="exampleInputEmail1" className="form-label">
-                    Job Title
+                    Job Title {name}
                   </label>
                   <input
                     type="text"

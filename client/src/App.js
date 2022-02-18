@@ -64,7 +64,7 @@ const App = () => {
             <DashboardprotectedRoute DashboardProtect={CreateJobs} />
           </Route>
 
-          <Route exact path="/edit-job-post">
+          <Route exact path="/edit-job-post/:id">
             <DashboardprotectedRoute DashboardProtect={EditjobPost} />
           </Route>
 

@@ -215,7 +215,7 @@ const Publishedjobs = () => {
                         </button>
                       </Link>
                     </td> */}
-                    <Link to={"/edit-job-post"}>
+                    <Link to={"/edit-job-post/" + item._id}>
                       <td>
                         <button className="btn btn-success">
                           <FaEdit size={20} /> Edit

@@ -11,7 +11,8 @@ const {
   jobdetailsDescription,
   appliedjobPost,
   jobapplicationList,
-  getEditpostinfo
+  getEditpostinfo,
+  updateEditpostinfo,
 } = require("../controller/createJobs");
 
 //employer published jobs
@@ -38,5 +39,9 @@ router.get("/job-application-list/:id", requireLogin, jobapplicationList);
 //to get post info in the edit page,
 
 router.get("/get-edit-postinfo/:id", requireLogin, getEditpostinfo);
+
+//to update edit post info
+
+router.put("/update-jobpost-info/:id", requireLogin, updateEditpostinfo);
 
 module.exports = router;

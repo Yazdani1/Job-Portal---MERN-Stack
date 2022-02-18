@@ -171,10 +171,20 @@ exports.jobapplicationList = (req, res) => {
     });
 };
 
-//to get post edit info in the edit field.
+//to get post info in the edit field
 
-exports.getEditpostinfo = (req, res) => {
-  var editinfoquery = { _id: req.params.id };
+exports.getEditpostinfo = (req,res)=>{
+
+  var 
+
+
+}
+
+
+//to update post edit info.
+
+exports.updateEditpostinfo = (req, res) => {
+  var updatequery = { _id: req.params.id };
 
   const { name, des, city, house, country, jobtypes, requirements, skills } =
     req.body;
@@ -210,7 +220,7 @@ exports.getEditpostinfo = (req, res) => {
     return res.status(400).json({ error: "skill is required.." });
   }
 
-  JobPost.updateOne(editinfoquery, {
+  JobPost.updateOne(updatequery, {
     $set: {
       name: name,
       des: des,
