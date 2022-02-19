@@ -58,14 +58,23 @@ const EditjobPost = () => {
   const updateJobpost = (e) => {
     e.preventDefault();
 
-    fetch("", {
+    fetch("/api/update-jobpost-info/" + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify({}),
+      body: JSON.stringify({
+        name,
+        des,
+        city,
+        house,
+        country,
+        jobtypes,
+        requirements,
+        skills,
+      }),
     })
       .then((res) => res.json())
       .then((result) => {
