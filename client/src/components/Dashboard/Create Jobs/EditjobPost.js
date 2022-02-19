@@ -83,7 +83,7 @@ const EditjobPost = () => {
             position: toast.POSITION.TOP_RIGHT,
           });
         } else {
-          toast.success("Post Created Successfully! ", {
+          toast.success("Job post updated Successfully! ", {
             position: toast.POSITION.TOP_RIGHT,
           });
 
@@ -255,7 +255,7 @@ const EditjobPost = () => {
                     type="submit"
                     name="btnSubmit"
                     className="create-event-button"
-                    // onClick={dataSubmit}
+                    onClick={updateJobpost}
                   >
                     Publish Job
                   </button>
