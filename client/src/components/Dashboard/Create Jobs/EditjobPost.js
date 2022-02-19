@@ -53,6 +53,31 @@ const EditjobPost = () => {
       });
   };
 
+  //update job post
+
+  const updateJobpost = (e) => {
+    e.preventDefault();
+
+    fetch("", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({}),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.error) {
+        } else {
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     getpostinfoinEditinputfield();
   }, []);
