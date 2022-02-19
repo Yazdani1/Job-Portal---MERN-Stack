@@ -70,7 +70,22 @@ const EditjobPost = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.error) {
+          toast.error(result.error, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
         } else {
+          toast.success("Post Created Successfully! ", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+
+          setName("");
+          setDes("");
+          setCity("");
+          setHouse("");
+          setCountry("");
+          setJobtypes("");
+          setRequirements("");
+          setSkills("");
         }
       })
       .catch((err) => {
