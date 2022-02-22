@@ -38,6 +38,14 @@
     margin-right: 20px; 
 }
 
+.collapse-icon-design:hover{
+  background-color: brown;
+  cursor: pointer;
+  border-radius: 90px;
+  height: 20px;
+  width: 20px;
+}
+
 
 /* morejobs  */
 
