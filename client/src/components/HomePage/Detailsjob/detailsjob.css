@@ -5,7 +5,6 @@
 .job-description {
   padding: 10px;
   margin-top: 10px;
-
 }
 
 .job-requirements {
@@ -17,39 +16,38 @@
   padding: 10px;
 }
 
-.job-company-address{
-    margin-top: 10px;
-    padding: 10px;
+.job-company-address {
+  margin-top: 10px;
+  padding: 10px;
 }
 
-.job-company-info{
+.job-company-info {
   margin-top: 10px;
   padding: 10px;
 }
 
 /* collapse option job details items */
 
-.job-items-collapse-option{
-    display: flex;
-    justify-content: space-between;
-    margin-right: 30px;
+.job-items-collapse-option {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
 }
 
-.collapse-icon-design svg{
-    
-    align-items: center;
-    justify-content: center;
+.collapse-icon-design {
+  align-items: center;
+  padding: 3px;
+  justify-content: center;
 }
 
-.collapse-icon-design:hover{
+.collapse-icon-design:hover {
   background-color: rgb(245, 230, 230);
   cursor: pointer;
   border-radius: 90px;
 }
 
-
 /* morejobs  */
 
-.morejobs-design{
+.morejobs-design {
   margin-top: 15px;
 }
