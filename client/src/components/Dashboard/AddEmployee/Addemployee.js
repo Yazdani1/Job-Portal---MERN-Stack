@@ -1,4 +1,5 @@
 import React from "react";
+import "./addemployee.css";
 
 const Addemployee = () => {
   return (
