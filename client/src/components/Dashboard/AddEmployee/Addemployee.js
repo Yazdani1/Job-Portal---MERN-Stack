@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Addemployee = () => {
   return (
-    <div>Addemployee</div>
-  )
-}
+    <React.Fragment>
+      <div className="listof-employee">
+        <h6>Add Employee</h6>
+      </div>
+    </React.Fragment>
+  );
+};
 
-export default Addemployee
+export default Addemployee;
