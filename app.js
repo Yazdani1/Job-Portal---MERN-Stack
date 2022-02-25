@@ -22,12 +22,10 @@ app.use("/api", require("./router/userauth"));
 app.use("/api", require("./router/createJobs"));
 app.use("/api", require("./router/appliedJobs"));
 app.use("/api", require("./router/userInfo"));
-
+app.use("/api", require("./router/employer.js"));
 
 // app.use("/api", require("./router/eventpost"));
 // app.use("/api", require("./router/joinevents"));
-
-
 
 //to deploy heroku
 // Serve static assets if in production
@@ -40,9 +38,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-
-
-
 
 app.listen(PORT, (req, res) => {
   console.log("Server connected");
