@@ -4,6 +4,17 @@ exports.createemployer = (req, res) => {
   const { employername, jobposition, joineddate } = req.body;
 
   if (!employername) {
-    return res.status(400).json({ error: "Please add your employer name" });
+    return res.status(400).json({ error: "Please add your employeer name" });
+  }
+
+  if (!jobposition) {
+    return res
+      .status(400)
+      .json({ error: "Please add your employeer job position" });
+  }
+  if (!joineddate) {
+    return res
+      .status(400)
+      .json({ error: "Please add your employeer joined date" });
   }
 };
