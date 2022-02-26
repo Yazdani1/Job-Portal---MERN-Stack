@@ -36,3 +36,12 @@ exports.createemployer = (req, res) => {
       console.log(err);
     });
 };
+
+//to get list of employer
+
+exports.getemployerList = (req,res)=>{
+
+  Employer.find({})
+  .
+
+}
