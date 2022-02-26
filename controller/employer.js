@@ -1,6 +1,5 @@
 const Employer = require("../model/Employer");
 
-
 //create employer api end point..
 
 exports.createemployer = (req, res) => {
@@ -39,9 +38,13 @@ exports.createemployer = (req, res) => {
 
 //to get list of employer
 
-exports.getemployerList = (req,res)=>{
-
+exports.getemployerList = (req, res) => {
   Employer.find({})
-  .
-
-}
+    .sort({ date: "DESC" })
+    .then((showemployerlist) => {
+      res.json(showemployerlist);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

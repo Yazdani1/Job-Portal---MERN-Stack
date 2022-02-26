@@ -11,6 +11,10 @@ const employerschema = mongoose.Schema({
   joineddate: {
     type: String,
   },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
   postedBy: {
     type: ObjectId,
     ref: "User",
