@@ -1,5 +1,8 @@
 const Employer = require("../model/Employer");
 
+
+//create employer api end point..
+
 exports.createemployer = (req, res) => {
   const { employername, jobposition, joineddate } = req.body;
 
@@ -24,4 +27,12 @@ exports.createemployer = (req, res) => {
     joineddate,
     postedBy: req.user,
   });
+
+  Employer.create(saveemployer)
+    .then((saveemployer) => {
+      res.json(saveemployer);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
