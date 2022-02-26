@@ -17,4 +17,11 @@ exports.createemployer = (req, res) => {
       .status(400)
       .json({ error: "Please add your employeer joined date" });
   }
+
+  const saveemployer = new Employer({
+    employername,
+    jobposition,
+    joineddate,
+    postedBy: req.user,
+  });
 };
