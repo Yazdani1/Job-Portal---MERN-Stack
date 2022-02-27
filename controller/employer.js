@@ -62,3 +62,17 @@ exports.deleteEmployer = (req, res) => {
       console.log(err);
     });
 };
+
+//to get edit employer info
+
+exports.geteditEmployerinfo = (req, res) => {
+  var editquery = { _id: req.params.id };
+
+  Employer.findOne(editquery)
+    .then((editdata) => {
+      res.json(editdata);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

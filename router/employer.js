@@ -6,6 +6,7 @@ const {
   createemployer,
   getemployerList,
   deleteEmployer,
+  geteditEmployerinfo
 } = require("../controller/employer");
 
 //to create employer list
@@ -18,5 +19,8 @@ router.get("/get-employerlist", requireLogin, getemployerList);
 //to delete employer
 
 router.delete("/delete-employer/:id", requireLogin, deleteEmployer);
+//to get edit employer info
+
+router.get("/get-edit-employer/:id", requireLogin, geteditEmployerinfo);
 
 module.exports = router;
