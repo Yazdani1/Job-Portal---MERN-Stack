@@ -76,3 +76,9 @@ exports.geteditEmployerinfo = (req, res) => {
       console.log(err);
     });
 };
+
+//to update employeer info
+
+exports.updateEmployerinfo = (req, res) => {
+  var updateQuery = { _id: req.params.id };
+};
