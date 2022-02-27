@@ -48,3 +48,17 @@ exports.getemployerList = (req, res) => {
       console.log(err);
     });
 };
+
+//to delete employer
+
+exports.deleteEmployer = (req, res) => {
+  var deletequery = { _id: req.params.id };
+
+  Employer.findByIdAndDelete(deletequery)
+    .then((deletemployer) => {
+      res.json(deletemployer);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
