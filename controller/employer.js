@@ -99,11 +99,11 @@ exports.updateEmployerinfo = (req, res) => {
       .json({ error: "Please add your employeer joined date" });
   }
 
-  Employer.findByIdAndUpdate(updateQuery,{
-    $set:{
-      
-    }
-  })
-
-
+  Employer.findByIdAndUpdate(updateQuery, {
+    $set: {
+      employername: employername,
+      jobposition: jobposition,
+      joineddate: joineddate,
+    },
+  });
 };
