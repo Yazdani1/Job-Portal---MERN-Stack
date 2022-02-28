@@ -88,5 +88,14 @@ exports.updateEmployerinfo = (req, res) => {
     return res.status(400).json({ error: "Please add your employeer name" });
   }
 
-  
+  if (!jobposition) {
+    return res
+      .status(400)
+      .json({ error: "Please add your employeer job position" });
+  }
+  if (!joineddate) {
+    return res
+      .status(400)
+      .json({ error: "Please add your employeer joined date" });
+  }
 };
