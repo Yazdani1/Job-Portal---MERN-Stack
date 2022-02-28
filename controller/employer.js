@@ -81,4 +81,12 @@ exports.geteditEmployerinfo = (req, res) => {
 
 exports.updateEmployerinfo = (req, res) => {
   var updateQuery = { _id: req.params.id };
+
+  const { employername, jobposition, joineddate } = req.body;
+
+  if (!employername) {
+    return res.status(400).json({ error: "Please add your employeer name" });
+  }
+
+  
 };
