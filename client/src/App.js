@@ -19,6 +19,7 @@ import AlluserList from "./components/HomePage/AlluserList";
 import Appliedjoblist from "./components/Dashboard/AppliedjobList/Appliedjoblist";
 import Wishlist from "./components/Dashboard/wishlist/Wishlist";
 import EditjobPost from "./components/Dashboard/Create Jobs/EditjobPost";
+import Addemployee from "./components/Dashboard/AddEmployee/Addemployee";
 
 const App = () => {
   return (
@@ -89,7 +90,7 @@ const App = () => {
           </Route>
 
           <Route exact path="/add-employee/">
-            <DashboardprotectedRoute component={} />
+            <DashboardprotectedRoute DashboardProtect={Addemployee} />
           </Route>
           {/*  Protected route end for dashboard side */}
 
