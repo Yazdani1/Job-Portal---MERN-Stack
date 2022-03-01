@@ -8,6 +8,9 @@
   .nav-dashboard-front {
     width: 100%;
     height: 70px;
+    position: sticky;
+    top: 0;
+    z-index:1;
     background-color: #ffffff;
     color: black;
     justify-content: right;
