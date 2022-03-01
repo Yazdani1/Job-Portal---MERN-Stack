@@ -1,10 +1,11 @@
 .homepage-first {
   height: 350px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 
-  /* background-color: #e8424a; */
-  color: black;
-  margin-top: 10px;
+  background-color: #172b45;
+  /* color: black; */
+  color: white;
+  /* margin-top: 10px; */
 }
 
 .first_Section_data p {
@@ -19,7 +20,7 @@
 
 /* button design */
 .publish-jobpost p {
-  background-color: black;
+  background-color: #e8424a;
   color: white;
   padding: 1px;
   border-radius: 20px;
