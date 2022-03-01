@@ -11,12 +11,15 @@ import { GiSkills } from "react-icons/gi";
 import { Link, useHistory } from "react-router-dom";
 import { BsHeartFill } from "react-icons/bs";
 import { RiLogoutCircleRLine } from "react-icons/ri";
-import { AiFillMessage } from "react-icons/ai";
+import { AiFillMessage,AiOutlineUsergroupAdd } from "react-icons/ai";
 import { GiRamProfile } from "react-icons/gi";
-import { MdQuestionAnswer } from "react-icons/md";
+import { MdPersonAddAlt1 } from "react-icons/md";
 import { UserContext } from "../../UserContext";
 import ReactTooltip from "react-tooltip";
 import { BsStack, BsFillBookmarkStarFill } from "react-icons/bs";
+
+
+
 
 const Navwebview = (props) => {
   const [state, setState] = useContext(UserContext);
@@ -131,6 +134,20 @@ const Navwebview = (props) => {
             </div>
           </NavLink>
 
+          <NavLink
+            to="/add-employee/"
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+          >
+            <div className="sidebar-item-back" data-tip="Add Employee">
+              <div className="sidebar-items">
+                <p>
+                  <MdPersonAddAlt1 size={20} />
+                </p>
+              </div>
+            </div>
+          </NavLink>
+
           <div className="sidebar-item-back" data-tip="Log Out">
             <div className="sidebar-items" onClick={logOut}>
               <p>
@@ -210,6 +227,20 @@ const Navwebview = (props) => {
             <div className="sidebar-large-navdesign">
               <p>
                 <BsFillBookmarkStarFill size={15} /> Wishlist
+              </p>
+            </div>
+          </NavLink>
+
+          <NavLink
+            to="/add-employee/"
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) =>
+              isActive ? "largenavactive" : "inactive"
+            }
+          >
+            <div className="sidebar-large-navdesign">
+              <p>
+                <BsFillBookmarkStarFill size={15} /> Add-Employee
               </p>
             </div>
           </NavLink>
