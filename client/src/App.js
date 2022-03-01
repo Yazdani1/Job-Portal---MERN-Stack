@@ -87,6 +87,10 @@ const App = () => {
           <Route exact path="/wishlist">
             <DashboardprotectedRoute DashboardProtect={Wishlist} />
           </Route>
+
+          <Route exact path="/add-employee/">
+            <DashboardprotectedRoute component={} />
+          </Route>
           {/*  Protected route end for dashboard side */}
 
           {/* page not found  */}
