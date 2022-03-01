@@ -13,7 +13,7 @@ import { BsHeartFill } from "react-icons/bs";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { AiFillMessage } from "react-icons/ai";
 import { GiRamProfile } from "react-icons/gi";
-import { MdQuestionAnswer } from "react-icons/md";
+import { MdPersonAddAlt1 } from "react-icons/md";
 import { UserContext } from "../../UserContext";
 import { BsStack } from "react-icons/bs";
 import { BsFillBookmarkStarFill } from "react-icons/bs";
@@ -118,6 +118,18 @@ const NavMobileview = () => {
             <div className="sidebar-mobile-nav">
               <li onClick={() => setMobilesidebar(!mobilesidebar)}>
                 <BsFillBookmarkStarFill size={15} /> Wishlist
+              </li>
+            </div>
+          </NavLink>
+
+          <NavLink
+            to="/add-employee/"
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+          >
+            <div className="sidebar-mobile-nav">
+              <li onClick={() => setMobilesidebar(!mobilesidebar)}>
+                <MdPersonAddAlt1 size={15} /> Add Employee
               </li>
             </div>
           </NavLink>
