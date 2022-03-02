@@ -2,7 +2,7 @@ const Employer = require("../model/Employer");
 
 //create employer api end point..
 
-exports.createemployer = (req, res) => {
+exports.createemploye = (req, res) => {
   const { employername, jobposition, joineddate } = req.body;
 
   if (!employername) {

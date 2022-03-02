@@ -3,7 +3,7 @@ require("dotenv").config();
 const { requireLogin } = require("../middleware/auth");
 
 const {
-  createemployer,
+  createemploye,
   getemployerList,
   deleteEmployer,
   geteditEmployerinfo,
@@ -11,7 +11,7 @@ const {
 } = require("../controller/employer");
 
 //to create employer list
-router.post("/create-employer", requireLogin, createemployer);
+router.post("/create-employe", requireLogin, createemploye);
 
 //to get list of employer
 
