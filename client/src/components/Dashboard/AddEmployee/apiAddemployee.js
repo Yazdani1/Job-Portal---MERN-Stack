@@ -17,3 +17,13 @@ export const addEmployee = (employee) => {
       console.log(err);
     });
 };
+
+//to get employee list
+
+
+export const getEmployeelist = ()=>{
+
+    return fetch("/api/")
+
+}
+
