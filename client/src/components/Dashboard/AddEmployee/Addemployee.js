@@ -1,11 +1,19 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./addemployee.css";
+import { addEmployee } from "./apiAddemployee";
 
 const Addemployee = () => {
+  const [employername, setEmployername] = useState("");
+  const [jobposition, setJobposition] = useState("");
+  const [joineddate, setJoineddate] = useState("");
 
-const [employername,setEmployername] = useState("");
-const [jobposition,setJobposition] = useState("");
-const [joineddate,setJoineddate] = useState("");
+  const createEmployee = (e)=>{
+
+    e.preventDefault();
+    
+
+  }
+
 
   return (
     <React.Fragment>
