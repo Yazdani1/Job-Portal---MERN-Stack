@@ -1,7 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import "./addemployee.css";
 
 const Addemployee = () => {
+
+const [employername,setEmployername] = useState("");
+const 
+
   return (
     <React.Fragment>
       <div className="listof-employee">
