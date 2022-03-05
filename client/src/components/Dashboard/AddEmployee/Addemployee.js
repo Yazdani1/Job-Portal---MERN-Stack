@@ -7,13 +7,15 @@ const Addemployee = () => {
   const [jobposition, setJobposition] = useState("");
   const [joineddate, setJoineddate] = useState("");
 
-  const createEmployee = (e)=>{
-
+  const createEmployee = (e) => {
     e.preventDefault();
-    
 
-  }
-
+    addEmployee({})
+      .then((result) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <React.Fragment>
