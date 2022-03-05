@@ -4,7 +4,8 @@ import "./addemployee.css";
 const Addemployee = () => {
 
 const [employername,setEmployername] = useState("");
-const 
+const [jobposition,setJobposition] = useState("");
+const [joineddate,setJoineddate] = useState("");
 
   return (
     <React.Fragment>
