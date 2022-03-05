@@ -11,7 +11,13 @@ const Addemployee = () => {
     e.preventDefault();
 
     addEmployee({})
-      .then((result) => {})
+      .then((result) => {
+        if(result.error){
+
+        }else{
+          
+        }
+      })
       .catch((err) => {
         console.log(err);
       });
