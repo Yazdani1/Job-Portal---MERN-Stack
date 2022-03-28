@@ -36,3 +36,22 @@ export const getEmployeelist = () => {
       console.log(err);
     });
 };
+
+//to remove employer
+
+export const deleteEmployer = () => {
+  return fetch("/api/", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
