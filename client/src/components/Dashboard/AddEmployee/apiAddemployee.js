@@ -20,10 +20,19 @@ export const addEmployee = (employee) => {
 
 //to get employee list
 
-
-export const getEmployeelist = ()=>{
-
-    return fetch("/api/")
-
-}
-
+export const getEmployeelist = () => {
+  return fetch("/api/", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
