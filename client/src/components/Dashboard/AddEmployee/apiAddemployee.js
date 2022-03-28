@@ -21,7 +21,7 @@ export const addEmployee = (employee) => {
 //to get employee list
 
 export const getEmployeelist = () => {
-  return fetch("/api/", {
+  return fetch("/api/get-employerlist", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
