@@ -39,8 +39,8 @@ export const getEmployeelist = () => {
 
 //to remove employer
 
-export const deleteEmployer = () => {
-  return fetch("/api/", {
+export const deleteEmployer = (id) => {
+  return fetch("/api/delete-employer/"+id, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
