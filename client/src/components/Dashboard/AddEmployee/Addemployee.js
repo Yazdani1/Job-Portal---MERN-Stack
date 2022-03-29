@@ -45,6 +45,19 @@ const Addemployee = () => {
                   />
                 </div>
 
+                <div className="event-form">
+                  <label for="exampleInputEmail1" className="form-label">
+                    Job Position
+                  </label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="form-control"
+                    maxLength="100"
+                  />
+                </div>
+
                 <div class="form-group justify-content-center align-items-center">
                   <button
                     type="submit"
