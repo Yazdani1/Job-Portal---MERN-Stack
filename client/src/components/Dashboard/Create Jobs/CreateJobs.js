@@ -68,7 +68,7 @@ const CreateJobs = () => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <div className="container-fluid create-event-container">
         <div className="row">
           <div className="col-lg-10 col-md-12 col-sm-12">
@@ -217,7 +217,7 @@ const CreateJobs = () => {
         </div>
       </div>
       <ToastContainer autoClose={8000} />
-    </div>
+    </React.Fragment>
   );
 };
 
