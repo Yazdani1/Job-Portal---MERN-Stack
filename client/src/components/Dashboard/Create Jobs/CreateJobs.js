@@ -25,6 +25,7 @@ const CreateJobs = () => {
   const [requirements, setRequirements] = useState("");
   const [skills, setSkills] = useState("");
 
+  
   // const [startdate, setStartdate] = useState(null);
   // const [enddate, setEnddate] = useState(null);
 
@@ -69,6 +70,7 @@ const CreateJobs = () => {
 
   return (
     <React.Fragment>
+     
       <div className="container-fluid create-event-container">
         <div className="row">
           <div className="col-lg-10 col-md-12 col-sm-12">
