@@ -42,9 +42,15 @@ const Addemployee = () => {
   return (
     <React.Fragment>
       <div>
-        <button className="btn btn-success" onClick={addEmployform}>
-          Add Employee
-        </button>
+        {show ? (
+          <button className="btn btn-danger" onClick={addEmployform}>
+            Close
+          </button>
+        ) : (
+          <button className="btn btn-success" onClick={addEmployform}>
+            Add Employee
+          </button>
+        )}
       </div>
       {show ? (
         <div className="container-fluid create-event-container">
