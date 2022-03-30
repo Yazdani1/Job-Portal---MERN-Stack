@@ -10,7 +10,7 @@ const Addemployee = () => {
   const createEmployee = (e) => {
     e.preventDefault();
 
-    addEmployee({})
+    addEmployee({employername,jobposition,joineddate})
       .then((result) => {
         if (result.error) {
         } else {
@@ -63,9 +63,9 @@ const Addemployee = () => {
                     type="submit"
                     name="btnSubmit"
                     className="create-event-button"
-                    onClick={dataSubmit}
+                    onClick={createEmployee}
                   >
-                    Publish Job
+                    Add Employee
                   </button>
                 </div>
               </form>
