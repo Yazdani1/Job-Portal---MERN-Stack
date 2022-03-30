@@ -49,8 +49,8 @@ const Addemployee = () => {
                   </label>
                   <input
                     type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={employername}
+                    onChange={(e) => setEmployername(e.target.value)}
                     className="form-control"
                     maxLength="100"
                   />
@@ -62,8 +62,8 @@ const Addemployee = () => {
                   </label>
                   <input
                     type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    value={jobposition}
+                    onChange={(e) => setJobposition(e.target.value)}
                     className="form-control"
                     maxLength="100"
                   />
