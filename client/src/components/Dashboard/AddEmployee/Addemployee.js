@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./addemployee.css";
 import { addEmployee } from "./apiAddemployee";
+import { ToastContainer, toast } from "react-toastify";
 
 const Addemployee = () => {
   const [employername, setEmployername] = useState("");
@@ -10,10 +11,20 @@ const Addemployee = () => {
   const createEmployee = (e) => {
     e.preventDefault();
 
-    addEmployee({employername,jobposition,joineddate})
+    addEmployee({ employername, jobposition, joineddate })
       .then((result) => {
         if (result.error) {
+          toast.error(result.error, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
         } else {
+          toast.success("Post Created Successfully! ", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+
+          setEmployername("");
+          setJobposition("");
+          setJoineddate("");
         }
       })
       .catch((err) => {
@@ -73,6 +84,7 @@ const Addemployee = () => {
           </div>
         </div>
       </div>
+      <ToastContainer autoClose={8000} />
     </React.Fragment>
   );
 };
