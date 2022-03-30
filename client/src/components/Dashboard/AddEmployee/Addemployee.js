@@ -10,6 +10,7 @@ const Addemployee = () => {
 
   const createEmployee = (e) => {
     e.preventDefault();
+    console.log("Clicked Add Employer");
 
     addEmployee({ employername, jobposition, joineddate })
       .then((result) => {
