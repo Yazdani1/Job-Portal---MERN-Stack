@@ -1,0 +1,167 @@
+
+/* pagination package  design */
+
+.pagination{
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin: 10px;
+    list-style: none;
+    text-decoration: none;
+  }
+  .pagination a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+  }
+  
+  .pagination__link--active {
+  
+    border: 1px solid white;
+    padding: 10px;
+    background-color: black;
+  }
+  
+  .pagination__link--active a{
+    color: white;
+  
+  }
+  
+  .pagination-design{
+    display: flex;
+    list-style-type: none;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 7px;
+    height: 30px;
+    width: 30px;
+    color: black;
+    border-radius: 90px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  .break-class{
+    display: flex;
+    list-style-type: none;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 7px;
+    height: 30px;
+    width: 30px;
+    color: white;
+    border-radius: 90px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .break-class:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+  }
+  
+  .break-class a:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+  }
+  
+  .selected-page a{
+  color: white;
+  }
+  
+  .pagination-design a:hover{
+    display: flex;
+    list-style-type: none;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 90px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  /* to disable the previous button when in firs page */
+  /* .pagination li.disabled a {
+    pointer-events: none;
+    color: rgb(198, 197, 202);
+    border: 1px solid rgb(198, 197, 202);
+    display: flex;
+    list-style-type: none;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 7px;
+    height: 30px;
+    width: 90px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style-type: none;
+   } */
+  
+  
+  
+  .previous-button{
+    display: flex;
+    list-style-type: none;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 7px;
+    height: 30px;
+    width: 90px;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style-type: none;
+  }
+  
+  .next-button{
+    display: flex;
+    list-style-type: none;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 7px;
+    height: 30px;
+    width: 90px;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style-type: none;
+  }
+  
+  .pagination__link--disabled{
+  
+    /* display: none; */
+  
+    cursor: not-allowed;
+    color: gray;
+    text-decoration: none;
+  }
