@@ -1,4 +1,5 @@
 import React from 'react'
+import "./addpagination.css";
 
 const AddPagination = () => {
   return (
