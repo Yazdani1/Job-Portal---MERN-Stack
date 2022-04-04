@@ -7,6 +7,7 @@ import Pagination from "../Dashboard/Published Jobs/Pagination";
 import { ToastContainer, toast } from "react-toastify";
 import { GiArchiveResearch } from "react-icons/gi";
 import { savejobtoWishlist } from "../Dashboard/wishlist/apiWishlist";
+import AddPagination from "../Pagination/AddPagination";
 
 const Alljobposts = () => {
   //context api
