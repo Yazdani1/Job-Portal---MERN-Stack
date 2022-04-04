@@ -21,15 +21,33 @@ const Alljobposts = () => {
   //get all job posts
   const [alljobposts, setAlljobposts] = useState([]);
 
+
+
+  //react pagination using react paginate package
+
+
+
+   //for pagination
+   const PER_PAGE = 5;
+   const [currentPage, setCurrentPage] = useState(1);
+   const handlePageClick = ({ selected: slectedPage }) => {
+     setCurrentPage(slectedPage);
+   };
+   const offSet = currentPage * PER_PAGE;
+   const currrentPagedata = data.slice(offSet, offSet + PER_PAGE);
+   //total page count
+   const pageCount = Math.ceil(data.length / PER_PAGE);
+ 
+
   //for pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(8);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [postsPerPage] = useState(8);
 
   //Get current posts
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = alljobposts.slice(indexOfFirstPost, indexOfLastPost);
-  const howManyPages = Math.ceil(alljobposts.length / postsPerPage);
+  // const indexOfLastPost = currentPage * postsPerPage;
+  // const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  // const currentPosts = alljobposts.slice(indexOfFirstPost, indexOfLastPost);
+  // const howManyPages = Math.ceil(alljobposts.length / postsPerPage);
 
   const loadallJobposts = () => {
     getallJobsinhomepage()
