@@ -2,7 +2,7 @@ import React from "react";
 import "./addpagination.css";
 import ReactPaginate from "react-paginate";
 
-const AddPagination = () => {
+const AddPagination = ({pageCount,handlePageClick}) => {
   return (
     <React.Fragment>
       <ReactPaginate

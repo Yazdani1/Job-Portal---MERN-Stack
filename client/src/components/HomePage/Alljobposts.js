@@ -35,9 +35,9 @@ const Alljobposts = () => {
      setCurrentPage(slectedPage);
    };
    const offSet = currentPage * PER_PAGE;
-   const currrentPagedata = data.slice(offSet, offSet + PER_PAGE);
+   const currrentPagedata = alljobposts.slice(offSet, offSet + PER_PAGE);
    //total page count
-   const pageCount = Math.ceil(data.length / PER_PAGE);
+   const pageCount = Math.ceil(alljobposts.length / PER_PAGE);
  
 
   //for pagination
@@ -140,7 +140,7 @@ const Alljobposts = () => {
       <div className="container">
         <div className="row">
           {alljobposts.length ? (
-            currentPosts.map((job, index) => (
+            currrentPagedata.map((job, index) => (
               //for large to medium screen
 
               <>
@@ -174,7 +174,8 @@ const Alljobposts = () => {
         </div>
         <div className="card pagination-job-posts-homepage">
           {alljobposts.length > 1 ? (
-            <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
+            <AddPagination pageCount={pageCount} handlePageClick={handlePageClick}/>
+            // <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
           ) : null}
         </div>
       </div>

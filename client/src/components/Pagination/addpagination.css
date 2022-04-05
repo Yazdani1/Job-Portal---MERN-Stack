@@ -2,7 +2,6 @@
 /* pagination package  design */
 
 .pagination{
-    border: 1px solid black;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -137,6 +136,8 @@
     justify-content: center;
     text-decoration: none;
     list-style-type: none;
+    cursor: not-allowed;
+
   }
   
   .next-button{
@@ -159,9 +160,9 @@
   
   .pagination__link--disabled{
   
-    /* display: none; */
+    display: none;
   
-    cursor: not-allowed;
+    /* cursor: not-allowed;
     color: gray;
-    text-decoration: none;
+    text-decoration: none; */
   }
