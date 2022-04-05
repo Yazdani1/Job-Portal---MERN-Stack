@@ -95,7 +95,7 @@ const Alljobposts = () => {
 
   useEffect(() => {
     loadallJobposts();
-  }, [currrentPagedata]);
+  }, []);
 
   if (loading) {
     return (
