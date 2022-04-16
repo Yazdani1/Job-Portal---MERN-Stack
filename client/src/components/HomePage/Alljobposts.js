@@ -30,7 +30,7 @@ const Alljobposts = () => {
 
    //for pagination
    const PER_PAGE = 4;
-   const [currentPage, setCurrentPage] = useState(1);
+   const [currentPage, setCurrentPage] = useState(0);
    const handlePageClick = ({ selected: slectedPage }) => {
      setCurrentPage(slectedPage);
    };

@@ -110,8 +110,8 @@ exports.getallJobposts = (req, res) => {
 };
 
 //get trending job post based on the number of job application list
-//{$exists:true}, $where:'this.tag.length>3'}
-  // JobPost.find({ application: { $size: 7 } })
+//
+  // JobPost.find({ application: { $size: 7 } }) 
 
 exports.getTrendingjobpost = (req, res) => {
   JobPost.find({
