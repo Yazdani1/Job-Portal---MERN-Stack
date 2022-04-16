@@ -13,6 +13,7 @@ const {
   jobapplicationList,
   getEditpostinfo,
   updateEditpostinfo,
+  getTrendingjobpost
 } = require("../controller/createJobs");
 
 //employer published jobs
@@ -43,5 +44,9 @@ router.get("/get-edit-postinfo/:id", requireLogin, getEditpostinfo);
 //to update edit post info
 
 router.put("/update-jobpost-info/:id", requireLogin, updateEditpostinfo);
+
+//to get trending job post based on the number of job application list
+
+router.get("/get-trending-job", getTrendingjobpost);
 
 module.exports = router;

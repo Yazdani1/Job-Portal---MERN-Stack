@@ -29,7 +29,7 @@ const Alljobposts = () => {
 
 
    //for pagination
-   const PER_PAGE = 5;
+   const PER_PAGE = 4;
    const [currentPage, setCurrentPage] = useState(1);
    const handlePageClick = ({ selected: slectedPage }) => {
      setCurrentPage(slectedPage);
@@ -140,7 +140,7 @@ const Alljobposts = () => {
       <div className="container">
         <div className="row">
           {alljobposts.length ? (
-            currrentPagedata.map((job, index) => (
+            currrentPagedata?.map((job, index) => (
               //for large to medium screen
 
               <>

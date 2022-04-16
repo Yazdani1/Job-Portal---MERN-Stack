@@ -109,6 +109,30 @@ exports.getallJobposts = (req, res) => {
     });
 };
 
+//get trending job post based on the number of job application list
+//{$exists:true}, $where:'this.tag.length>3'}
+  // JobPost.find({ application: { $size: 7 } })
+
+exports.getTrendingjobpost = (req, res) => {
+  JobPost.find({
+    application: { $exists: true },
+    $where: "this.application.length>1",
+  })
+    .sort({ date: "DESC" })
+    .populate("postedBy", "_id name email photo")
+    .populate("application.postedBy", "_id name email photo")
+    .populate(
+      "application",
+      "name des location eventtypes startdate enddate date maxmembers"
+    )
+    .then((trendingjobresult) => {
+      res.json(trendingjobresult);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 //search jobs in the home page api end point
 
 exports.searchJobpost = (req, res) => {
