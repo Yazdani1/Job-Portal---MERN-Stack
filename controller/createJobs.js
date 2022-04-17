@@ -118,7 +118,8 @@ exports.getallJobposts = (req, res) => {
 // })
 exports.getTrendingjobpost = (req, res) => {
   JobPost.find({
-    $where: "this.application.length>1",
+    application: { $exists: true },
+    $where: "this.application.length>0",
   })
     .populate("postedBy", "_id name email photo")
     .populate("application.postedBy", "_id name email photo")
