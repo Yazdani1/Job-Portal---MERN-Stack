@@ -31,3 +31,18 @@
   background-color: rgb(234, 124, 21);
   color: white;
 }
+
+.trending-tag-userinfo {
+  display: flex;
+  justify-content: space-between;
+}
+.trending-tag {
+  background-color: blueviolet;
+  border-radius: 10px;
+  padding: 5px;
+  block-size: fit-content;
+  color: white;
+  width: fit-content;
+  margin-left: 60px;
+  font-size: 14px;
+}

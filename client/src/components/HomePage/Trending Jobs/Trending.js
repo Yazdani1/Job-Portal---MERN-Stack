@@ -20,23 +20,21 @@ const Trending = ({
         style={{ textDecoration: "none", color: "black" }}
       >
         <div className="trending-job-item">
-          <div className="profile-name-date">
-            {photo ? (
-              <div className="profile-name-avatar-image">
-                <img src={photo} />
-              </div>
-            ) : (
-              <div className="profile-name-avatar">
-                <p>{username?.substring(0, 2).toUpperCase()}</p>
-              </div>
-            )}
-
-            {/* <div className="profile-name-post-date">
-              <p className="profile-name-size">{username}</p>
-            </div> */}
-
-            <p className="trending">Trending</p>
+          <div className="trending-tag-userinfo">
+            <div className="profile-name-date">
+              {photo ? (
+                <div className="profile-name-avatar-image">
+                  <img src={photo} />
+                </div>
+              ) : (
+                <div className="profile-name-avatar">
+                  <p>{username?.substring(0, 2).toUpperCase()}</p>
+                </div>
+              )}
+            </div>
+            <p className="trending-tag">Trending</p>
           </div>
+
           <p className="profile-name-size">{username}</p>
 
           <p>Published on: {moment(date).format("MMM Do YY")}</p>
