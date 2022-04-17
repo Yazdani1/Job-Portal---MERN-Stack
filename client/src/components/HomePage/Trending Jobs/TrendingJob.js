@@ -27,14 +27,22 @@ const TrendingJob = () => {
     <React.Fragment>
       <div className="container-fluid card trending-job">
         <div className="trending-job-title">
-          <h2>Trending Jobs</h2>
+          <h4>Trending Jobs</h4>
           <span className="line"></span>
         </div>
         <div className="container">
           <div className="row">
             {trendingjob.map((item, index) => (
-              <div className="col-xl-3 col-lg-3 col-md-3">
-                <Trending name={item.name} username={item.postedBy?.name} />
+              <div className="col-xl-3 col-lg-4 col-md-6">
+                <Trending
+                  key={item._id}
+                  name={item.name}
+                  username={item.postedBy?.name}
+                  date={item.date}
+                  jobtypes={item.jobtypes}
+                  application={item.application?.length}
+                  postid={item._id}
+                />
               </div>
             ))}
           </div>

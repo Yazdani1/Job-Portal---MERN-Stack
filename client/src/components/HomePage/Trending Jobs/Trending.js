@@ -2,42 +2,55 @@ import React from "react";
 import "./trendingjob.css";
 import { FcApproval, FcNightPortrait, FcBookmark } from "react-icons/fc";
 import moment from "moment";
+import { Link, useHistory, useParams } from "react-router-dom";
 
-const Trending = ({photo,username,date,name,jobtypes,application}) => {
+const Trending = ({
+  photo,
+  username,
+  date,
+  name,
+  jobtypes,
+  application,
+  postid,
+}) => {
   return (
     <React.Fragment>
-      <div className="trending-job-item">
-        <div className="profile-name-date">
-          {photo ? (
-            <div className="profile-name-avatar-image">
-              <img src={photo} />
-            </div>
-          ) : (
-            <div className="profile-name-avatar">
-              <p>{username?.substring(0, 2).toUpperCase()}</p>
-            </div>
-          )}
+      <Link
+        to={"/job-description/" + postid}
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <div className="trending-job-item">
+          <div className="profile-name-date">
+            {photo ? (
+              <div className="profile-name-avatar-image">
+                <img src={photo} />
+              </div>
+            ) : (
+              <div className="profile-name-avatar">
+                <p>{username?.substring(0, 2).toUpperCase()}</p>
+              </div>
+            )}
 
-          <div className="profile-name-post-date">
-            <p className="profile-name-size">{username}</p>
+            <div className="profile-name-post-date">
+              <p className="profile-name-size">{username}</p>
+            </div>
+
+            <p className="trending">Trending</p>
           </div>
+          <p>Published on: {moment(date).format("MMM Do YY")}</p>
 
-          <p className="trending">Trending</p>
+          <h6>{name.substring(0, 50)}</h6>
+
+          <p className="job-items">
+            <FcApproval size={18} style={{ color: "red" }} />
+            {jobtypes}
+          </p>
+          <p className="job-items">
+            <FcNightPortrait size={20} style={{ color: "red" }} />
+            {application} applicants
+          </p>
         </div>
-        <p>Published on: {moment(date).format("MMM Do YY")}</p>
-
-        <h6>{name.substring(0, 50)}</h6>
-
-        <p className="job-items">
-          <FcApproval size={18} style={{ color: "red" }} />
-          {jobtypes}
-        </p>
-        <p className="job-items">
-          <FcNightPortrait size={20} style={{ color: "red" }} />
-          {application} applicants
-        </p>
-      </div>
-      ;
+      </Link>
     </React.Fragment>
   );
 };
