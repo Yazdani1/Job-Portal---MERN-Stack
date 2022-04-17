@@ -41,7 +41,7 @@ const TrendingJob = () => {
     <React.Fragment>
       <div className="container-fluid card trending-job">
         <div className="trending-job-title">
-          <h4>Trending Jobs {trendingjob.length}</h4>
+          <h4>Trending Jobs: {trendingjob.length} </h4>
           <span className="line"></span>
         </div>
         <div className="container">

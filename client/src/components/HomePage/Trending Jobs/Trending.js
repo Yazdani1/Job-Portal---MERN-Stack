@@ -32,7 +32,7 @@ const Trending = ({
             )}
 
             <div className="profile-name-post-date">
-              <p className="profile-name-size">{username}</p>
+              <p className="profile-name-size">{username?.substring(0,17)}</p>
             </div>
 
             <p className="trending">Trending</p>
