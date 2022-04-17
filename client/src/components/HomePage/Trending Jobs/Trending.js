@@ -31,12 +31,14 @@ const Trending = ({
               </div>
             )}
 
-            <div className="profile-name-post-date">
-              <p className="profile-name-size">{username?.substring(0,11)}</p>
-            </div>
+            {/* <div className="profile-name-post-date">
+              <p className="profile-name-size">{username}</p>
+            </div> */}
 
             <p className="trending">Trending</p>
           </div>
+          <p className="profile-name-size">{username}</p>
+
           <p>Published on: {moment(date).format("MMM Do YY")}</p>
 
           <h6>{name.substring(0, 50)}</h6>

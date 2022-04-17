@@ -122,6 +122,7 @@ exports.getTrendingjobpost = (req, res) => {
       $gt: [{ $size: { $ifNull: ["$application", []] } }, 2],
     },
   })
+    .sort({ date: "DESC" })
     .populate("postedBy", "_id name email photo")
     .populate("application.postedBy", "_id name email photo")
     .populate(
