@@ -98,9 +98,15 @@ const Appliedjoblist = () => {
                   <tr key={item._id}>
                     <th scope="row">{index + 1}</th>
 
-                    <td>{item.jobpost?.name?.substring(0, 30)}</td>
                     <td>
-                      {ReactHtmlParser(item.jobpost?.des?.substring(0, 100))}
+                      {item.jobpost?.name
+                        ? item.jobpost?.name?.substring(0, 30)
+                        : "This Job Has Been removed"}
+                    </td>
+                    <td>
+                      {item.jobpost?.des
+                        ? ReactHtmlParser(item.jobpost?.des?.substring(0, 100))
+                        : "This Job Has Been removed"}
                     </td>
 
                     <td>
