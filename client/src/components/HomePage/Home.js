@@ -3,6 +3,7 @@ import Alljobposts from "./Alljobposts";
 import Footer from "./Footer/Footer";
 import UserList from "./UserList";
 import FirstSection from "./FirstSection";
+import TrendingJob from "./Trending Jobs/TrendingJob";
 import {
   getallJobsinhomepage,
   getallUserlist,
@@ -43,7 +44,6 @@ const Home = () => {
   useEffect(() => {
     loadallJobposts();
     loadallUsers();
-  
   }, []);
 
   return (
@@ -51,7 +51,8 @@ const Home = () => {
       <FirstSection />
       <Totalpostcount totalpost={alljobs.length} totaluser={allusers.length} />
       <Alljobposts />
-      <UserList/>
+      <TrendingJob />
+      <UserList />
       <Footer />
     </div>
   );

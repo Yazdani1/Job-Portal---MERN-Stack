@@ -23,8 +23,14 @@ const TrendingJob = () => {
 
   return (
     <React.Fragment>
-      <div className="container card">
-        <div className="row"></div>
+      <div className="container card trending-job">
+          <div className="trending-job-title">
+              <h2>Trending Jobs</h2>
+              <span className="line"></span>
+          </div>
+        <div className="row">
+          <h1>{trendingjob.length}</h1>
+        </div>
       </div>
     </React.Fragment>
   );
