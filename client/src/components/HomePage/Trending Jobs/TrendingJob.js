@@ -8,13 +8,13 @@ import { SyncOutlined } from "@ant-design/icons";
 import Fade from "react-reveal/Fade";
 const TrendingJob = () => {
   const [trendingjob, setTrendingjob] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   const loadTrendingjob = () => {
     getTrendingjobpost()
       .then((result) => {
         if (result) {
-          setLoading(false);
+          // setLoading(false);
 
           setTrendingjob(result);
         }
@@ -28,15 +28,15 @@ const TrendingJob = () => {
     loadTrendingjob();
   }, []);
 
-  if (loading) {
-    return (
-      <div class="text-center my-25">
-        <h1>
-          <SyncOutlined spin />
-        </h1>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div class="text-center my-25">
+  //       <h1>
+  //         <SyncOutlined spin />
+  //       </h1>
+  //     </div>
+  //   );
+  // }
   return (
     <React.Fragment>
       <div className="container-fluid card trending-job">
@@ -48,15 +48,17 @@ const TrendingJob = () => {
           <div className="row">
             {trendingjob.map((item, index) => (
               <div className="col-xl-3 col-lg-4 col-md-6">
-                <Trending
-                  key={item._id}
-                  name={item.name}
-                  username={item.postedBy?.name}
-                  date={item.date}
-                  jobtypes={item.jobtypes}
-                  application={item.application?.length}
-                  postid={item._id}
-                />
+                <Fade left>
+                  <Trending
+                    key={item._id}
+                    name={item.name}
+                    username={item.postedBy?.name}
+                    date={item.date}
+                    jobtypes={item.jobtypes}
+                    application={item.application?.length}
+                    postid={item._id}
+                  />
+                </Fade>
               </div>
             ))}
           </div>
