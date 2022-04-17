@@ -114,11 +114,11 @@ exports.getallJobposts = (req, res) => {
 // JobPost.find({ application: { $size: 7 } })
 
 exports.getTrendingjobpost = (req, res) => {
-  JobPost.find({
-    application: { $exists: true },
-    $where: "this.application.length>1",
-  })
-    
+  // JobPost.find({
+  //   application: { $exists: true },
+  //   $where: "this.application.length>1",
+  // })
+  JobPost.find({ application: { $size: 2 } })
     .sort({ date: "DESC" })
     .populate("postedBy", "_id name email photo")
     .populate("application.postedBy", "_id name email photo")
