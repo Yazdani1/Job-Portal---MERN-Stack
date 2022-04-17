@@ -3,7 +3,7 @@ import "./trendingjob.css";
 import { getTrendingjobpost } from "./apiTrending";
 import { FcApproval, FcNightPortrait, FcBookmark } from "react-icons/fc";
 import Trending from "./Trending";
-
+import Fade from "react-reveal/Fade";
 const TrendingJob = () => {
   const [trendingjob, setTrendingjob] = useState([]);
 
@@ -34,15 +34,17 @@ const TrendingJob = () => {
           <div className="row">
             {trendingjob.map((item, index) => (
               <div className="col-xl-3 col-lg-4 col-md-6">
-                <Trending
-                  key={item._id}
-                  name={item.name}
-                  username={item.postedBy?.name}
-                  date={item.date}
-                  jobtypes={item.jobtypes}
-                  application={item.application?.length}
-                  postid={item._id}
-                />
+                <Fade left>
+                  <Trending
+                    key={item._id}
+                    name={item.name}
+                    username={item.postedBy?.name}
+                    date={item.date}
+                    jobtypes={item.jobtypes}
+                    application={item.application?.length}
+                    postid={item._id}
+                  />
+                </Fade>
               </div>
             ))}
           </div>

@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { GiArchiveResearch } from "react-icons/gi";
 import { savejobtoWishlist } from "../Dashboard/wishlist/apiWishlist";
 import AddPagination from "../Pagination/AddPagination";
+import Fade from "react-reveal/Fade";
 
 const Alljobposts = () => {
   //context api
@@ -22,23 +23,18 @@ const Alljobposts = () => {
   //get all job posts
   const [alljobposts, setAlljobposts] = useState([]);
 
-
-
   //react pagination using react paginate package
 
-
-
-   //for pagination
-   const PER_PAGE = 4;
-   const [currentPage, setCurrentPage] = useState(0);
-   const handlePageClick = ({ selected: slectedPage }) => {
-     setCurrentPage(slectedPage);
-   };
-   const offSet = currentPage * PER_PAGE;
-   const currrentPagedata = alljobposts.slice(offSet, offSet + PER_PAGE);
-   //total page count
-   const pageCount = Math.ceil(alljobposts.length / PER_PAGE);
- 
+  //for pagination
+  const PER_PAGE = 4;
+  const [currentPage, setCurrentPage] = useState(0);
+  const handlePageClick = ({ selected: slectedPage }) => {
+    setCurrentPage(slectedPage);
+  };
+  const offSet = currentPage * PER_PAGE;
+  const currrentPagedata = alljobposts.slice(offSet, offSet + PER_PAGE);
+  //total page count
+  const pageCount = Math.ceil(alljobposts.length / PER_PAGE);
 
   //for pagination
   // const [currentPage, setCurrentPage] = useState(1);
@@ -145,21 +141,22 @@ const Alljobposts = () => {
 
               <>
                 {/* for extra large screen */}
-
-                <Jobpostwebview
-                  name={job.name}
-                  des={job.des}
-                  userid={job.postedBy?._id}
-                  photo={job?.postedBy?.photo}
-                  username={job.postedBy?.name}
-                  postid={job._id}
-                  date={job.date}
-                  jobtypes={job.jobtypes}
-                  country={job.country}
-                  city={job.city}
-                  totalapplications={job.application.length}
-                  savejobPosttowishlist={savejobPosttowishlist}
-                />
+                <Fade left>
+                  <Jobpostwebview
+                    name={job.name}
+                    des={job.des}
+                    userid={job.postedBy?._id}
+                    photo={job?.postedBy?.photo}
+                    username={job.postedBy?.name}
+                    postid={job._id}
+                    date={job.date}
+                    jobtypes={job.jobtypes}
+                    country={job.country}
+                    city={job.city}
+                    totalapplications={job.application.length}
+                    savejobPosttowishlist={savejobPosttowishlist}
+                  />
+                </Fade>
               </>
             ))
           ) : (
@@ -174,9 +171,12 @@ const Alljobposts = () => {
         </div>
         <div className="card pagination-job-posts-homepage">
           {alljobposts.length > 1 ? (
-            <AddPagination pageCount={pageCount} handlePageClick={handlePageClick}/>
-            // <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
-          ) : null}
+            <AddPagination
+              pageCount={pageCount}
+              handlePageClick={handlePageClick}
+            />
+          ) : // <Pagination pages={howManyPages} setCurrentPage={setCurrentPage} />
+          null}
         </div>
       </div>
 
