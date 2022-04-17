@@ -37,6 +37,7 @@ const Trending = ({
 
           <p className="profile-name-size">{username}</p>
 
+
           <p>Published on: {moment(date).format("MMM Do YY")}</p>
 
           <h6>{name.substring(0, 50)}</h6>
