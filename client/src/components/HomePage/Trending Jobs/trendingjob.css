@@ -1,15 +1,32 @@
-.trending-job{
-    margin-top: 15px;
+.trending-job {
+  margin-top: 15px;
 }
 
-.trending-job-title h2{
-    text-align: center;
-    margin-top: 15px;
+.trending-job-title h2 {
+  text-align: center;
+  margin-top: 15px;
 }
 .line {
-    display: block;
-    width: 70px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: rgb(122, 122, 23);
-  }
+  display: block;
+  width: 70px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: rgb(122, 122, 23);
+}
+
+.trending-job-item {
+  padding: 10px;
+  border: 1px dotted black;
+  margin: 10px;
+  border-radius: 10px;
+}
+.trending-job-item:hover {
+  box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+
+  cursor: pointer;
+  transition-duration: 1s;
+  background-color: brown;
+  color: white;
+}
