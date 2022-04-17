@@ -10,9 +10,9 @@ const TrendingJob = () => {
   const loadTrendingjob = () => {
     getTrendingjobpost()
       .then((result) => {
-        if (result) {
+     
           setTrendingjob(result);
-        }
+    
       })
       .catch((err) => {
         console.log(err);
@@ -27,14 +27,14 @@ const TrendingJob = () => {
     <React.Fragment>
       <div className="container-fluid card trending-job">
         <div className="trending-job-title">
-          <h4>Trending Jobs</h4>
+          <h4>Trending Jobs {trendingjob.length}</h4>
           <span className="line"></span>
         </div>
         <div className="container">
           <div className="row">
             {trendingjob.map((item, index) => (
               <div className="col-xl-3 col-lg-4 col-md-6">
-                <Fade left>
+           
                   <Trending
                     key={item._id}
                     name={item.name}
@@ -44,7 +44,7 @@ const TrendingJob = () => {
                     application={item.application?.length}
                     postid={item._id}
                   />
-                </Fade>
+           
               </div>
             ))}
           </div>
