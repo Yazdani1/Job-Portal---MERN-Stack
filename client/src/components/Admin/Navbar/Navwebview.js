@@ -11,15 +11,12 @@ import { GiSkills } from "react-icons/gi";
 import { Link, useHistory } from "react-router-dom";
 import { BsHeartFill } from "react-icons/bs";
 import { RiLogoutCircleRLine } from "react-icons/ri";
-import { AiFillMessage,AiOutlineUsergroupAdd } from "react-icons/ai";
+import { AiFillMessage, AiOutlineUsergroupAdd } from "react-icons/ai";
 import { GiRamProfile } from "react-icons/gi";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { UserContext } from "../../UserContext";
 import ReactTooltip from "react-tooltip";
 import { BsStack, BsFillBookmarkStarFill } from "react-icons/bs";
-
-
-
 
 const Navwebview = (props) => {
   const [state, setState] = useContext(UserContext);
@@ -59,6 +56,21 @@ const Navwebview = (props) => {
           </NavLink>
 
           <NavLink
+            to="/all-user-info"
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+          >
+            <div className="sidebar-item-back" data-tip="User">
+              <div className="sidebar-items">
+                <p>
+                  <FaUserNurse size={20} />
+                </p>
+
+              </div>
+            </div>
+          </NavLink>
+
+          {/* <NavLink
             to="/create-job-post"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -69,12 +81,11 @@ const Navwebview = (props) => {
                   <RiEditFill size={20} />
                 </p>
 
-                {/* <p>Create Event</p> */}
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/profile"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -85,12 +96,11 @@ const Navwebview = (props) => {
                   <FaUserNurse size={20} />
                 </p>
 
-                {/* <p>Profile</p> */}
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/applied-jobs"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -101,12 +111,11 @@ const Navwebview = (props) => {
                   <BsStack size={20} />
                 </p>
 
-                {/* <p>Profile</p> */}
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/message"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -118,9 +127,9 @@ const Navwebview = (props) => {
                 </p>
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/wishlist"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -132,9 +141,9 @@ const Navwebview = (props) => {
                 </p>
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/add-employee/"
             style={{ textDecoration: "none" }}
             className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -146,7 +155,7 @@ const Navwebview = (props) => {
                 </p>
               </div>
             </div>
-          </NavLink>
+          </NavLink> */}
 
           <div className="sidebar-item-back" data-tip="Log Out">
             <div className="sidebar-items" onClick={logOut}>
@@ -161,7 +170,7 @@ const Navwebview = (props) => {
       ) : (
         <div className="sidebar-large">
           <NavLink
-            to="/dashboard"
+            to="/admin"
             style={{ textDecoration: "none" }}
             className={({ isActive }) =>
               isActive ? "largenavactive" : "inactive"
@@ -175,6 +184,20 @@ const Navwebview = (props) => {
           </NavLink>
 
           <NavLink
+            to="/all-user-info"
+            style={{ textDecoration: "none" }}
+            className={({ isActive }) =>
+              isActive ? "largenavactive" : "inactive"
+            }
+          >
+            <div className="sidebar-large-navdesign">
+              <p>
+                <AiFillDashboard size={15} /> User List
+              </p>
+            </div>
+          </NavLink>
+
+          {/* <NavLink
             to="/create-job-post"
             style={{ textDecoration: "none" }}
             className={({ isActive }) =>
@@ -187,8 +210,8 @@ const Navwebview = (props) => {
                 Create Jobs
               </p>
             </div>
-          </NavLink>
-
+          </NavLink> */}
+{/* 
           <NavLink
             to="/profile"
             style={{ textDecoration: "none" }}
@@ -201,9 +224,9 @@ const Navwebview = (props) => {
                 <FaUserNurse size={15} /> Profile
               </p>
             </div>
-          </NavLink>
+          </NavLink> */}
 
-          <NavLink
+          {/* <NavLink
             to="/applied-jobs"
             style={{ textDecoration: "none" }}
             className={({ isActive }) =>
@@ -215,8 +238,8 @@ const Navwebview = (props) => {
                 <BsStack size={15} /> Applied Jobs
               </p>
             </div>
-          </NavLink>
-
+          </NavLink> */}
+{/* 
           <NavLink
             to="/wishlist"
             style={{ textDecoration: "none" }}
@@ -229,8 +252,8 @@ const Navwebview = (props) => {
                 <BsFillBookmarkStarFill size={15} /> Wishlist
               </p>
             </div>
-          </NavLink>
-
+          </NavLink> */}
+{/* 
           <NavLink
             to="/add-employee/"
             style={{ textDecoration: "none" }}
@@ -243,7 +266,7 @@ const Navwebview = (props) => {
                 <BsFillBookmarkStarFill size={15} /> Add-Employee
               </p>
             </div>
-          </NavLink>
+          </NavLink> */}
 
           <div className="sidebar-large-navdesign" onClick={logOut}>
             <p>

@@ -22,6 +22,7 @@ import EditjobPost from "./components/Dashboard/Create Jobs/EditjobPost";
 import Addemployee from "./components/Dashboard/AddEmployee/Addemployee";
 import AdminPostlist from "./components/Admin/AdminAllPost/AdminPostlist";
 import AdminProtectedRoute from "./components/Admin/AdminProtectedRoute";
+import AllUser from "./components/Admin/AdminAllPost/AllUser";
 
 const App = () => {
   return (
@@ -31,6 +32,9 @@ const App = () => {
           {/* Route for super admin side */}
           <Route exact path="/admin">
             <AdminProtectedRoute AdminProtected={AdminPostlist} />
+          </Route>
+          <Route exact path="/all-user-info">
+            <AdminProtectedRoute AdminProtected={AllUser} />
           </Route>
           {/* Route end  for super admin side  */}
 

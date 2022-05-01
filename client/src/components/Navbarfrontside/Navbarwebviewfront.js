@@ -17,10 +17,16 @@ const Navbarwebviewfront = () => {
               <Link to={"/"} style={{ textDecoration: "none" }}>
                 <li>Home</li>
               </Link>
-              <Link to={"/dashboard"} style={{ textDecoration: "none" }}>
-                <li>Dashboard</li>
-              </Link>
-             
+              {state && state.user && state.user.role === "Admin" ? (
+                <Link to={"/admin"} style={{ textDecoration: "none" }}>
+                  <li>Admin</li>
+                </Link>
+              ) : (
+                <Link to={"/dashboard"} style={{ textDecoration: "none" }}>
+                  <li>Dashboard</li>
+                </Link>
+              )}
+
               <li>{state && state.user && state.user.name}</li>
 
               <div className="profile-image">
