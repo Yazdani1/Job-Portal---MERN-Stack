@@ -23,7 +23,7 @@ import Addemployee from "./components/Dashboard/AddEmployee/Addemployee";
 import AdminPostlist from "./components/Admin/AdminAllPost/AdminPostlist";
 import AdminProtectedRoute from "./components/Admin/AdminProtectedRoute";
 import AllUser from "./components/Admin/AdminAllPost/AllUser";
-
+import EditUserAccount from "./components/Admin/AdminAllPost/EditUserAccount";
 const App = () => {
   return (
     <UserProvider>
@@ -35,6 +35,9 @@ const App = () => {
           </Route>
           <Route exact path="/all-user-info">
             <AdminProtectedRoute AdminProtected={AllUser} />
+          </Route>
+          <Route exact path="/all-user-info/update-user-account/:userId">
+            <AdminProtectedRoute AdminProtected={EditUserAccount} />
           </Route>
           {/* Route end  for super admin side  */}
 

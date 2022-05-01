@@ -23,6 +23,7 @@ app.use("/api", require("./router/createJobs"));
 app.use("/api", require("./router/appliedJobs"));
 app.use("/api", require("./router/userInfo"));
 app.use("/api", require("./router/employer"));
+app.use("/api", require("./router/admin"));
 
 // app.use("/api", require("./router/eventpost"));
 // app.use("/api", require("./router/joinevents"));

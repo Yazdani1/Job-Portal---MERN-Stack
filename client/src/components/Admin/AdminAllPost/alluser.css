@@ -1,0 +1,19 @@
+.user-list:hover {
+  box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: -6px 11px 5px -4px rgba(0, 0, 0, 0.42);
+
+  cursor: pointer;
+  transition-duration: 1s;
+}
+
+.admin-color {
+  color: rgb(9, 190, 57);
+  padding: 5px;
+  font-weight: bold;
+}
+.subscriber-color{
+    color: rgb(38, 17, 224);
+    padding: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}

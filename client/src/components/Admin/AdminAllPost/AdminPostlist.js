@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { getallJobsinhomepage } from "../../HomePage/apiHomepage";
 import moment from "moment";
+import { MdDelete } from "react-icons/md";
+import {deletemyJobs} from "../../Dashboard/Published Jobs/apiPublishedjobs";
+import { ToastContainer, toast } from "react-toastify";
 
 const AdminPostlist = () => {
   const [allposts, setAllposts] = useState([]);
@@ -10,6 +13,21 @@ const AdminPostlist = () => {
       .then((result) => {
         if (result) {
           setAllposts(result);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const deleteMyjobposts = (id) => {
+    deletemyJobs(id)
+      .then((result) => {
+        if (result) {
+          loadallJobpostForAdmin();
+          toast.success("Job post deleted successfully! ", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
         }
       })
       .catch((err) => {
@@ -39,23 +57,38 @@ const AdminPostlist = () => {
                       </div>
                     ) : (
                       <div className="profile-name-avatar">
-                        <p>{item?.postedBy?.name?.substring(0, 2).toUpperCase()}</p>
+                        <p>
+                          {item?.postedBy?.name?.substring(0, 2).toUpperCase()}
+                        </p>
                       </div>
                     )}
 
                     <div className="profile-name-post-date">
-                      <p className="profile-name-size">{item?.postedBy?.name}</p>
+                      <p className="profile-name-size">
+                        {item?.postedBy?.name}
+                      </p>
                       <p>{moment(item.date).format("MMM Do YY")}</p>
                     </div>
-                 
                   </div>
-                  <h6>{item.name}</h6>
+                  <div className="content" style={{ display: "flex",justifyContent: "space-between" }}>
+                    <h6>{item.name}</h6>
+                    <button
+                        className="btn btn-danger"
+                        onClick={() => {
+                          deleteMyjobposts(item._id);
+                        }}
+                      >
+                        <MdDelete size={20} /> 
+                      </button>
+                  </div>
                 </div>
               </div>
             </>
           ))}
         </div>
       </div>
+      <ToastContainer autoClose={8000} />
+
     </React.Fragment>
   );
 };

@@ -40,7 +40,7 @@ const UserList = () => {
               ) : (
                 <div className="profile-pic-and-name">
                   <div className="user-profile-pic">
-                    <p>{user && user.name.substring(0, 2).toUpperCase()}</p>
+                    <p>{user && user.name?.substring(0, 2).toUpperCase()}</p>
                   </div>
                   <p>{user.name}</p>
                 </div>
