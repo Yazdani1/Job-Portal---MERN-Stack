@@ -1,5 +1,6 @@
 const JobPost = require("../model/JobPost");
 
+
 const { requireLogin } = require("../middleware/auth");
 
 exports.createjobPost = (req, res) => {
@@ -272,3 +273,5 @@ exports.updateEditpostinfo = (req, res) => {
       console.log(err);
     });
 };
+
+

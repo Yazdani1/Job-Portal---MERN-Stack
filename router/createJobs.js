@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { requireLogin } = require("../middleware/auth");
+const { requireLogin,isAdmin } = require("../middleware/auth");
 require("dotenv").config();
 
 const {
@@ -13,7 +13,7 @@ const {
   jobapplicationList,
   getEditpostinfo,
   updateEditpostinfo,
-  getTrendingjobpost
+  getTrendingjobpost,
 } = require("../controller/createJobs");
 
 //employer published jobs
@@ -48,5 +48,6 @@ router.put("/update-jobpost-info/:id", requireLogin, updateEditpostinfo);
 //to get trending job post based on the number of job application list
 
 router.get("/get-trending-job", getTrendingjobpost);
+
 
 module.exports = router;

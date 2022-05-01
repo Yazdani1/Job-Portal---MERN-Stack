@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const { requireLogin } = require("../middleware/auth");
+const { requireLogin,isAdmin } = require("../middleware/auth");
 require("dotenv").config();
 
 const {
   userRegistration,
   userLogin,
   passwordReset,
-  newPassword,
+  newPassword,currentUser
 } = require("../controller/userauth");
 
 //Userauth
@@ -19,5 +19,8 @@ router.post("/reset-password", passwordReset);
 
 router.post("/new-password", newPassword);
 //end user auth
+//current uer id
+
+router.get("/admin/current-user",requireLogin,isAdmin,currentUser);
 
 module.exports = router;
