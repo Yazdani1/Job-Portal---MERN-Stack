@@ -23,7 +23,7 @@ const Navheader = (props) => {
           {/* <Link to={"/joined-events"} style={{ textDecoration: "none",color:"black" }}>
             <li>My Events</li>
           </Link> */}
-          <li>{state && state.user && state.user._id}</li>
+          <li>{state && state.user && state.user.name}</li>
 
           {/* <li>{state.user._id}</li> */}
 

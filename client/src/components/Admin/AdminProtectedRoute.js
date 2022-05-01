@@ -16,6 +16,7 @@ const AdminProtectedRoute = (props) => {
 
   const [sidebar, setSidebar] = useState(true);
   const [state, setState] = useContext(UserContext);
+  const [ok, setOk] = useState(false);
 
   const openNavbar = () => {
     setSidebar(!sidebar);
@@ -30,20 +31,28 @@ const AdminProtectedRoute = (props) => {
   //   ReactTooltip.rebuild();
   // }, []);
   useEffect(() => {
-    if (state && state.user && state.user.role === "Subscriber") {
-      history.push("/");
-    } else {
-      history.push("/dashboard");
+    if (state && state.token) getCurrentUserInfo()
+  }, [state && state.token]);
 
-    }
-  }, []);
-
-  const getCurrentUserInfo = ()=>{
-
-    
-
-  }
-
+  const getCurrentUserInfo = () => {
+    fetch("/api/admin/current-user", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.ok) {
+          setOk(true);
+        }
+      })
+      .catch((err) => {
+        history.push("/signin");
+      });
+  };
 
   return (
     <div className="container-fluid">
