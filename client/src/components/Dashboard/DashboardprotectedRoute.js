@@ -34,11 +34,11 @@ const DashboardprotectedRoute = (props) => {
 
       {/* <div className="container fluid"> */}
       <div className="row">
-        <div className="col-xl-2">
+        <div className={sidebar ?"col-xl-1":"col-xl-2"}>
           <Navwebview sidebar={sidebar} />
           {/* <DashboardNav /> */}
         </div>
-        <div className="col-xl-10">
+        <div className={sidebar?"col-xl-11":"col-xl-10" }>
           <DashboardProtected />
         </div>
         {/* </div> */}
