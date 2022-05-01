@@ -18,6 +18,17 @@ exports.updateUserRole = (req, res) => {
   const { role, name, email } = req.body;
   var updatequery = { _id: req.params.id };
 
+  if (!name) {
+    return res.status(400).json({ error: "name is required" });
+  }
+
+  if (!email) {
+    return res.status(400).json({ error: "email is required.." });
+  }
+  if (!role) {
+    return res.status(400).json({ error: "add a role.." });
+  }
+
   User.updateOne(updatequery, {
     $set: {
       role: role,

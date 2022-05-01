@@ -1,6 +1,6 @@
 const router = require("express").Router();
 require("dotenv").config();
-const { requireLogin } = require("../middleware/auth");
+const { requireLogin,isAdmin } = require("../middleware/auth");
 
 const {
   updateUserRole,
@@ -10,9 +10,9 @@ const {
 
 //to update emplouer info
 
-router.get("/getuser-account-info/:id", requireLogin, getUserAccountInfo);
+router.get("/getuser-account-info/:id", requireLogin,isAdmin, getUserAccountInfo);
 
-router.put("/update-user-role/:id", requireLogin, updateUserRole);
+router.put("/update-user-role/:id", requireLogin,isAdmin, updateUserRole);
 router.delete("/delete-user/:id", requireLogin, deleteUser);
 
 module.exports = router;

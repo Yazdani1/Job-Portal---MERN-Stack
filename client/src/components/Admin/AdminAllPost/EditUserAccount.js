@@ -24,6 +24,45 @@ const EditUserAccount = () => {
       .then((result) => {
         if (result) {
           setName(result.name);
+          setEmail(result.email);
+          setRole(result.role);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const updateJobpost = (e) => {
+    e.preventDefault();
+
+    fetch("/api/update-user-role/" + userId, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        role,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.error) {
+          toast.error(result.error, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        } else {
+          toast.success("Job post updated Successfully! ", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+
+          setName("");
+          setEmail("");
+          setRole("");
         }
       })
       .catch((err) => {
@@ -85,11 +124,15 @@ const EditUserAccount = () => {
                   </select>
                 </div>
 
-                <div class="form-group justify-content-center align-items-center">
+                <div
+                  style={{ marginTop: "20px" }}
+                  class="form-group justify-content-center align-items-center"
+                >
                   <button
                     type="submit"
                     name="btnSubmit"
                     className="create-event-button"
+                    onClick={updateJobpost}
                   >
                     Update Account
                   </button>
