@@ -46,7 +46,7 @@ const Wishlist = () => {
 
   return (
     <React.Fragment>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           {showwishlist.wishlist?.map((list) => (
             <div className="col-xl-3 col-lg-3 col-md-4">

@@ -10,29 +10,40 @@ import "./Navbar/navweb.css";
 import "./Navbar/navmobile.css";
 import { UserContext } from "../UserContext";
 
-const DashboardprotectedRoute = (props) => {
+const AdminProtectedRoute = (props) => {
   const history = useHistory();
-  let DashboardProtected = props.DashboardProtect;
-
-  //context api
-
-  const [state, setState] = useContext(UserContext);
+  let AdminProtected = props.AdminProtected;
 
   const [sidebar, setSidebar] = useState(true);
+  const [state, setState] = useContext(UserContext);
 
   const openNavbar = () => {
     setSidebar(!sidebar);
   };
 
-  useEffect(() => {
-    if (!localStorage.getItem("tokenLogin")) {
-      history.push("/signin");
-    } else {
-      
-    }
+  // useEffect(() => {
+  //   if (!localStorage.getItem("tokenLogin")) {
+  //     history.push("/signin");
+  //   } else {
+  //   }
 
-    ReactTooltip.rebuild();
+  //   ReactTooltip.rebuild();
+  // }, []);
+  useEffect(() => {
+    if (state && state.user && state.user.role === "Subscriber") {
+      history.push("/");
+    } else {
+      history.push("/dashboard");
+
+    }
   }, []);
+
+  const getCurrentUserInfo = ()=>{
+
+    
+
+  }
+
 
   return (
     <div className="container-fluid">
@@ -45,7 +56,7 @@ const DashboardprotectedRoute = (props) => {
           {/* <DashboardNav /> */}
         </div>
         <div className={sidebar ? "col-xl-11" : "col-xl-10"}>
-          <DashboardProtected />
+          <AdminProtected />
         </div>
         {/* </div> */}
       </div>
@@ -53,4 +64,4 @@ const DashboardprotectedRoute = (props) => {
   );
 };
 
-export default DashboardprotectedRoute;
+export default AdminProtectedRoute;

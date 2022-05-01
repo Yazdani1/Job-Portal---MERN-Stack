@@ -26,6 +26,10 @@ const userSchema = mongoose.Schema(
     photo: {
       type: String,
     },
+    role:{
+      type: String,
+      default: "Subscriber"
+    },
 
     message: [
       {

@@ -111,7 +111,7 @@ exports.userLogin = async (req, res) => {
     user.expireToken = undefined;
     user.resetToken = undefined;
 
-    return res.json({ token, user});
+    return res.json({ token, user });
   } catch (err) {
     console.log(err);
   }
@@ -195,4 +195,13 @@ exports.newPassword = (req, res) => {
     });
 };
 
+exports.currentUser = async (req, res, next) => {
+  try {
 
+    const user = await User.findById(req.user._id);
+    res.json(user)
+
+  } catch (err) {
+    console.log(err);
+  }
+};

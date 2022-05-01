@@ -20,12 +20,20 @@ import Appliedjoblist from "./components/Dashboard/AppliedjobList/Appliedjoblist
 import Wishlist from "./components/Dashboard/wishlist/Wishlist";
 import EditjobPost from "./components/Dashboard/Create Jobs/EditjobPost";
 import Addemployee from "./components/Dashboard/AddEmployee/Addemployee";
+import AdminPostlist from "./components/Admin/AdminAllPost/AdminPostlist";
+import AdminProtectedRoute from "./components/Admin/AdminProtectedRoute";
 
 const App = () => {
   return (
     <UserProvider>
       <BrowserRouter>
         <Switch>
+          {/* Route for super admin side */}
+          <Route exact path="/admin">
+            <AdminProtectedRoute AdminProtected={AdminPostlist} />
+          </Route>
+          {/* Route end  for super admin side  */}
+
           {/* route for client side */}
           <Route path="/" exact>
             <ProtectedRoute FrontProtected={Home} />
