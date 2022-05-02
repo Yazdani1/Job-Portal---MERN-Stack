@@ -4,15 +4,20 @@ import moment from "moment";
 import { MdDelete } from "react-icons/md";
 import { deletemyJobs } from "../../Dashboard/Published Jobs/apiPublishedjobs";
 import { ToastContainer, toast } from "react-toastify";
+import { SyncOutlined } from "@ant-design/icons";
 
 const AdminPostlist = () => {
   const [allposts, setAllposts] = useState([]);
+ //loading
+ const [loading, setLoading] = useState(true);
 
   const loadallJobpostForAdmin = () => {
     getallJobsinhomepage()
       .then((result) => {
         if (result) {
           setAllposts(result);
+          setLoading(false);
+
         }
       })
       .catch((err) => {
@@ -38,7 +43,15 @@ const AdminPostlist = () => {
   useEffect(() => {
     loadallJobpostForAdmin();
   }, []);
-
+  if (loading) {
+    return (
+      <div class="text-center my-25">
+        <h1>
+          <SyncOutlined spin />
+        </h1>
+      </div>
+    );
+  }
   return (
     <React.Fragment>
       <div className="container-fluid">

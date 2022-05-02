@@ -112,7 +112,7 @@ const JobapplicationList = () => {
 
                       <p>
                         Applied on:
-                        {moment(applicationlist.date).format(
+                        {moment(applicationlist?.date).format(
                           "MMMM Do YYYY, h:mm:ss a"
                         )}
                       </p>
