@@ -51,7 +51,7 @@ const AllUser = () => {
           <div className="card table-horizontal">
             <table class="table table-bordered table-hover">
               <thead>
-                <tr>
+                <tr style={{textAlign:"center"}}>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">E-mail</th>
@@ -64,7 +64,7 @@ const AllUser = () => {
               </thead>
               <tbody>
                 {users.map((item, index) => (
-                  <tr key={item._id}>
+                  <tr key={item._id} style={{textAlign:"center"}}>
                     <th scope="row">{index + 1}</th>
 
                     <td>{item.name}</td>

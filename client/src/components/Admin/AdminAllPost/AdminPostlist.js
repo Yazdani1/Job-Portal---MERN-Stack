@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getallJobsinhomepage } from "../../HomePage/apiHomepage";
 import moment from "moment";
 import { MdDelete } from "react-icons/md";
-import {deletemyJobs} from "../../Dashboard/Published Jobs/apiPublishedjobs";
+import { deletemyJobs } from "../../Dashboard/Published Jobs/apiPublishedjobs";
 import { ToastContainer, toast } from "react-toastify";
 
 const AdminPostlist = () => {
@@ -70,16 +70,21 @@ const AdminPostlist = () => {
                       <p>{moment(item.date).format("MMM Do YY")}</p>
                     </div>
                   </div>
-                  <div className="content" style={{ display: "flex",justifyContent: "space-between" }}>
+                  <div
+                    className="content"
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
                     <h6>{item.name}</h6>
+                    <h6>{item.application.length} Application</h6>
+
                     <button
-                        className="btn btn-danger"
-                        onClick={() => {
-                          deleteMyjobposts(item._id);
-                        }}
-                      >
-                        <MdDelete size={20} /> 
-                      </button>
+                      className="btn btn-danger"
+                      onClick={() => {
+                        deleteMyjobposts(item._id);
+                      }}
+                    >
+                      <MdDelete size={20} />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -88,7 +93,6 @@ const AdminPostlist = () => {
         </div>
       </div>
       <ToastContainer autoClose={8000} />
-
     </React.Fragment>
   );
 };
