@@ -22,6 +22,8 @@ const Applyjob = ({ jobId }) => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const [applicationsuccess, setApplicationSuccess] = useState(true);
+
   const nameChange = (e) => {
     setError("");
     setName(e.target.value);
@@ -76,6 +78,7 @@ const Applyjob = ({ jobId }) => {
           toast.success("You have successfully applied for this job", {
             position: toast.POSITION.TOP_RIGHT,
           });
+          setApplicationSuccess(false);
           console.log(result);
 
           setName("");
@@ -93,7 +96,7 @@ const Applyjob = ({ jobId }) => {
 
   //to save the job have applied in the user profile..
 
-  const myappliedjobslist = (e,jobID) => {
+  const myappliedjobslist = (e, jobID) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
@@ -105,7 +108,7 @@ const Applyjob = ({ jobId }) => {
       workexperience,
       skills,
       projects,
-      jobID
+      jobID,
     })
       .then((result) => {
         if (result.error) {
@@ -118,6 +121,7 @@ const Applyjob = ({ jobId }) => {
           //   position: toast.POSITION.TOP_RIGHT,
           // });
           console.log(result);
+          setApplicationSuccess(false);
 
           setName("");
           setEmail("");
@@ -161,109 +165,110 @@ const Applyjob = ({ jobId }) => {
       <div className="card event-form-designs">
         <div className="text-center">
           <h5 className="text-center">Apply for this Job</h5>
-          <p>{detailsjob && detailsjob.jobdetails?._id}</p>
         </div>
 
         {showError()}
 
-        <form>
-          <div className="event-form">
-            <label for="exampleInputEmail1" className="form-label">
-              Your name
-            </label>
-            <input
-              type="text"
-              value={name}
-              onChange={nameChange}
-              className="form-control"
-              maxLength="100"
-            />
-          </div>
+        {applicationsuccess ? (
+          <form>
+            <div className="event-form">
+              <label for="exampleInputEmail1" className="form-label">
+                Your name
+              </label>
+              <input
+                type="text"
+                value={name}
+                onChange={nameChange}
+                className="form-control"
+                maxLength="100"
+              />
+            </div>
 
-          <div className="event-form">
-            <label for="exampleInputEmail1" className="form-label">
-              Your E-mail
-            </label>
-            <input
-              type="text"
-              value={email}
-              onChange={emailChange}
-              className="form-control"
-              maxLength="100"
-            />
-          </div>
+            <div className="event-form">
+              <label for="exampleInputEmail1" className="form-label">
+                Your E-mail
+              </label>
+              <input
+                type="text"
+                value={email}
+                onChange={emailChange}
+                className="form-control"
+                maxLength="100"
+              />
+            </div>
 
-          <div className="event-form">
-            <label for="exampleInputEmail1" className="form-label">
-              Year of experience
-            </label>
-            <select
-              className="custom-select"
-              value={yearofexperience}
-              onChange={yearofexperienceChange}
-            >
-              <option value="0-6 months">0-6 months</option>
-              <option value="1-2 years">1-2 years</option>
-              <option value="2-4 years">2-4 years</option>
-              <option value="4+ years">4+ years</option>
-            </select>
-          </div>
+            <div className="event-form">
+              <label for="exampleInputEmail1" className="form-label">
+                Year of experience
+              </label>
+              <select
+                className="custom-select"
+                value={yearofexperience}
+                onChange={yearofexperienceChange}
+              >
+                <option value="0-6 months">0-6 months</option>
+                <option value="1-2 years">1-2 years</option>
+                <option value="2-4 years">2-4 years</option>
+                <option value="4+ years">4+ years</option>
+              </select>
+            </div>
 
-          <div className="event-form">
-            <label for="exampleInputEmail1" className="form-label">
-              Work-experience
-            </label>
-            <textarea
-              type="text"
-              value={workexperience}
-              onChange={workexperienceChange}
-              className="form-control"
-              rows={3}
-            />
-          </div>
-          <div className="event-form">
-            <label for="exampleInputEmail1" className="form-label">
-              Skills
-            </label>
-            <textarea
-              type="text"
-              value={skills}
-              onChange={skillsChange}
-              className="form-control"
-              rows={3}
-            />
-          </div>
-          <div className="event-form">
-            <label for="exampleInputEmail1" className="form-label">
-              Projects (Optional)
-            </label>
-            <textarea
-              type="text"
-              value={projects}
-              onChange={projectsChange}
-              className="form-control"
-              rows={3}
-            />
-          </div>
-          <div className="main_container-button">
-            <button
-              className="apply-job-button"
-              onClick={(e) =>
-                // applyforjob(e, detailsjob && detailsjob.jobdetails?._id)
-                {
-                  if (!window.localStorage.getItem("tokenLogin")) {
-                    history.push("/signin");
-                  } else {
-                    applyforjob(e, jobId);
-                    myappliedjobslist(e,jobId);
+            <div className="event-form">
+              <label for="exampleInputEmail1" className="form-label">
+                Work-experience
+              </label>
+              <textarea
+                type="text"
+                value={workexperience}
+                onChange={workexperienceChange}
+                className="form-control"
+                rows={3}
+              />
+            </div>
+            <div className="event-form">
+              <label for="exampleInputEmail1" className="form-label">
+                Skills
+              </label>
+              <textarea
+                type="text"
+                value={skills}
+                onChange={skillsChange}
+                className="form-control"
+                rows={3}
+              />
+            </div>
+            <div className="event-form">
+              <label for="exampleInputEmail1" className="form-label">
+                Projects (Optional)
+              </label>
+              <textarea
+                type="text"
+                value={projects}
+                onChange={projectsChange}
+                className="form-control"
+                rows={3}
+              />
+            </div>
+            <div className="main_container-button">
+              <button
+                className="apply-job-button"
+                onClick={(e) =>
+                  // applyforjob(e, detailsjob && detailsjob.jobdetails?._id)
+                  {
+                    if (!window.localStorage.getItem("tokenLogin")) {
+                      history.push("/signin");
+                    } else {
+                      applyforjob(e, jobId);
+                      myappliedjobslist(e, jobId);
+                    }
                   }
                 }
-              }
-            >
-              Apply Job
-            </button>
-          </div>
-        </form>
+              >
+                Apply Job
+              </button>
+            </div>
+          </form>
+        ) : null}
       </div>
       <ToastContainer autoClose={8000} />
     </React.Fragment>
