@@ -4,7 +4,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import moment from "moment";
 import ReactHtmlParser from "react-html-parser";
 import { FcOk, FcCollapse, FcExpand, FcNightPortrait } from "react-icons/fc";
-import { FcApproval,FcBookmark } from "react-icons/fc";
+import { FcApproval, FcBookmark } from "react-icons/fc";
 import { SyncOutlined } from "@ant-design/icons";
 import { Spin, Space } from "antd";
 import { MdLocationPin } from "react-icons/md";
@@ -41,28 +41,25 @@ const Detailsjobwebview = ({
             to={"/organizers-public-profile/" + userid}
             style={{ textDecoration: "none" }}
           > */}
-            <div className="profile-name-date">
-              {photo ? (
-                <div className="profile-name-avatar-image">
-                  <img src={photo} />
-                </div>
-              ) : (
-                <div className="profile-name-avatar">
-                  <p>{username?.substring(0, 2).toUpperCase()}</p>
-                </div>
-              )}
-
-              <div className="profile-name-post-date">
-                <p className="profile-name-size">{username}</p>
-                <p>
-                
-                  {moment(date).format("MMM Do YY")}
-                </p>
+          <div className="profile-name-date">
+            {photo ? (
+              <div className="profile-name-avatar-image">
+                <img src={photo} />
               </div>
-              {totalapplications >= 5 ? (
-                    <p className="trending">Trending</p>
-                  ) : null}
+            ) : (
+              <div className="profile-name-avatar">
+                <p>{username?.substring(0, 2).toUpperCase()}</p>
+              </div>
+            )}
+
+            <div className="profile-name-post-date">
+              <p className="profile-name-size">{username}</p>
+              <p>{moment(date).format("MMM Do YY")}</p>
             </div>
+            {totalapplications >= 5 ? (
+              <p className="trending">Trending</p>
+            ) : null}
+          </div>
           {/* </Link> */}
           <h6>{name}</h6>
           <div className="row">
@@ -86,8 +83,7 @@ const Detailsjobwebview = ({
             </div>
             <div className="col-lg-3">
               <p className="job-items">
-              <FcBookmark size={20} style={{ color: "red" }} /> Save
-
+                <FcBookmark size={20} style={{ color: "red" }} /> Save
               </p>
             </div>
           </div>
@@ -95,7 +91,10 @@ const Detailsjobwebview = ({
 
         <div className="card job-description">
           <h6>Description</h6>
-          <p>{ReactHtmlParser(des)}</p>
+          <span>
+            {ReactHtmlParser(des?.substring(0, 550))}
+            <p>See More</p>
+          </span>
         </div>
 
         {/* job requirements */}

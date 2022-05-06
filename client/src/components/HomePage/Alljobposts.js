@@ -155,7 +155,7 @@ const Alljobposts = () => {
                     jobtypes={job.jobtypes}
                     country={job.country}
                     city={job.city}
-                    totalapplications={job.application.length}
+                    totalapplications={job.application?.length}
                     savejobPosttowishlist={savejobPosttowishlist}
                   />
                 </Fade>

@@ -68,7 +68,7 @@ const Detailsjob = () => {
                 detailsjob && detailsjob.jobdetails?.application.length
               }
               jobtypes={detailsjob && detailsjob.jobdetails?.jobtypes}
-              username={detailsjob && detailsjob.jobdetails?.postedBy.name}
+              username={detailsjob && detailsjob.jobdetails?.postedBy?.name}
             />
           </div>
 
