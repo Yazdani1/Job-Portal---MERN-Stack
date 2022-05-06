@@ -32,6 +32,10 @@ const Detailsjobwebview = ({
   const [showskills, setShowskills] = useState(true);
   const [showsaddress, setShowsaddress] = useState(false);
 
+  //to show and hide see more post description
+
+  const [seeMorePost, setSeeMorePost] = useState(false);
+
   return (
     <React.Fragment>
       <div className="job-details-page">
@@ -92,9 +96,23 @@ const Detailsjobwebview = ({
         <div className="card job-description">
           <h6>Description</h6>
           <span>
-            {ReactHtmlParser(des?.substring(0, 550))}
-            <p>See More</p>
+            {seeMorePost ? "" : ReactHtmlParser(des?.substring(0, 550))}
+            <p
+              onClick={() => setSeeMorePost(true)}
+              style={{ color: "blue", cursor: "pointer" }}
+            >
+              {seeMorePost ? "" : "See More"}
+            </p>
           </span>
+          {seeMorePost ? ReactHtmlParser(des) : null}
+          {seeMorePost ? (
+            <p
+              onClick={() => setSeeMorePost(false)}
+              style={{ color: "blue", cursor: "pointer" }}
+            >
+              {seeMorePost ? "Show Less" : null}
+            </p>
+          ) : null}
         </div>
 
         {/* job requirements */}
