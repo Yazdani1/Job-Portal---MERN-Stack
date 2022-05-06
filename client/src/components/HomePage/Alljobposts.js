@@ -90,6 +90,7 @@ const Alljobposts = () => {
       });
   };
 
+ 
   useEffect(() => {
     loadallJobposts();
   }, []);

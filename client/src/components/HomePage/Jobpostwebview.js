@@ -6,7 +6,6 @@ import ReactHtmlParser from "react-html-parser";
 import { MdLocationPin } from "react-icons/md";
 import { FcApproval, FcNightPortrait, FcBookmark } from "react-icons/fc";
 import { UserContext } from "../UserContext";
-import { getjobWishlist } from "../Dashboard/wishlist/apiWishlist";
 
 const Jobpostwebview = ({
   name,
@@ -28,25 +27,7 @@ const Jobpostwebview = ({
   //context api
   const [state, setState] = useContext(UserContext);
 
-  //to show save job title save to saved
-
-  const [savedjob, setSavedjob] = useState([]);
-
-  const loadWishlistID = () => {
-    getjobWishlist()
-      .then((result) => {
-        if (result) {
-          setSavedjob(result);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  useEffect(() => {
-    loadWishlistID();
-  }, []);
+ 
 
   return (
     <React.Fragment>
@@ -108,12 +89,8 @@ const Jobpostwebview = ({
                 className="job-items"
                 onClick={() => savejobPosttowishlist(postid)}
               >
-                <FcBookmark size={20} style={{ color: "red" }} />
-                {savedjob.wishlist?.map((item) => (
-                  <>
-                    <p>{item._id === postid ? "Job Saved" : null}</p>
-                  </>
-                ))}
+                <FcBookmark size={20} style={{ color: "red" }} />Save Job
+              
               </p>
             </div>
           </div>
