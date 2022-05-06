@@ -16,6 +16,7 @@ const Alljobposts = () => {
   const [state, setState] = useContext(UserContext);
   const [loading, setLoading] = useState(true);
 
+
   //search job post
 
   const [searchjob, setSearchjob] = useState("");
